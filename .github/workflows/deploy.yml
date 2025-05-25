@@ -20,15 +20,18 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Clean Install Dependencies
         run: |
+          rm -rf node_modules
+          rm -rf dist
           npm install
-          npm list
 
       - name: Build
         run: |
           npm run build
+          echo "Build contents:"
           ls -la dist/
+          echo "Assets contents:"
           ls -la dist/assets/
 
       - name: Deploy
