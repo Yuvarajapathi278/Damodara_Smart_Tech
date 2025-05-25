@@ -40,5 +40,6 @@
     "silent": true
   },
   "cleanUrls": true,
-  "public": true
+  "public": true,
+  "sourceProtection": false
 } 
