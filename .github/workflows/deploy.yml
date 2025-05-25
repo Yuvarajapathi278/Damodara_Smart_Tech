@@ -29,10 +29,14 @@ jobs:
         run: |
           npm run build
           ls -la dist/
+          ls -la dist/assets/
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
-          clean: true 
+          clean: true
+          clean-exclude: |
+            .git
+            .github 
