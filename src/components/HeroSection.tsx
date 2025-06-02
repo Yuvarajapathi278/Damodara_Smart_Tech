@@ -46,6 +46,7 @@ export function HeroSection() {
               >
                 Learn More
               </Button>
+              </div>
           <div className="relative animate-fade-in animate-float-slow" style={{ animationDelay: "0.2s" }}>
             <div className="aspect-square w-full max-w-[500px] mx-auto relative">
               {/* Abstract design elements */}
