@@ -37,14 +37,6 @@ export function HeroSection() {
                 className="bg-gradient-blue-purple hover:opacity-90 transition-opacity text-lg py-6 px-8"
               >
                 Get Started
-                <ArrowRight className="ml-2" size={18} />
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                className={`border-white/20 hover:border-white/40 text-lg py-6 px-8 ${theme === 'light' ? '!border-black/20 hover:!border-black/40' : ''}`}
-              >
-                Learn More
               </Button>
             </div>
           </div>
