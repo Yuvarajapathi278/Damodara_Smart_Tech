@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
@@ -15,13 +14,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, col
       <div className={`w-16 h-16 rounded-lg flex items-center justify-center mb-6 ${color}`}>
         {icon}
       </div>
-      
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-muted-foreground mb-6">{description}</p>
-      
-      <a href="#" className="inline-flex items-center text-sm group-hover:text-neon-blue transition-colors">
-        Learn more <ArrowRight size={16} className="ml-2" />
-      </a>
+      <p className="text-muted-foreground mb-0">{description}</p>
     </div>
   );
 };
@@ -32,7 +26,7 @@ export function ServicesSection() {
       title: "Web Development",
       description: "Custom-built websites and web applications tailored to your unique business requirements.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-blue"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-blue"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="M14.5 4 9.5 20"></path></svg>
       ),
       color: "bg-gradient-to-br from-neon-blue/30 to-neon-purple/30"
     },
