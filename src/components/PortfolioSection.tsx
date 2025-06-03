@@ -1,7 +1,4 @@
-
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 type Project = {
   id: number;
@@ -44,9 +41,7 @@ const projects: Project[] = [
 
 export function PortfolioSection() {
   const [filter, setFilter] = useState("all");
-  
   const categories = ["all", "Web App", "Web Development", "Mobile App", "Digital Marketing"];
-  
   const filteredProjects = filter === "all" 
     ? projects 
     : projects.filter(project => project.category === filter);
@@ -68,15 +63,13 @@ export function PortfolioSection() {
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
-            <Button
+            <button
               key={category}
-              variant={filter === category ? "default" : "outline"}
-              size="sm"
-              className={filter === category ? "bg-gradient-blue-purple" : "border-white/20"}
+              className={`px-4 py-2 rounded ${filter === category ? "bg-gradient-blue-purple text-white" : "border border-white/20 text-foreground"}`}
               onClick={() => setFilter(category)}
             >
               {category === "all" ? "All Projects" : category}
-            </Button>
+            </button>
           ))}
         </div>
         
@@ -98,13 +91,11 @@ export function PortfolioSection() {
                     {project.category}
                   </span>
                   <h4 className="text-xl font-bold mb-2">{project.title}</h4>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <p className="text-muted-foreground mb-0">{project.description}</p>
                 </div>
               </div>
             </div>
           ))}
-        </div> 
-        <div className="text-center mt-12">
         </div>
       </div>
     </section>
