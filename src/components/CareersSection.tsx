@@ -3,22 +3,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { Briefcase, MapPin, Clock, Users, Send } from "lucide-react";
+import { Briefcase, Users, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-interface JobOpening {
-  id: string;
-  title: string;
-  type: string;
-  location: string;
-  experience: string;
-  skills: string[];
-  description: string;
-}
-
 export function CareersSection() {
-  const [selectedJob, setSelectedJob] = useState<string>("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,11 +27,11 @@ export function CareersSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!selectedJob || !formData.name || !formData.email) {
+
+    if (!formData.name || !formData.email) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all required fields and select a position.",
+        description: "Please fill in all required fields.",
         variant: "destructive",
       });
       return;
@@ -54,10 +42,9 @@ export function CareersSection() {
     try {
       // Google Sheets Web App URL - Replace with your actual Google Sheets Web App URL
       const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
-      
+
       const submissionData = {
         timestamp: new Date().toISOString(),
-        position: jobOpenings.find(job => job.id === selectedJob)?.title || selectedJob,
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -77,8 +64,8 @@ export function CareersSection() {
       });
 
       toast({
-        title: "Application Submitted!",
-        description: "Thank you for your interest. We'll review your application and get back to you soon.",
+        title: "Profile Submitted!",
+        description: "Thank you for your interest. We'll keep your profile on file for future opportunities.",
       });
 
       // Reset form
@@ -90,13 +77,12 @@ export function CareersSection() {
         portfolio: "",
         coverLetter: ""
       });
-      setSelectedJob("");
 
     } catch (error) {
-      console.error("Error submitting application:", error);
+      console.error("Error submitting profile:", error);
       toast({
         title: "Submission Error",
-        description: "There was an error submitting your application. Please try again.",
+        description: "There was an error submitting your profile. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -113,89 +99,24 @@ export function CareersSection() {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We're always looking for talented developers and freelancers to join our growing team. 
-            Explore exciting opportunities in web development, Java, Python, and more.
+            Please submit your profile below and we'll reach out when a suitable opportunity arises.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Job Openings */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold mb-6">Current Openings</h3>
-            {jobOpenings.map((job) => (
-              <Card 
-                key={job.id} 
-                className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                  selectedJob === job.id ? 'ring-2 ring-neon-blue shadow-lg' : ''
-                }`}
-                onClick={() => setSelectedJob(job.id)}
-              >
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl">{job.title}</CardTitle>
-                      <CardDescription className="mt-2">{job.description}</CardDescription>
-                    </div>
-                    <Badge variant="outline" className="ml-4">
-                      {job.type}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <MapPin size={16} />
-                        {job.location}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock size={16} />
-                        {job.experience}
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {job.skills.map((skill) => (
-                        <Badge key={skill} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Application Form */}
-          <div>
+        <div className="flex justify-center">
+          <div className="w-full max-w-xl">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Users size={24} />
-                  Apply Now
+                  Submit Your Profile
                 </CardTitle>
                 <CardDescription>
-                  Fill out the form below to apply for any position. Freelancers are always welcome!
+                  Fill out the form below to submit your profile. We'll keep your details on file for future openings.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Position *</label>
-                    <select 
-                      value={selectedJob}
-                      onChange={(e) => setSelectedJob(e.target.value)}
-                      className="w-full p-2 border rounded-md bg-background"
-                      required
-                    >
-                      <option value="">Select a position</option>
-                      {jobOpenings.map((job) => (
-                        <option key={job.id} value={job.id}>
-                          {job.title}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-medium mb-2 block">Full Name *</label>
@@ -251,7 +172,7 @@ export function CareersSection() {
                     <Textarea
                       value={formData.coverLetter}
                       onChange={(e) => handleInputChange("coverLetter", e.target.value)}
-                      placeholder="Tell us why you'd be a great fit for this role..."
+                      placeholder="Tell us about yourself..."
                       rows={4}
                     />
                   </div>
@@ -266,7 +187,7 @@ export function CareersSection() {
                     ) : (
                       <>
                         <Send size={16} className="mr-2" />
-                        Submit Application
+                        Submit Profile
                       </>
                     )}
                   </Button>
