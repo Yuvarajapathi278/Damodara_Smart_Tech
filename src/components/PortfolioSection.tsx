@@ -99,25 +99,12 @@ export function PortfolioSection() {
                   </span>
                   <h4 className="text-xl font-bold mb-2">{project.title}</h4>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <a 
-                    href="#" 
-                    className="inline-flex items-center text-sm text-neon-purple hover:text-neon-blue transition-colors"
-                  >
-                    View Project <ArrowRight size={16} className="ml-2" />
-                  </a>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-        
+        </div> 
         <div className="text-center mt-12">
-          <Button 
-            variant="outline" 
-            className="border-white/20 hover:border-white/40"
-          >
-            View All Projects
-          </Button>
         </div>
       </div>
     </section>
