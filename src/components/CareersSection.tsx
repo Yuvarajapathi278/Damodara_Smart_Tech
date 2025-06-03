@@ -1,101 +1,296 @@
-import React from "react";
-import { ArrowRight } from "lucide-react";
+import React, { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Briefcase, MapPin, Clock, Users, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
-interface ServiceCardProps {
+interface JobOpening {
+  id: string;
   title: string;
+  type: string;
+  location: string;
+  experience: string;
+  skills: string[];
   description: string;
-  icon: React.ReactNode;
-  color: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, color }) => {
-  return (
-    <div className="glass-card rounded-xl p-6 transition-all duration-300 hover:translate-y-[-5px] group">
-      <div className={`w-16 h-16 rounded-lg flex items-center justify-center mb-6 ${color}`}>
-        {icon}
-      </div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-muted-foreground mb-0">{description}</p>
-    </div>
-  );
-};
+export function CareersSection() {
+  const [selectedJob, setSelectedJob] = useState<string>("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    experience: "",
+    portfolio: "",
+    coverLetter: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-export function ServicesSection() {
-  const services = [
-    {
-      title: "Web Development",
-      description: "Custom-built websites and web applications tailored to your unique business requirements.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-blue"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="M14.5 4 9.5 20"></path></svg>
-      ),
-      color: "bg-gradient-to-br from-neon-blue/30 to-neon-purple/30"
-    },
-    {
-      title: "UI/UX Design",
-      description: "Beautiful, intuitive interfaces that enhance user engagement and deliver seamless experiences.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-purple"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" x2="9.01" y1="9" y2="9"></line><line x1="15" x2="15.01" y1="9" y2="9"></line></svg>
-      ),
-      color: "bg-gradient-to-br from-neon-purple/30 to-neon-pink/30"
-    },
-    {
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications with cutting-edge features and functionality.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-pink"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
-      ),
-      color: "bg-gradient-to-br from-neon-pink/30 to-neon-orange/30"
-    },
-    {
-      title: "Digital Marketing",
-      description: "Strategic marketing campaigns that increase visibility and drive conversions for your business.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-orange"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
-      ),
-      color: "bg-gradient-to-br from-neon-orange/30 to-neon-green/30"
-    },
-    {
-      title: "API Integration",
-      description: "Seamless connection of your systems with third-party services and applications for enhanced functionality.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-green"><path d="M15 12h2a2 2 0 0 1 0 4h-2"></path><path d="M7 12H5a2 2 0 0 0 0 4h2"></path><path d="M9 16V8"></path><path d="M15 16V8"></path><line x1="9" y1="12" x2="15" y2="12"></line></svg>
-      ),
-      color: "bg-gradient-to-br from-neon-green/30 to-neon-blue/30"
-    },
-    {
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and services tailored for performance, security, and reliability.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neon-blue"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
-      ),
-      color: "bg-gradient-to-br from-neon-blue/30 to-neon-purple/30"
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!selectedJob || !formData.name || !formData.email) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields and select a position.",
+        variant: "destructive",
+      });
+      return;
     }
-  ];
+
+    setIsSubmitting(true);
+
+    try {
+      // Google Sheets Web App URL - Replace with your actual Google Sheets Web App URL
+      const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+      
+      const submissionData = {
+        timestamp: new Date().toISOString(),
+        position: jobOpenings.find(job => job.id === selectedJob)?.title || selectedJob,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        experience: formData.experience,
+        portfolio: formData.portfolio,
+        coverLetter: formData.coverLetter
+      };
+
+      // Submit to Google Sheets
+      await fetch(GOOGLE_SHEETS_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submissionData),
+      });
+
+      toast({
+        title: "Application Submitted!",
+        description: "Thank you for your interest. We'll review your application and get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        experience: "",
+        portfolio: "",
+        coverLetter: ""
+      });
+      setSelectedJob("");
+
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      toast({
+        title: "Submission Error",
+        description: "There was an error submitting your application. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <section id="services" className="py-20">
+    <section className="py-20 bg-gradient-to-br from-background via-background to-muted/20">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm uppercase tracking-wider text-neon-pink mb-3">Our Services</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">
-            Comprehensive <span className="gradient-text-alt">Digital Solutions</span>
-          </h3>
-          <p className="text-muted-foreground">
-            We offer a wide range of services to help your business thrive in the digital world,
-            from web development to digital marketing.
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-display font-bold mb-4 bg-gradient-blue-purple bg-clip-text text-transparent">
+            Join Our Team
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            We're always looking for talented developers and freelancers to join our growing team. 
+            Explore exciting opportunities in web development, Java, Python, and more.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              color={service.color}
-            />
-          ))}
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Job Openings */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold mb-6">Current Openings</h3>
+            {jobOpenings.map((job) => (
+              <Card 
+                key={job.id} 
+                className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
+                  selectedJob === job.id ? 'ring-2 ring-neon-blue shadow-lg' : ''
+                }`}
+                onClick={() => setSelectedJob(job.id)}
+              >
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="text-xl">{job.title}</CardTitle>
+                      <CardDescription className="mt-2">{job.description}</CardDescription>
+                    </div>
+                    <Badge variant="outline" className="ml-4">
+                      {job.type}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <MapPin size={16} />
+                        {job.location}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock size={16} />
+                        {job.experience}
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {job.skills.map((skill) => (
+                        <Badge key={skill} variant="secondary" className="text-xs">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Application Form */}
+          <div>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Users size={24} />
+                  Apply Now
+                </CardTitle>
+                <CardDescription>
+                  Fill out the form below to apply for any position. Freelancers are always welcome!
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Position *</label>
+                    <select 
+                      value={selectedJob}
+                      onChange={(e) => setSelectedJob(e.target.value)}
+                      className="w-full p-2 border rounded-md bg-background"
+                      required
+                    >
+                      <option value="">Select a position</option>
+                      {jobOpenings.map((job) => (
+                        <option key={job.id} value={job.id}>
+                          {job.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Full Name *</label>
+                      <Input
+                        value={formData.name}
+                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        placeholder="Your full name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Email *</label>
+                      <Input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Phone</label>
+                      <Input
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        placeholder="Your phone number"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Years of Experience</label>
+                      <Input
+                        value={formData.experience}
+                        onChange={(e) => handleInputChange("experience", e.target.value)}
+                        placeholder="e.g., 3 years"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Portfolio/GitHub URL</label>
+                    <Input
+                      value={formData.portfolio}
+                      onChange={(e) => handleInputChange("portfolio", e.target.value)}
+                      placeholder="https://your-portfolio.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Cover Letter</label>
+                    <Textarea
+                      value={formData.coverLetter}
+                      onChange={(e) => handleInputChange("coverLetter", e.target.value)}
+                      placeholder="Tell us why you'd be a great fit for this role..."
+                      rows={4}
+                    />
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-blue-purple hover:opacity-90"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      "Submitting..."
+                    ) : (
+                      <>
+                        <Send size={16} className="mr-2" />
+                        Submit Application
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <Card className="bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 border-neon-blue/20">
+            <CardContent className="p-8">
+              <Briefcase size={48} className="mx-auto mb-4 text-neon-blue" />
+              <h3 className="text-2xl font-bold mb-4">Ready to Start Your Journey?</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Join a team that values innovation, creativity, and professional growth. 
+                We offer competitive compensation, flexible working arrangements, and exciting projects.
+              </p>
+              <div className="text-sm text-muted-foreground">
+                <p>📧 Applications will be sent to: <strong>careers@damodarasmartech.com</strong></p>
+                <p className="mt-2">💡 Pro tip: Make sure to set up your Google Sheets integration for automatic form processing!</p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
