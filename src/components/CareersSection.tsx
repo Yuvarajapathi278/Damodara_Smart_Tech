@@ -7,82 +7,35 @@ import { Briefcase, Users, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export function CareersSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    experience: "",
-    portfolio: "",
-    coverLetter: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!formData.name || !formData.email) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsSubmitting(true);
 
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
     try {
-      // Google Sheets Web App URL - Replace with your actual Google Sheets Web App URL
-      const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
-
-      const submissionData = {
-        timestamp: new Date().toISOString(),
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        experience: formData.experience,
-        portfolio: formData.portfolio,
-        coverLetter: formData.coverLetter
-      };
-
-      // Submit to Google Sheets
-      await fetch(GOOGLE_SHEETS_URL, {
+      const response = await fetch("https://formsubmit.co/el/activate/damodarasmarttech@gmail.com", {
         method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(submissionData),
+        body: formData,
       });
 
-      toast({
-        title: "Profile Submitted!",
-        description: "Thank you for your interest. We'll keep your profile on file for future opportunities.",
-      });
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        experience: "",
-        portfolio: "",
-        coverLetter: ""
-      });
-
+      if (response.ok) {
+        toast({
+          title: "Profile Submitted!",
+          description: "Thank you for your interest. We'll keep your profile on file for future opportunities.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Failed to submit profile");
+      }
     } catch (error) {
-      console.error("Error submitting profile:", error);
       toast({
-        title: "Submission Error",
-        description: "There was an error submitting your profile. Please try again.",
+        title: "Error",
+        description: "Failed to submit profile. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -91,20 +44,27 @@ export function CareersSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-background to-muted/20">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-display font-bold mb-4 bg-gradient-blue-purple bg-clip-text text-transparent">
-            Join Our Team
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're always looking for talented developers and freelancers to join our growing team. 
-            Please submit your profile below and we'll reach out when a suitable opportunity arises.
+    <section id="careers" className="py-20 relative">
+      {/* Background Effects */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-neon-blue/10 rounded-full filter blur-[100px]"></div>
+        <div className="absolute top-1/3 right-0 w-80 h-80 bg-neon-purple/10 rounded-full filter blur-[100px]"></div>
+      </div>
+
+      <div className="container relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-sm uppercase tracking-wider text-neon-orange mb-3">Join Our Team</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
+            Build Your <span className="gradient-text-alt">Future</span> With Us
+          </h3>
+          <p className="text-muted-foreground">
+            We're always looking for talented individuals who are passionate about technology and innovation.
+            Join our team and be part of something extraordinary.
           </p>
         </div>
 
-        <div className="flex justify-center">
-          <div className="w-full max-w-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -116,13 +76,24 @@ export function CareersSection() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form 
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
+                  {/* Honeypot */}
+                  <input type="text" name="_honey" style={{ display: 'none' }} />
+                  
+                  {/* Disable Captcha */}
+                  <input type="hidden" name="_captcha" value="false" />
+                  
+                  {/* Subject for Career Applications */}
+                  <input type="hidden" name="_subject" value="New Career Application" />
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-medium mb-2 block">Full Name *</label>
                       <Input
-                        value={formData.name}
-                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        name="name"
                         placeholder="Your full name"
                         required
                       />
@@ -131,8 +102,7 @@ export function CareersSection() {
                       <label className="text-sm font-medium mb-2 block">Email *</label>
                       <Input
                         type="email"
-                        value={formData.email}
-                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        name="email"
                         placeholder="your@email.com"
                         required
                       />
@@ -143,16 +113,14 @@ export function CareersSection() {
                     <div>
                       <label className="text-sm font-medium mb-2 block">Phone</label>
                       <Input
-                        value={formData.phone}
-                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        name="phone"
                         placeholder="Your phone number"
                       />
                     </div>
                     <div>
                       <label className="text-sm font-medium mb-2 block">Years of Experience</label>
                       <Input
-                        value={formData.experience}
-                        onChange={(e) => handleInputChange("experience", e.target.value)}
+                        name="experience"
                         placeholder="e.g., 3 years"
                       />
                     </div>
@@ -161,8 +129,7 @@ export function CareersSection() {
                   <div>
                     <label className="text-sm font-medium mb-2 block">Portfolio/GitHub URL</label>
                     <Input
-                      value={formData.portfolio}
-                      onChange={(e) => handleInputChange("portfolio", e.target.value)}
+                      name="portfolio"
                       placeholder="https://your-portfolio.com"
                     />
                   </div>
@@ -170,8 +137,7 @@ export function CareersSection() {
                   <div>
                     <label className="text-sm font-medium mb-2 block">Cover Letter</label>
                     <Textarea
-                      value={formData.coverLetter}
-                      onChange={(e) => handleInputChange("coverLetter", e.target.value)}
+                      name="coverLetter"
                       placeholder="Tell us about yourself..."
                       rows={4}
                     />
@@ -182,14 +148,8 @@ export function CareersSection() {
                     className="w-full bg-gradient-blue-purple hover:opacity-90"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? (
-                      "Submitting..."
-                    ) : (
-                      <>
-                        <Send size={16} className="mr-2" />
-                        Submit Profile
-                      </>
-                    )}
+                    {isSubmitting ? "Submitting..." : "Submit Profile"}
+                    <Send size={16} className="mr-2" />
                   </Button>
                 </form>
               </CardContent>
@@ -207,8 +167,7 @@ export function CareersSection() {
                 We offer competitive compensation, flexible working arrangements, and exciting projects.
               </p>
               <div className="text-sm text-muted-foreground">
-                <p>📧 Applications will be sent to: <strong>careers@damodarasmartech.com</strong></p>
-                <p className="mt-2">💡 Pro tip: Make sure to set up your Google Sheets integration for automatic form processing!</p>
+                <p>📧 Applications will be sent to: <strong>damodarasmarttech@gmail.com</strong></p>
               </div>
             </CardContent>
           </Card>
