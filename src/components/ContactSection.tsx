@@ -1,11 +1,47 @@
-
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export function ContactSection() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formsubmit.co/el/activate/damodarasmarttech@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for contacting us. We'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 relative">
       {/* Background Effects */}
@@ -32,7 +68,19 @@ export function ContactSection() {
             <div className="glass-card rounded-xl p-8">
               <h4 className="text-xl font-semibold mb-6">Send us a message</h4>
               
-              <form className="space-y-6">
+              <form 
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                {/* Honeypot */}
+                <input type="text" name="_honey" style={{ display: 'none' }} />
+                
+                {/* Disable Captcha */}
+                <input type="hidden" name="_captcha" value="false" />
+                
+                {/* Subject */}
+                <input type="hidden" name="_subject" value="New Contact Form Submission" />
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -40,8 +88,10 @@ export function ContactSection() {
                     </label>
                     <Input 
                       id="name"
+                      name="name"
                       placeholder="John Doe"
                       className="bg-secondary/50 border-white/10"
+                      required
                     />
                   </div>
                   <div>
@@ -50,9 +100,11 @@ export function ContactSection() {
                     </label>
                     <Input 
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="john@example.com"
                       className="bg-secondary/50 border-white/10"
+                      required
                     />
                   </div>
                 </div>
@@ -63,8 +115,10 @@ export function ContactSection() {
                   </label>
                   <Input 
                     id="subject"
+                    name="subject"
                     placeholder="How can we help you?"
                     className="bg-secondary/50 border-white/10"
+                    required
                   />
                 </div>
                 
@@ -74,17 +128,20 @@ export function ContactSection() {
                   </label>
                   <Textarea 
                     id="message"
+                    name="message"
                     placeholder="Tell us about your project..."
                     rows={5}
                     className="bg-secondary/50 border-white/10 resize-none"
+                    required
                   />
                 </div>
                 
                 <Button 
                   type="submit" 
                   className="w-full bg-gradient-blue-purple hover:opacity-90 transition-opacity"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <Send size={16} className="ml-2" />
                 </Button>
               </form>
@@ -103,7 +160,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h5 className="text-sm text-muted-foreground mb-1">Email Us</h5>
-                    <p className="font-medium">dr.devuc@gmail.com</p>
+                    <p className="font-medium">damodarasmarttech@gmail.com</p>
                   </div>
                 </div>
                 
@@ -123,7 +180,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h5 className="text-sm text-muted-foreground mb-1">Visit Us</h5>
-                    <p className="font-medium">Damodara Smart Tech Private Limited</p>
+                    <p className="font-medium">Damodara Smart Tech</p>
                     <p className="font-medium">Thalambur SIPCOT Road, Siruseri, Chennai-603103</p>
                   </div>
                 </div>
