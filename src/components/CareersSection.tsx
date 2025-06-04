@@ -18,7 +18,7 @@ export function CareersSection() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formsubmit.co/el/activate/damodarasmarttech@gmail.com", {
+      const response = await fetch("https://formsubmit.co/damodarasmarttech@gmail.com", {
         method: "POST",
         body: formData,
       });
