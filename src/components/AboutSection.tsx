@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -49,40 +48,62 @@ export function AboutSection() {
                   </div>
                 ))}
               </div>
-              
-              <div className="pt-4">
-              </div>
             </div>
           </div>
           
           <div className="order-1 lg:order-2">
             <div className="relative">
-              {/* Abstract design */}
-              <div className="aspect-video overflow-hidden glass-card rounded-2xl border border-white/10 shadow-lg">
+              {/* Mission Card */}
+              <div className="aspect-video overflow-hidden glass-card rounded-2xl border border-white/10 shadow-lg transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/20 to-neon-blue/20"></div>
                 <div className="p-8 relative z-10 h-full flex flex-col">
-                  <h4 className="text-2xl font-bold mb-4 gradient-text">Our Mission</h4>
+                  <h4 className="text-2xl font-bold mb-4">Our Mission</h4>
                   <p className="mb-6 text-muted-foreground">
-                    "To empower businesses with transformative digital solutions that drive growth, 
-                    enhance efficiency, and deliver exceptional user experiences."
+                    "At Damodara Smart Tech, our mission is to align smartness with service — to humanity and to the planet."
                   </p>
-                  
-                  <div className="mt-auto">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-gradient-blue-purple flex items-center justify-center">
-                        <span className="font-bold">DS</span>
-                      </div>
-                      <div>
-                        <p className="font-medium">DAMODARA SMART TECH</p>
-                        <p className="text-sm text-muted-foreground">Founded in 2024</p>
-                      </div>
-                    </div>
-                  </div>
+                  <p className="mb-6 text-muted-foreground">
+                    We believe technology must serve not just profits, but also people and the planet. This is how true smartness looks.
+                  </p>
                 </div>
               </div>
-              
-              {/* Decorative element */}
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-pink-orange rounded-xl -z-10 blur-sm"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Purpose & Philosophy Section */}
+        <div className="mt-20">
+          <div className="glass-card p-8 rounded-2xl border border-white/10">
+            <h3 className="text-2xl font-bold mb-8 text-center">
+              <span className="gradient-text">🌱 Our Purpose & Philosophy</span>
+            </h3>
+            
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <blockquote className="text-xl italic text-muted-foreground">
+                  "We started Damodara Smart Tech not just to build smarter systems, but to build a smarter way of living. In every product, we see a promise to the future."
+                </blockquote>
+                <p className="text-lg">
+                  Every solution we design is meant to make lives more intentional, more joyful, and more conscious.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <blockquote className="text-xl italic text-muted-foreground">
+                  "Smart tech is not about machines taking over. It's about machines making space for more human possibilities."
+                </blockquote>
+                <p className="text-lg">
+                  Let machines do the repetitive — let humans do the meaningful.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <blockquote className="text-xl italic text-muted-foreground">
+                  "We use Smart Tech not to replace people, but to restore their time, energy, and creativity."
+                </blockquote>
+                <p className="text-lg">
+                  Our goal is not efficiency alone, but empowerment.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -96,7 +117,7 @@ export function AboutSection() {
             {/* Founder 1 */}
             <div className="glass-card p-6 rounded-xl border border-white/10">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-blue-purple flex items-center justify-center text-xl font-bold">
+                <div className="w-16 h-16 rounded-full bg-pastel-gradient flex items-center justify-center text-xl font-bold">
                   Dr
                 </div>
                 <div>
@@ -113,7 +134,7 @@ export function AboutSection() {
             {/* Founder 2 */}
             <div className="glass-card p-6 rounded-xl border border-white/10">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-pink-orange flex items-center justify-center text-xl font-bold">
+                <div className="w-16 h-16 rounded-full bg-pastel-gradient flex items-center justify-center text-xl font-bold">
                   Dr
                 </div>
                 <div>
