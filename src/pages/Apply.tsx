@@ -1,115 +1,191 @@
 import React, { useState } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { VideoBackground } from "@/components/VideoBackground";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Send } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
-const Apply = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+export default function Apply() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    position: '',
+    experience: '',
+    message: '',
+    portfolio_links: ''
+  });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
-    // Add your form submission logic here
-    // For example, sending data to your backend
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
-      // Add success notification or redirect
-    }, 1000);
+    const emailBody = `
+Job Application Details:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Position: ${formData.position}
+Experience: ${formData.experience} years
+
+${formData.message ? `Cover Letter:\n${formData.message}` : ''}
+
+${formData.portfolio_links ? `Portfolio Links:\n${formData.portfolio_links}` : ''}
+
+Please attach your resume to this email.
+    `.trim();
+
+    // Use Gmail's mailto format
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent('New Job Application')}&body=${encodeURIComponent(emailBody)}`;
+    window.open(mailtoLink, '_blank');
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <VideoBackground />
-      <Navbar />
-      <main className="flex-grow pt-24">
-        <div className="container py-12">
-          <h1 className="text-4xl font-bold mb-8 gradient-text">Join Our Team</h1>
-          <div className="max-w-2xl mx-auto">
-            <Card className="glass-card">
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Full Name</label>
-                      <Input
-                        name="name"
-                        placeholder="Your full name"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Email</label>
-                      <Input
-                        name="email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                        required
-                      />
-                    </div>
-                  </div>
+    <div className="container mx-auto px-4 py-16">
+      <div className="max-w-4xl mx-auto">
+        <Button
+          variant="ghost"
+          onClick={() => navigate('/')}
+          className="mb-8 hover:bg-transparent"
+        >
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to Home
+        </Button>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Phone</label>
-                      <Input
-                        name="phone"
-                        placeholder="Your phone number"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Years of Experience</label>
-                      <Input
-                        name="experience"
-                        placeholder="e.g., 3 years"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Portfolio/GitHub URL</label>
-                    <Input
-                      name="portfolio"
-                      placeholder="https://your-portfolio.com"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Cover Letter</label>
-                    <Textarea
-                      name="coverLetter"
-                      placeholder="Tell us about yourself..."
-                      rows={4}
-                      required
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full gradient-border-alt hover:opacity-90"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Submitting..." : "Submit Profile"}
-                    <Send size={16} className="ml-2" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
+          <p className="text-muted-foreground text-lg">
+            We're always looking for talented individuals to join our team. 
+            Fill out the form below to apply for a position.
+          </p>
         </div>
-      </main>
-      <Footer />
+
+        <Card className="p-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-medium">
+                  Full Name *
+                </label>
+                <Input
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your full name"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Email *
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="your.email@example.com"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="phone" className="text-sm font-medium">
+                  Phone Number *
+                </label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Your phone number"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="position" className="text-sm font-medium">
+                  Position *
+                </label>
+                <Input
+                  id="position"
+                  name="position"
+                  required
+                  value={formData.position}
+                  onChange={handleChange}
+                  placeholder="Position you're applying for"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="experience" className="text-sm font-medium">
+                Years of Experience *
+              </label>
+              <Input
+                id="experience"
+                name="experience"
+                type="number"
+                required
+                min="0"
+                step="0.1"
+                value={formData.experience}
+                onChange={handleChange}
+                placeholder="Your years of experience"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="portfolio_links" className="text-sm font-medium">
+                Portfolio/GitHub Links (Optional)
+              </label>
+              <Input
+                id="portfolio_links"
+                name="portfolio_links"
+                value={formData.portfolio_links}
+                onChange={handleChange}
+                placeholder="https://your-portfolio.com"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm font-medium">
+                Cover Letter (Optional)
+              </label>
+              <Textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Tell us about yourself and why you want to join us..."
+                className="min-h-[150px]"
+              />
+            </div>
+
+            <div className="text-center text-sm text-muted-foreground">
+              <p>Please attach your resume to the email that will open after clicking Submit.</p>
+            </div>
+
+            <Button type="submit" className="w-full">
+              Submit Application
+            </Button>
+          </form>
+        </Card>
+      </div>
     </div>
   );
-};
-
-export default Apply; 
+} 
