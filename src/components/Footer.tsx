@@ -1,12 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleHomeClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <footer className="border-t border-white/10 bg-gradient-to-b from-background to-secondary/20 pt-16 pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Company Info */}
           <div>
             <Link to="/" className="text-2xl font-display font-bold neon-glow text-neon-blue mb-4 inline-block">
@@ -31,7 +42,15 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
+              <li>
+                <button
+                  onClick={handleHomeClick}
+                  className="text-muted-foreground hover:text-foreground transition-colors bg-transparent border-none cursor-pointer p-0"
+                >
+                  Home
+                </button>
+              </li>
               <li>
                 <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
                   About Us
@@ -55,65 +74,34 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                  UI/UX Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Digital Marketing
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Mobile Apps
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-muted-foreground">
-                <Mail size={16} />
-                <span>dr.devuc@gmail.com</span>
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center gap-2">
+                <Mail size={20} className="text-muted-foreground" />
+                <a href="mailto:damodarasmarttech@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                  damodarasmarttech@gmail.com
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-muted-foreground">
-                <Phone size={16} />
-                <span>+91-9342832456</span>
+              <li className="flex items-center gap-2">
+                <Phone size={20} className="text-muted-foreground" />
+                <a href="tel:+919342832456" className="text-muted-foreground hover:text-foreground transition-colors">
+                  +91 9342832456
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-muted-foreground">
-                <MapPin size={16} />
-                <span>Damodara Smart Tech Private Limited, Thalambur SIPCOT Road, Siruseri, Chennai-603103</span>
+              <li className="flex items-center gap-2">
+                <MapPin size={20} className="text-muted-foreground" />
+                <span className="text-muted-foreground">
+                  Damodara Smart Tech Private Limited, Thalambur SIPCOT Road, Siruseri, Chennai-603103
+                </span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} DAMODARA SMART TECH Inc. All rights reserved.
-          </p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Terms of Service
-            </Link>
-          </div>
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} Damodara Smart Tech. All rights reserved.</p>
         </div>
       </div>
     </footer>
