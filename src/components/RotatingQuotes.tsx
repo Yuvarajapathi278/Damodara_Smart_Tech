@@ -14,10 +14,6 @@ export function RotatingQuotes() {
     {
       text: "Your problem is our blueprint for innovation.",
       author: "Dr. Dev, Co-founder"
-    },
-    {
-      text: "Empowering industries to think, act, and grow smart.",
-      author: "Dr. Dev, Co-founder"
     }
   ];
 
