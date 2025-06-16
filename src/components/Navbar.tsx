@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -23,6 +23,8 @@ const navItems: NavItem[] = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +36,12 @@ export function Navbar() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+      return;
+    }
+
     const element = document.getElementById(sectionId);
     if (element) {
       const headerHeight = 80;
@@ -45,6 +53,22 @@ export function Navbar() {
       setMobileMenuOpen(false);
     }
   };
+
+  // Handle scroll after navigation
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const sectionId = location.state.scrollTo;
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerHeight = 80;
+        const elementPosition = element.offsetTop - headerHeight;
+        window.scrollTo({ 
+          top: elementPosition, 
+          behavior: "smooth" 
+        });
+      }
+    }
+  }, [location]);
 
   return (
     <header
@@ -59,6 +83,12 @@ export function Navbar() {
         <Link 
           to="/" 
           className="text-2xl font-bold hover:opacity-80 transition-opacity"
+          onClick={() => {
+            // If we're already on the home page, scroll to top
+            if (location.pathname === '/') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
         >
           Damodara<span className="text-neon-purple"> Smart Tech</span>
         </Link>
