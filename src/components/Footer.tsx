@@ -1,23 +1,12 @@
 import React from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleHomeClick = () => {
-    if (location.pathname === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      navigate('/');
-    }
-  };
-
   return (
     <footer className="border-t border-white/10 bg-gradient-to-b from-background to-secondary/20 pt-16 pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Company Info */}
           <div>
             <Link to="/" className="text-2xl font-display font-bold neon-glow text-neon-blue mb-4 inline-block">
@@ -37,41 +26,6 @@ export function Footer() {
                 <Linkedin size={20} />
               </a>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={handleHomeClick}
-                  className="text-muted-foreground hover:text-foreground transition-colors bg-transparent border-none cursor-pointer p-0"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/portfolio" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
           </div>
 
           {/* Contact Info */}
