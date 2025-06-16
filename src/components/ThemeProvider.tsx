@@ -28,8 +28,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // Apply the current theme to the document element
   useEffect(() => {
-    document.documentElement.classList.toggle('light-mode', theme === 'light');
-    document.documentElement.classList.toggle('dark-mode', theme === 'dark');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, [theme]);
 
   return (
