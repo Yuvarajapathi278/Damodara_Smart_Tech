@@ -50,8 +50,8 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-20 bg-secondary/20">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-sm uppercase tracking-wider text-neon-green mb-3">Our Work</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Our Work</h2>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">
             Featured <span className="gradient-text">Projects</span>
           </h3>
           <p className="text-muted-foreground">
