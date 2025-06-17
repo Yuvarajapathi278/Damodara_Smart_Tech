@@ -93,10 +93,10 @@ const CallToAction = memo(() => (
     <Card className="glass-card max-w-2xl mx-auto">
       <CardContent className="p-8">
         <CheckCircle className="h-12 w-12 text-[hsl(var(--accent-green))] mx-auto mb-4" />
-        <h3 className="text-2xl font-bold mb-4">
+        <h3 className="text-3xl font-bold mb-4">
           Ready to Transform Your Business?
         </h3>
-        <p className="text-muted-foreground mb-6">
+        <p className="text-base text-muted-foreground mb-6">
           Join the revolution and experience why 95% of our clients renew their contracts. 
           Get started with a free consultation today!
         </p>
@@ -136,12 +136,11 @@ export function WhyChooseUsSection() {
     <section id="why-choose-us" className="py-20 px-4 bg-gradient-to-br from-background via-background to-accent/5">
       <div className="container">
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-gradient-blue-purple text-white">
-            <Sparkles className="h-4 w-4 mr-2" />
-            Why Choose Us
-          </Badge>
-          <h2 className="text-4xl font-bold mb-4">Why Choose Us?</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Why Choose Us</h2>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            Your Trusted <span className="gradient-text">Technology Partner</span>
+          </h3>
+          <p className="text-base text-muted-foreground max-w-3xl mx-auto">
             Join thousands of satisfied clients who've transformed their business with our 
             cutting-edge solutions and unmatched expertise.
           </p>
