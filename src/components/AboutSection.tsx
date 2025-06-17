@@ -20,11 +20,11 @@ export function AboutSection() {
       
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm uppercase tracking-wider text-neon-purple mb-3">About Us</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">About Us</h2>
+          <h3 className="text-2xl md:text-3xl mb-6">
             Transforming Ideas into <span className="gradient-text">Digital Excellence</span>
           </h3>
-          <p className="text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             We are a passionate team of experts dedicated to delivering cutting-edge solutions
             that help businesses thrive in the digital landscape.
           </p>
@@ -57,8 +57,8 @@ export function AboutSection() {
               <div className="aspect-video overflow-hidden glass-card rounded-2xl border border-white/10 shadow-lg transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/20 to-neon-blue/20"></div>
                 <div className="p-8 relative z-10 h-full flex flex-col">
-                  <h4 className="text-2xl font-bold mb-4">Our Mission</h4>
-                  <p className="mb-6 text-muted-foreground">
+                  <h4 className="text-4xl font-bold mb-4">Our Mission</h4>
+                  <p className="mb-6 text-muted-foreground text-base">
                     "At Damodara Smart Tech, our mission is to align smartness with service — to humanity and to the planet."
                   </p>
                   <p className="mb-6 text-muted-foreground">
@@ -73,7 +73,7 @@ export function AboutSection() {
         {/* Purpose & Philosophy Section */}
         <div className="mt-20">
           <div className="glass-card p-8 rounded-2xl border border-white/10">
-            <h3 className="text-2xl font-bold mb-8 text-center">
+            <h3 className="text-4xl font-bold mb-8 text-center">
               <span className="gradient-text">🌱 Our Purpose & Philosophy</span>
             </h3>
             
@@ -110,7 +110,7 @@ export function AboutSection() {
 
         {/* Founders Section */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold mb-8 text-center">
+          <h3 className="text-4xl font-bold mb-8 text-center">
             <span className="gradient-text">Our Founders</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
