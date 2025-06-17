@@ -29,11 +29,11 @@ const Index = () => {
         <div id="why-choose-us" className="py-20 relative">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-sm uppercase tracking-wider text-neon-purple mb-3">Why Choose Us</h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Why Choose Us</h2>
+              <h3 className="text-2xl md:text-3xl font-bold mb-6">
                 Your Trusted <span className="gradient-text">Technology Partner</span>
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 We combine technical expertise with innovative thinking to deliver solutions that drive your business forward.
               </p>
             </div>
@@ -65,11 +65,11 @@ const Index = () => {
         <div id="careers" className="py-20 relative">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-sm uppercase tracking-wider text-neon-purple mb-3">Careers</h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Careers</h2>
+              <h3 className="text-2xl md:text-3xl font-bold mb-6">
                 Join Our <span className="gradient-text">Innovation Journey</span>
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 We're always looking for talented individuals who share our passion for technology and innovation.
               </p>
             </div>
@@ -87,11 +87,11 @@ const Index = () => {
         <div id="contact" className="py-20 relative">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-sm uppercase tracking-wider text-neon-purple mb-3">Contact Us</h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Contact Us</h2>
+              <h3 className="text-2xl md:text-3xl font-bold mb-6">
                 Start Your <span className="gradient-text">Digital Journey</span>
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Have a project in mind? Let's discuss how we can help bring your vision to life.
               </p>
             </div>
