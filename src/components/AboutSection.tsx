@@ -117,9 +117,6 @@ export function AboutSection() {
             {/* Founder 1 */}
             <div className="glass-card p-6 rounded-xl border border-white/10">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-pastel-gradient flex items-center justify-center text-xl font-bold">
-                  Dr
-                </div>
                 <div>
                   <h4 className="text-xl font-semibold">Dr. Dev</h4>
                   <p className="text-sm text-neon-blue">Co-founder & CEO</p>
@@ -134,9 +131,6 @@ export function AboutSection() {
             {/* Founder 2 */}
             <div className="glass-card p-6 rounded-xl border border-white/10">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-pastel-gradient flex items-center justify-center text-xl font-bold">
-                  Dr
-                </div>
                 <div>
                   <h4 className="text-xl font-semibold">Dr. Chirag</h4>
                   <p className="text-sm text-neon-purple">Co-founder & CTO</p>
