@@ -21,7 +21,8 @@ export default function Apply() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const emailBody = `
+    const emailBody = `Hi,
+
 Job Application Details:
 
 Name: ${formData.name}
@@ -30,15 +31,22 @@ Phone: ${formData.phone}
 Position: ${formData.position}
 Experience: ${formData.experience} years
 
-${formData.message ? `Cover Letter:\n${formData.message}` : ''}
+${formData.portfolio_links ? `Portfolio Links:\n${formData.portfolio_links}\n` : ''}
 
-${formData.portfolio_links ? `Portfolio Links:\n${formData.portfolio_links}` : ''}
+${formData.message ? `Cover Letter:\n${formData.message}\n` : ''}
 
-Please attach your resume to this email.
+Thank you for considering my application!
+
+Best regards,
+${formData.name}
+
+==================================================
+IMPORTANT: PLEASE ATTACH YOUR RESUME TO THIS EMAIL
+==================================================
     `.trim();
 
     // Use Gmail's mailto format
-    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent('New Job Application')}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent(`New Job Application by ${formData.name}`)}&body=${encodeURIComponent(emailBody)}`;
     window.open(mailtoLink, '_blank');
   };
 
@@ -174,10 +182,6 @@ Please attach your resume to this email.
                 placeholder="Tell us about yourself and why you want to join us..."
                 className="min-h-[150px]"
               />
-            </div>
-
-            <div className="text-center text-sm text-muted-foreground">
-              <p>Please attach your resume to the email that will open after clicking Submit.</p>
             </div>
 
             <Button type="submit" className="w-full">
