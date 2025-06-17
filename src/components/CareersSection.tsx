@@ -8,39 +8,38 @@ import { useToast } from "@/hooks/use-toast";
 
 export function CareersSection() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    experience: '',
+    portfolio: '',
+    coverLetter: ''
+  });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Experience: ${formData.experience || 'Not provided'}
+Portfolio/GitHub URL: ${formData.portfolio || 'Not provided'}
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+Cover Letter:
+${formData.coverLetter || 'Not provided'}
 
-    try {
-      const response = await fetch("https://formsubmit.co/damodarasmarttech@gmail.com", {
-        method: "POST",
-        body: formData,
-      });
+Please attach your resume to this email.`;
 
-      if (response.ok) {
-        toast({
-          title: "Profile Submitted!",
-          description: "Thank you for your interest. We'll keep your profile on file for future opportunities.",
-        });
-        form.reset();
-      } else {
-        throw new Error("Failed to submit profile");
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to submit profile. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent('Career Application')}&body=${encodeURIComponent(emailBody)}`;
   };
 
   return (
@@ -53,11 +52,11 @@ export function CareersSection() {
 
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm uppercase tracking-wider mb-3">Join Our Team</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">
-            Build Your <span className="gradient-text">Future</span> With Us
+          <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Careers</h2>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            Join Our <span className="gradient-text">Innovation Journey</span>
           </h3>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             We're always looking for talented individuals who are passionate about technology and innovation.
             Join our team and be part of something extraordinary. Ready to start your journey? Apply now!
           </p>
@@ -79,20 +78,13 @@ export function CareersSection() {
                 onSubmit={handleSubmit}
                 className="space-y-4"
               >
-                {/* Honeypot */}
-                <input type="text" name="_honey" style={{ display: 'none' }} />
-                
-                {/* Disable Captcha */}
-                <input type="hidden" name="_captcha" value="false" />
-                
-                {/* Subject for Career Applications */}
-                <input type="hidden" name="_subject" value="New Career Application" />
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium mb-2 block">Full Name *</label>
                     <Input
                       name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="Your full name"
                       required
                     />
@@ -102,6 +94,8 @@ export function CareersSection() {
                     <Input
                       type="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="your@email.com"
                       required
                     />
@@ -113,6 +107,8 @@ export function CareersSection() {
                     <label className="text-sm font-medium mb-2 block">Phone</label>
                     <Input
                       name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="Your phone number"
                     />
                   </div>
@@ -120,6 +116,8 @@ export function CareersSection() {
                     <label className="text-sm font-medium mb-2 block">Years of Experience</label>
                     <Input
                       name="experience"
+                      value={formData.experience}
+                      onChange={handleChange}
                       placeholder="e.g., 3 years"
                     />
                   </div>
@@ -129,6 +127,8 @@ export function CareersSection() {
                   <label className="text-sm font-medium mb-2 block">Portfolio/GitHub URL</label>
                   <Input
                     name="portfolio"
+                    value={formData.portfolio}
+                    onChange={handleChange}
                     placeholder="https://your-portfolio.com"
                   />
                 </div>
@@ -137,6 +137,8 @@ export function CareersSection() {
                   <label className="text-sm font-medium mb-2 block">Cover Letter</label>
                   <Textarea
                     name="coverLetter"
+                    value={formData.coverLetter}
+                    onChange={handleChange}
                     placeholder="Tell us about yourself..."
                     rows={4}
                   />
@@ -145,9 +147,8 @@ export function CareersSection() {
                 <Button 
                   type="submit" 
                   className="w-full gradient-border-alt hover:opacity-90"
-                  disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Submitting..." : "Submit Profile"}
+                  Submit Profile
                   <Send size={16} className="ml-2" />
                 </Button>
               </form>
