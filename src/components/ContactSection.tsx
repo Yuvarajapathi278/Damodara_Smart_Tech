@@ -8,38 +8,29 @@ import { useToast } from "@/hooks/use-toast";
 export function ContactSection() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Message: ${formData.message}`;
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("https://formsubmit.co/damodarasmarttech@gmail.com", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for contacting us. We'll get back to you soon.",
-        });
-        form.reset();
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
   };
 
   return (
@@ -52,11 +43,11 @@ export function ContactSection() {
       
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm uppercase tracking-wider text-neon-orange mb-3">Get In Touch</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">
-            Let's <span className="gradient-text-alt">Connect</span>
+          <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Contact Us</h2>
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            Start Your <span className="gradient-text">Digital Journey</span>
           </h3>
-          <p className="text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             Have a project in mind or want to learn more about our services? 
             We'd love to hear from you. Reach out and let's start a conversation.
           </p>
@@ -89,7 +80,9 @@ export function ContactSection() {
                     <Input 
                       id="name"
                       name="name"
-                      placeholder="John Doe"
+                      type="text"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="bg-secondary/50 border-white/10"
                       required
                     />
@@ -102,7 +95,8 @@ export function ContactSection() {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
                       className="bg-secondary/50 border-white/10"
                       required
                     />
@@ -116,7 +110,9 @@ export function ContactSection() {
                   <Input 
                     id="subject"
                     name="subject"
-                    placeholder="How can we help you?"
+                    type="text"
+                    value={formData.subject}
+                    onChange={handleChange}
                     className="bg-secondary/50 border-white/10"
                     required
                   />
@@ -129,9 +125,9 @@ export function ContactSection() {
                   <Textarea 
                     id="message"
                     name="message"
-                    placeholder="Tell us about your project..."
-                    rows={5}
-                    className="bg-secondary/50 border-white/10 resize-none"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="bg-secondary/50 border-white/10"
                     required
                   />
                 </div>
