@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, WhatsApp } from "lucide-react";
 
 export function Footer() {
   return (
@@ -16,11 +16,8 @@ export function Footer() {
               Founded in 2024 by Dr. Dev and Dr. Chirag, creating innovative digital solutions for forward-thinking businesses.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-neon-blue transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-neon-purple transition-colors">
-                <Twitter size={20} />
+              <a href="#" className="text-muted-foreground hover:text-neon-pink transition-colors">
+                <WhatsApp size={20} />
               </a>
               <a href="#" className="text-muted-foreground hover:text-neon-pink transition-colors">
                 <Linkedin size={20} />
