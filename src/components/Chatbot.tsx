@@ -19,6 +19,12 @@ interface QuickReply {
   action: () => void;
 }
 
+interface BotAction {
+  type: 'whatsapp' | 'email' | 'form' | 'live-agent';
+  label: string;
+  value?: string;
+}
+
 const initialMessages: Message[] = [
   { 
     id: 1, 
@@ -42,6 +48,10 @@ export function Chatbot() {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadFormData, setLeadFormData] = useState({ name: '', email: '', phone: '' });
+  const [leadFormSubmitted, setLeadFormSubmitted] = useState(false);
+  const [botActions, setBotActions] = useState<BotAction[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
 
@@ -53,7 +63,7 @@ export function Chatbot() {
     scrollToBottom();
   }, [messages]);
 
-  const getBotResponse = (userMessage: string): { text: string; suggestions?: string[] } => {
+  const getBotResponse = (userMessage: string): { text: string; suggestions?: string[]; actions?: BotAction[] } => {
     const message = userMessage.toLowerCase();
 
     // Service-related queries
@@ -83,14 +93,30 @@ export function Chatbot() {
     }
 
     // Contact-related queries
-    if (message.includes('contact') || message.includes('reach') || message.includes('get in touch')) {
+    if (message.includes('contact') || message.includes('reach') || message.includes('get in touch') || message.includes('whatsapp') || message.includes('email')) {
       return {
-        text: "You can reach us through multiple channels:\n\n• Email: damodarasmarttech@gmail.com\n• WhatsApp: +91 9342832456\n• Contact Form: Available on our website\n\nWould you like me to help you with any specific inquiry?",
+        text: "You can reach us through multiple channels. Choose your preferred method:",
+        actions: [
+          { type: 'whatsapp', label: 'WhatsApp', value: 'https://wa.me/919342832456' },
+          { type: 'email', label: 'Email', value: 'mailto:damodarasmarttech@gmail.com' },
+          { type: 'form', label: 'Request a Callback' },
+          { type: 'live-agent', label: 'Talk to a Human' }
+        ],
         suggestions: [
           "I want to schedule a consultation",
           "Send me your business hours",
           "What's your response time?",
           "I need technical support"
+        ]
+      };
+    }
+
+    // Live agent escalation
+    if (message.includes('human') || message.includes('agent') || message.includes('real person') || message.includes('live')) {
+      return {
+        text: "A live agent will reach out to you soon! Please provide your name and contact details so we can assist you further.",
+        actions: [
+          { type: 'form', label: 'Provide Contact Details' }
         ]
       };
     }
@@ -137,7 +163,7 @@ export function Chatbot() {
     // Greeting queries
     if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
       return {
-        text: "Hello! Welcome to DAMODARA SMART TECH. I'm here to help you learn about our services and how we can help transform your business. What would you like to know?",
+        text: "Hello! How can I assist you today?\n\nWelcome to DAMODARA SMART TECH. I'm here to help you learn about our services and how we can help transform your business. What would you like to know?",
         suggestions: [
           "Tell me about your services",
           "Show me your portfolio",
@@ -160,23 +186,21 @@ export function Chatbot() {
       };
     }
 
-    // Default responses with suggestions
-    const defaultResponses = [
-      {
-        text: "That's an interesting question! Our team specializes in creating innovative digital solutions. Would you like to know more about any specific service?",
-        suggestions: ["Web Development", "Mobile Apps", "Digital Marketing", "Cloud Solutions"]
-      },
-      {
-        text: "I'd be happy to help you with that! DAMODARA SMART TECH offers cutting-edge technology solutions. What specific aspect interests you?",
-        suggestions: ["Our Services", "Portfolio", "Team", "Contact Us"]
-      },
-      {
-        text: "Great question! We're always excited to discuss how our technology can help businesses grow. Would you like to schedule a consultation?",
-        suggestions: ["Schedule Now", "Learn More", "View Portfolio", "Contact Sales"]
-      }
-    ];
-
-    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+    // Default fallback with contact options
+    return {
+      text: "I'm here to help! If you need to contact us directly, you can use the options below.",
+      actions: [
+        { type: 'whatsapp', label: 'WhatsApp', value: 'https://wa.me/919342832456' },
+        { type: 'email', label: 'Email', value: 'mailto:damodarasmarttech@gmail.com' },
+        { type: 'live-agent', label: 'Talk to a Human' }
+      ],
+      suggestions: [
+        "Tell me about your services",
+        "Show me your portfolio",
+        "How can I contact you?",
+        "Tell me about your team"
+      ]
+    };
   };
 
   const handleSendMessage = () => {
@@ -196,7 +220,6 @@ export function Chatbot() {
     setInputValue('');
     setIsTyping(true);
 
-    // Simulate bot typing with more realistic delay
     setTimeout(() => {
       const response = getBotResponse(currentInput);
       const botMessage: Message = {
@@ -206,10 +229,7 @@ export function Chatbot() {
         timestamp: new Date(),
         type: 'text'
       };
-
       setMessages(prev => [...prev, botMessage]);
-      
-      // Add suggestions if available
       if (response.suggestions) {
         const suggestionMessage: Message = {
           id: messages.length + 3,
@@ -220,8 +240,20 @@ export function Chatbot() {
         };
         setMessages(prev => [...prev, suggestionMessage]);
         setSuggestions(response.suggestions);
+      } else {
+        setSuggestions([]);
       }
-      
+      // Handle actions
+      if (response.actions) {
+        // If form action, show lead form
+        if (response.actions.some(a => a.type === 'form')) {
+          setShowLeadForm(true);
+        }
+        // Store actions in state for rendering
+        setBotActions(response.actions);
+      } else {
+        setBotActions([]);
+      }
       setIsTyping(false);
     }, 1000 + Math.random() * 1000);
   };
@@ -229,6 +261,39 @@ export function Chatbot() {
   const handleSuggestionClick = (suggestion: string) => {
     setInputValue(suggestion);
     handleSendMessage();
+  };
+
+  const handleBotAction = (action: BotAction) => {
+    if (action.type === 'whatsapp' && action.value) {
+      window.open(action.value, '_blank');
+    } else if (action.type === 'email' && action.value) {
+      window.open(action.value, '_blank');
+    } else if (action.type === 'form') {
+      setShowLeadForm(true);
+    } else if (action.type === 'live-agent') {
+      setMessages(prev => [...prev, {
+        id: prev.length + 1,
+        text: "A live agent will reach out to you soon! Please provide your name and contact details so we can assist you further.",
+        sender: 'bot',
+        timestamp: new Date(),
+        type: 'text'
+      }]);
+      setShowLeadForm(true);
+    }
+  };
+
+  const handleLeadFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLeadFormSubmitted(true);
+    setShowLeadForm(false);
+    setMessages(prev => [...prev, {
+      id: prev.length + 1,
+      text: `Thank you, ${leadFormData.name}! Our team will contact you at ${leadFormData.email || leadFormData.phone}.`,
+      sender: 'bot',
+      timestamp: new Date(),
+      type: 'text'
+    }]);
+    setLeadFormData({ name: '', email: '', phone: '' });
   };
 
   const toggleChat = () => {
@@ -239,6 +304,13 @@ export function Chatbot() {
         description: "Our AI assistant is ready to help you!",
       });
     }
+  };
+
+  const quickActionMap: { [key: string]: string } = {
+    Help: 'I need help',
+    Services: 'Tell me about your services',
+    Careers: 'Tell me about career opportunities',
+    Contact: 'How can I contact you?'
   };
 
   return (
@@ -364,25 +436,41 @@ export function Chatbot() {
               </div>
             )}
 
+            {botActions.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-2">
+                {botActions.map((action, idx) => (
+                  <Button
+                    key={idx}
+                    variant="outline"
+                    size="sm"
+                    className="text-xs"
+                    onClick={() => handleBotAction(action)}
+                  >
+                    {action.label}
+                  </Button>
+                ))}
+              </div>
+            )}
+
             <div ref={messagesEndRef} />
           </div>
 
           {/* Quick Actions */}
           <div className="p-2 border-t border-white/10">
             <div className="flex justify-around">
-              <Button variant="ghost" size="sm" className="text-xs">
+              <Button variant="ghost" size="sm" className="text-xs" onClick={() => { setInputValue(quickActionMap['Help']); handleSendMessage(); }}>
                 <HelpCircle size={16} className="mr-1" />
                 Help
               </Button>
-              <Button variant="ghost" size="sm" className="text-xs">
+              <Button variant="ghost" size="sm" className="text-xs" onClick={() => { setInputValue(quickActionMap['Services']); handleSendMessage(); }}>
                 <FileText size={16} className="mr-1" />
                 Services
               </Button>
-              <Button variant="ghost" size="sm" className="text-xs">
+              <Button variant="ghost" size="sm" className="text-xs" onClick={() => { setInputValue(quickActionMap['Careers']); handleSendMessage(); }}>
                 <Briefcase size={16} className="mr-1" />
                 Careers
               </Button>
-              <Button variant="ghost" size="sm" className="text-xs">
+              <Button variant="ghost" size="sm" className="text-xs" onClick={() => { setInputValue(quickActionMap['Contact']); handleSendMessage(); }}>
                 <Phone size={16} className="mr-1" />
                 Contact
               </Button>
@@ -414,6 +502,33 @@ export function Chatbot() {
               </Button>
             </form>
           </div>
+        </div>
+      )}
+
+      {showLeadForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <form onSubmit={handleLeadFormSubmit} className="bg-white p-6 rounded-lg shadow-lg w-80 space-y-3">
+            <h3 className="font-bold text-lg mb-2">Contact Details</h3>
+            <Input
+              required
+              placeholder="Your Name"
+              value={leadFormData.name}
+              onChange={e => setLeadFormData({ ...leadFormData, name: e.target.value })}
+            />
+            <Input
+              type="email"
+              placeholder="Your Email (optional)"
+              value={leadFormData.email}
+              onChange={e => setLeadFormData({ ...leadFormData, email: e.target.value })}
+            />
+            <Input
+              placeholder="Your Phone (optional)"
+              value={leadFormData.phone}
+              onChange={e => setLeadFormData({ ...leadFormData, phone: e.target.value })}
+            />
+            <Button type="submit" className="w-full">Submit</Button>
+            <Button type="button" variant="ghost" className="w-full" onClick={() => setShowLeadForm(false)}>Cancel</Button>
+          </form>
         </div>
       )}
     </>
