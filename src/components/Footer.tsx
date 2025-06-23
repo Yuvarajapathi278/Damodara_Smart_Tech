@@ -54,7 +54,7 @@ export function Footer() {
               <li className="flex items-center gap-2">
                 <MapPin size={20} className="text-muted-foreground" />
                 <span className="text-muted-foreground">
-                  Damodara Smart Tech Private Limited, Thalambur SIPCOT Road, Siruseri, Chennai-603103
+                  Damodara Smart Tech Private Limited, Thalambur-SIPCOT Road, Siruseri, Chennai-603103
                 </span>
               </li>
             </ul>
