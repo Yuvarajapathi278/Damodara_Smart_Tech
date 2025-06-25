@@ -7,7 +7,7 @@ export function HeroSection() {
   const { theme } = useTheme();
 
   // Typing animation for blog title
-  const blogTitle = "🤖💼 AI Won't Replace Jobs — It Will Multiply Them";
+  const blogTitle = "🤖💼 AI Won't Replace Jobs Rather It Will Multiply The Jobs";
   const [typedTitle, setTypedTitle] = useState("");
 
   useEffect(() => {
