@@ -123,8 +123,7 @@ export function AboutSection() {
                 </div>
               </div>
               <p className="text-muted-foreground">
-                With extensive experience in technological innovation, Dr. Dev brings visionary leadership 
-                and strategic direction to DAMODARA SMART TECH.
+                Dr. Dev - A visionary entrepreneur leading Damodara Smart Tech with a blend of innovation, strategy, and purpose. With a strong background in technology and a mission-driven mindset, he empowers growth, drives transformation, and builds smart, sustainable solutions for the future.
               </p>
             </div>
             
@@ -133,7 +132,7 @@ export function AboutSection() {
               <div className="flex items-center gap-4 mb-4">
                 <div>
                   <h4 className="text-xl font-semibold">Dr. Chirag</h4>
-                  <p className="text-sm text-neon-purple">Co-founder & CEO</p>
+                  <p className="text-sm text-neon-purple">Co-founder & CTO</p>
                 </div>
               </div>
               <p className="text-muted-foreground">
