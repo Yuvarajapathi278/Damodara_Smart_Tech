@@ -35,10 +35,7 @@ export function HeroSection() {
           <div className="space-y-8 animate-fade-in">
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                Accelerate Growth and Innovation with
-                <span className="block mt-2 text-[hsl(var(--navy))]">
-                  Damodara Smart Tech
-                </span>
+                Accelerate Growth and Innovation with Damodara Smart Tech
               </h1>
               <p className="text-base text-muted-foreground">
                 We help forward-thinking companies build stunning digital experiences 
