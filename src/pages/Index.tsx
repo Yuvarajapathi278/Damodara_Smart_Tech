@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { VideoBackground } from "@/components/VideoBackground";
@@ -8,9 +8,11 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+// import RotatableSeatMap from '../components/RotatableSeatMap';
 
 const Index = () => {
   const navigate = useNavigate();
+  const [angle, setAngle] = useState(0);
 
   return (
     <div className="min-h-screen flex flex-col">
