@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 export function HeroSection() {
   const { theme } = useTheme();
+
+  // Typing animation for blog title
+  const blogTitle = "🤖💼 AI Won't Replace Jobs — It Will Multiply Them";
+  const [typedTitle, setTypedTitle] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedTitle(blogTitle.slice(0, i + 1));
+      i++;
+      if (i === blogTitle.length) clearInterval(interval);
+    }, 40);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-20">
@@ -20,36 +34,37 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
                 Transform Your Business With 
                 <span className="block mt-2 text-[hsl(var(--navy))]">
                   Damodara Smart Tech
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 We help forward-thinking companies build stunning digital experiences 
                 that drive growth and delight users. Founded in 2024.
               </p>
             </div>
           </div>
           
+          {/* Latest Blog Card */}
           <div className="relative animate-fade-in animate-float-slow" style={{ animationDelay: "0.2s" }}>
-            <div className="aspect-square w-full max-w-[500px] mx-auto relative">
-              {/* Abstract design elements */}
-              <div className="absolute inset-0 bg-[hsl(var(--soft-blue))]/30 rounded-full animate-pulse opacity-70"></div>
-              
-              {/* 3D Visual element */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-3/4 h-3/4 glass-card rounded-2xl flex items-center justify-center overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-500">
-                  <div className="w-full h-full bg-[hsl(var(--lavender))]/30">
-                    <div className="h-full w-full flex items-center justify-center">
-                      <div className="text-4xl md:text-5xl font-bold tracking-tighter text-center text-[hsl(var(--navy))]">
-                        Damodara<br />Smart Tech
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="w-full max-w-md mx-auto glass-card rounded-2xl p-8 shadow-lg flex flex-col gap-4 animate-blog-glow">
+              <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest Blog</span>
+              <h2 className="text-2xl font-bold mb-2 min-h-[2.5em]">
+                {typedTitle}
+                <span className="animate-pulse">|</span>
+              </h2>
+              <span className="text-sm text-muted-foreground mb-2">June 25, 2025</span>
+              <p className="text-base text-muted-foreground mb-4">
+                Contrary to popular fear, AI is not a job destroyer — it's a job multiplier. Like the internet, electricity, or the printing press in olden days, Now AI shifts human effort from repetitive tasks to higher-value thinking, creating entirely new industries, roles, and ecosystems.
+              </p>
+              <button
+                className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold hover:opacity-90 transition-opacity"
+                onClick={() => window.location.href = '/blog/ai-wont-replace-jobs'}
+              >
+                Read More
+              </button>
             </div>
           </div>
         </div>
