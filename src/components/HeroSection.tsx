@@ -35,7 +35,7 @@ export function HeroSection() {
           <div className="space-y-8 animate-fade-in">
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                Transform Your Business With 
+                Accelerate Growth and Innovation with
                 <span className="block mt-2 text-[hsl(var(--navy))]">
                   Damodara Smart Tech
                 </span>
@@ -46,25 +46,31 @@ export function HeroSection() {
               </p>
             </div>
           </div>
-          
-          {/* Latest Blog Card */}
+          {/* Right Side: Blog Card on angled glass card */}
           <div className="relative animate-fade-in animate-float-slow" style={{ animationDelay: "0.2s" }}>
-            <div className="w-full max-w-md mx-auto glass-card rounded-2xl p-8 shadow-lg flex flex-col gap-4 animate-blog-glow">
-              <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest Blog</span>
-              <h2 className="text-2xl font-bold mb-2 min-h-[2.5em]">
-                {typedTitle}
-                <span className="animate-pulse">|</span>
-              </h2>
-              <span className="text-sm text-muted-foreground mb-2">June 25, 2025</span>
-              <p className="text-base text-muted-foreground mb-4">
-                Contrary to popular fear, AI is not a job destroyer — it's a job multiplier. Like the internet, electricity, or the printing press in olden days, Now AI shifts human effort from repetitive tasks to higher-value thinking, creating entirely new industries, roles, and ecosystems.
-              </p>
-              <button
-                className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold hover:opacity-90 transition-opacity"
-                onClick={() => window.location.href = '/blog/ai-wont-replace-jobs'}
-              >
-                Read More
-              </button>
+            <div className="aspect-square w-full max-w-[420px] md:max-w-[480px] mx-auto relative">
+              {/* Abstract design elements */}
+              <div className="absolute inset-0 bg-[hsl(var(--soft-blue))]/30 rounded-full animate-pulse opacity-70"></div>
+              {/* 3D Visual element with blog card content */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[88%] h-[88%] glass-card rounded-2xl flex flex-col justify-center items-center overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-500 animate-blog-glow px-6 py-8 md:px-8 md:py-10">
+                  <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block font-sans">Latest Blog</span>
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-3 min-h-[3.5em] text-center leading-snug break-words whitespace-normal font-['Space Grotesk'],font-['Inter'],sans-serif">
+                    {typedTitle}
+                    <span className="animate-pulse">|</span>
+                  </h2>
+                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">June 25, 2025</span>
+                  <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
+                    Contrary to popular fear, AI is not a job destroyer — it's a job multiplier. Like the internet, electricity, or the printing press in olden days, Now AI shifts human effort from repetitive tasks to higher-value thinking, creating entirely new industries, roles, and ecosystems.
+                  </p>
+                  <button
+                    className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
+                    onClick={() => window.location.href = '/blog/ai-wont-replace-jobs'}
+                  >
+                    Read More
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
