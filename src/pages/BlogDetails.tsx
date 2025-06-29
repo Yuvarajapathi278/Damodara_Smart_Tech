@@ -6,22 +6,45 @@ const BlogDetails = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background py-16 px-4">
-      <div className="glass-card max-w-2xl w-full p-8 rounded-2xl shadow-lg animate-blog-glow">
+      <div className="glass-card max-w-2xl w-full p-8 rounded-2xl shadow-lg">
         <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest Blog</span>
-        <h1 className="text-3xl font-bold mb-4">🤖💼 AI Won't Replace Jobs — It Will Multiply Them</h1>
-        <span className="text-sm text-muted-foreground mb-4 block">June 25, 2025</span>
+        <h1 className="text-3xl font-bold mb-4">🔒💡 The Future of Cybersecurity: AI-Powered Defense Systems</h1>
+        <span className="text-sm text-muted-foreground mb-4 block">June 29, 2025</span>
         <div className="prose prose-lg text-foreground mb-8">
-          <p>Contrary to popular fear, AI is not a job destroyer — it's a job multiplier. Like the internet, electricity, or the printing press in olden days, Now AI shifts human effort from repetitive tasks to higher-value thinking, creating entirely new industries, roles, and ecosystems.</p>
-          <h2>📈 Here's How AI Multiplies Opportunities:</h2>
+          <p>As cyber threats evolve at unprecedented speed, AI-powered defense systems are becoming the cornerstone of modern cybersecurity. These intelligent systems can detect, analyze, and respond to threats in real-time, providing organizations with proactive protection against sophisticated attacks.</p>
+          
+          <h2>🛡️ The Evolution of Cyber Threats</h2>
+          <p>Traditional cybersecurity measures are no longer sufficient against today's sophisticated attacks. Cybercriminals are leveraging AI and machine learning to create more complex, adaptive threats that can bypass conventional security systems. This has created an urgent need for equally intelligent defense mechanisms.</p>
+          
+          <h2>🤖 How AI-Powered Defense Systems Work</h2>
           <ol>
-            <li><b>Automation Creates Room for Creativity</b><br/>AI automates routine, time-consuming tasks (like data entry, scheduling, or document review), freeing humans to focus on empathy, innovation, and leadership — areas where machines will never excel.</li>
-            <li><b>New Jobs, New Roles, New Industries</b><br/>From AI trainers, model explainers, robotics technicians, to AI ethicists, entire career paths are being born. These weren't even imaginable a decade ago.</li>
-            <li><b>Startups & MSMEs Get Superpowers</b><br/>Small businesses can now scale like giants. A 5-person team with AI tools can serve the world — creating more entrepreneurial activity, hiring, and value creation across sectors.</li>
-            <li><b>AI Amplifies Human Skills</b><br/>Doctors + AI = faster diagnosis. Teachers + AI = personalized learning. Farmers + AI = predictive crop planning. AI is not replacing humans — it's upgrading them.</li>
-            <li><b>New Support Ecosystems</b><br/>Every AI system needs data labeling, compliance checks, deployment experts, UX designers, customer support, ethics boards, translators — creating layers of new jobs in tech, business, and social domains.</li>
+            <li><b>Real-Time Threat Detection</b><br/>AI systems continuously monitor network traffic, user behavior, and system activities to identify potential threats before they can cause damage. These systems can detect patterns that human analysts might miss.</li>
+            <li><b>Behavioral Analysis</b><br/>Machine learning algorithms analyze normal user behavior patterns and flag any deviations that might indicate a security breach or unauthorized access attempt.</li>
+            <li><b>Automated Response</b><br/>When threats are detected, AI systems can automatically implement countermeasures, such as blocking suspicious IP addresses, isolating compromised systems, or alerting security teams.</li>
+            <li><b>Predictive Analytics</b><br/>By analyzing historical data and current trends, AI can predict potential attack vectors and help organizations prepare defenses before attacks occur.</li>
+            <li><b>Adaptive Learning</b><br/>These systems continuously learn from new threats and adapt their defense strategies, becoming more effective over time.</li>
           </ol>
-          <h3>🌱 Summary: "AI doesn't eliminate human potential — it unlocks it."</h3>
-          <p>It's not about man versus machine. It's man + machine against inefficiency, injustice, and inaccessibility.</p>
+          
+          <h2>📊 Key Benefits of AI-Powered Cybersecurity</h2>
+          <ul>
+            <li><strong>24/7 Protection:</strong> Unlike human teams, AI systems work around the clock without fatigue</li>
+            <li><strong>Faster Response Times:</strong> Automated responses can neutralize threats in milliseconds</li>
+            <li><strong>Reduced False Positives:</strong> Advanced algorithms minimize unnecessary alerts</li>
+            <li><strong>Scalability:</strong> AI systems can handle massive amounts of data and multiple threats simultaneously</li>
+            <li><strong>Cost Efficiency:</strong> Reduces the need for large security teams while improving protection</li>
+          </ul>
+          
+          <h2>🔮 The Future Landscape</h2>
+          <p>As we move forward, AI-powered cybersecurity will become even more sophisticated. We're seeing the emergence of:</p>
+          <ul>
+            <li><strong>Zero-Trust Architecture:</strong> AI systems that verify every access request, regardless of source</li>
+            <li><strong>Quantum-Resistant Encryption:</strong> Preparing for the quantum computing era</li>
+            <li><strong>Autonomous Security Operations:</strong> Fully automated security centers with minimal human intervention</li>
+            <li><strong>Threat Intelligence Sharing:</strong> AI systems that learn from global threat data</li>
+          </ul>
+          
+          <h3>🌐 Conclusion: Embracing the AI Security Revolution</h3>
+          <p>The future of cybersecurity lies in the intelligent integration of AI-powered defense systems. Organizations that embrace these technologies will not only protect their digital assets more effectively but also gain a competitive advantage in an increasingly digital world. The key is to implement these systems thoughtfully, ensuring they complement human expertise rather than replace it entirely.</p>
         </div>
         <Button className="bg-gradient-blue-purple text-white" onClick={() => navigate("/")}>Back to Home</Button>
       </div>
