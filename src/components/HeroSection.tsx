@@ -7,7 +7,7 @@ export function HeroSection() {
   const { theme } = useTheme();
 
   // Typing animation for blog title
-  const blogTitle = "🤖💼 AI Won't Replace Jobs Rather It Will Multiply The Jobs";
+  const blogTitle = "🔒💡 The Future of Cybersecurity: AI-Powered Defense Systems";
   const [typedTitle, setTypedTitle] = useState("");
 
   useEffect(() => {
@@ -56,13 +56,13 @@ export function HeroSection() {
                     {typedTitle}
                     <span className="animate-pulse">|</span>
                   </h2>
-                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">June 25, 2025</span>
+                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">June 29, 2025</span>
                   <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                    Contrary to popular fear, AI is not a job destroyer — it's a job multiplier. Like the internet, electricity, or the printing press in olden days, Now AI shifts human effort from repetitive tasks to higher-value thinking, creating entirely new industries, roles, and ecosystems.
+                    As cyber threats evolve at unprecedented speed, AI-powered defense systems are becoming the cornerstone of modern cybersecurity. These intelligent systems can detect, analyze, and respond to threats in real-time, providing organizations with proactive protection against sophisticated attacks.
                   </p>
                   <button
                     className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
-                    onClick={() => window.location.href = '/blog/ai-wont-replace-jobs'}
+                    onClick={() => window.location.href = '/blog/ai-cybersecurity-defense'}
                   >
                     Read More
                   </button>
