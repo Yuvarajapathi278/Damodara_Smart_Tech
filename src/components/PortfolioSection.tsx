@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from 'framer-motion';
 
 type Project = {
   id: number;
@@ -6,6 +7,7 @@ type Project = {
   category: string;
   image: string;
   description: string;
+  video: string;
 };
 
 const projects: Project[] = [
@@ -14,28 +16,32 @@ const projects: Project[] = [
     title: "Financial Dashboard",
     category: "Web App",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800&h=500",
-    description: "Interactive financial analytics dashboard with real-time data visualization."
+    description: "Interactive financial analytics dashboard with real-time data visualization.",
+    video: "/Financial_Dashboard_Video.mp4"
   },
   {
     id: 2,
     title: "E-commerce Platform",
     category: "Web Development",
     image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=800&h=500",
-    description: "Full-featured online store with product management and payment integration."
+    description: "Full-featured online store with product management and payment integration.",
+    video: "https://cdn.pixabay.com/video/2023/03/14/157092-813282858_large.mp4"
   },
   {
     id: 3,
     title: "Health & Fitness App",
     category: "Mobile App",
     image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&q=80&w=800&h=500",
-    description: "Mobile application for tracking fitness goals and health metrics."
+    description: "Mobile application for tracking fitness goals and health metrics.",
+    video: "/Health_Fitness_App.mp4"
   },
   {
     id: 4,
     title: "Branding Campaign",
     category: "Digital Marketing",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800&h=500",
-    description: "Comprehensive digital marketing campaign that increased brand awareness by 78%."
+    description: "Comprehensive digital marketing campaign that increased brand awareness by 78%.",
+    video: "https://cdn.pixabay.com/video/2023/03/14/157094-813282860_large.mp4"
   }
 ];
 
@@ -80,27 +86,37 @@ export function PortfolioSection() {
         </div>
         
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="group">
-              <div className="overflow-hidden rounded-lg glass-card relative">
-                <div className="h-64 relative">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-70"></div>
-                </div>
-                <div className="p-6 relative">
-                  <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-3 inline-block">
-                    {project.category}
-                  </span>
-                  <h4 className="text-xl font-bold mb-2">{project.title}</h4>
-                  <p className="text-muted-foreground mb-0">{project.description}</p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, idx) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,200,0.12)' }}
+              transition={{ duration: 0.5, delay: idx * 0.1, type: 'spring' }}
+              className="glass-card p-6 rounded-xl border border-white/10 shadow-lg transition-all duration-300 cursor-pointer"
+            >
+              <div className="h-64 relative overflow-hidden rounded-lg">
+                <video
+                  src={project.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                  style={{ opacity: 1 }}
+                >
+                  Sorry, your browser does not support embedded videos.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-70"></div>
               </div>
-            </div>
+              <div className="p-6 relative">
+                <h4 className="text-xl font-bold mb-2">{project.title}</h4>
+                <p className="text-muted-foreground mb-2">{project.description}</p>
+                <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{project.category}</span>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
