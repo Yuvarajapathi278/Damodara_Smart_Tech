@@ -70,6 +70,14 @@ export function Navbar() {
     }
   }, [location]);
 
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -79,33 +87,28 @@ export function Navbar() {
           : "bg-transparent py-6"
       )}
     >
-      <div className="container flex items-center justify-between">
-        <Link 
-          to="/" 
-          className="text-2xl font-bold hover:opacity-80 transition-opacity"
-          onClick={() => {
-            // If we're already on the home page, scroll to top
-            if (location.pathname === '/') {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-          }}
+      <div className="flex items-center w-full px-6">
+        <button 
+          onClick={handleLogoClick}
+          className="text-2xl font-bold hover:opacity-80 transition-opacity bg-transparent border-none cursor-default select-none ml-0 md:ml-2"
         >
-          Damodara<span className="text-neon-purple"> Smart Tech</span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.sectionId)}
-              className="text-muted-foreground hover:text-foreground transition-colors py-1 px-2 bg-transparent border-none cursor-pointer"
-            >
-              {item.label}
-            </button>
-          ))}
-          <ThemeToggle />
-        </nav>
+          A vision that employs. <span className="text-neon-purple">Automation that empowers</span>
+        </button>
+        <div className="ml-auto">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => scrollToSection(item.sectionId)}
+                className="text-muted-foreground hover:text-foreground transition-colors py-1 px-2 bg-transparent border-none cursor-pointer"
+              >
+                {item.label}
+              </button>
+            ))}
+            <ThemeToggle />
+          </nav>
+        </div>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-4 md:hidden">
