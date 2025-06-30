@@ -54,12 +54,11 @@ export function AboutSection() {
           <div className="order-1 lg:order-2">
             <div className="relative">
               {/* Mission Card */}
-              <div className="aspect-video overflow-hidden glass-card rounded-2xl border border-white/10 shadow-lg transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/20 to-neon-blue/20"></div>
-                <div className="p-8 relative z-10 h-full flex flex-col">
+              <div className="glass-card border border-white/10 shadow-lg transition-all duration-300">
+                <div className="p-4 bg-gradient-to-br from-neon-purple/20 to-neon-blue/20">
                   <h4 className="text-4xl font-bold mb-4">Our Mission</h4>
-                  <p className="mb-6 text-muted-foreground text-base">
-                    "At Damodara Smart Tech, we deliver timely, smart, and innovative solutions that solve real-world problems, create dignified jobs that value every skill, automate impactful services for greater efficiency, and empower people to thrive with purpose in the modern world."
+                  <p className="text-muted-foreground text-base">
+                    At Damodara Smart Tech, we deliver timely, smart, and innovative solutions that solve real-world problems, create dignified jobs that value every skill, automate impactful services for greater efficiency, and empower people to thrive with purpose in the modern world.
                   </p>
                 </div>
               </div>
