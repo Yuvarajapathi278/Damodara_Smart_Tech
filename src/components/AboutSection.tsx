@@ -59,10 +59,7 @@ export function AboutSection() {
                 <div className="p-8 relative z-10 h-full flex flex-col">
                   <h4 className="text-4xl font-bold mb-4">Our Mission</h4>
                   <p className="mb-6 text-muted-foreground text-base">
-                    "At Damodara Smart Tech, our mission is to align smartness with service — to humanity and to the planet."
-                  </p>
-                  <p className="mb-6 text-muted-foreground">
-                    We believe technology must serve not just profits, but also people and the planet. This is how true smartness looks.
+                    "At Damodara Smart Tech, we deliver timely, smart, and innovative solutions that solve real-world problems, create dignified jobs that value every skill, automate impactful services for greater efficiency, and empower people to thrive with purpose in the modern world."
                   </p>
                 </div>
               </div>
