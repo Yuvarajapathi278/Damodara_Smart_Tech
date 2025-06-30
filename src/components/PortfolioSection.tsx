@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from 'framer-motion';
 
 type Project = {
   id: number;
@@ -87,14 +86,9 @@ export function PortfolioSection() {
         
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, idx) => (
-            <motion.div
+          {filteredProjects.map((project) => (
+            <div
               key={project.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,200,0.12)' }}
-              transition={{ duration: 0.5, delay: idx * 0.1, type: 'spring' }}
               className="glass-card p-6 rounded-xl border border-white/10 shadow-lg transition-all duration-300 cursor-pointer"
             >
               <div className="h-64 relative overflow-hidden rounded-lg">
@@ -116,7 +110,7 @@ export function PortfolioSection() {
                 <p className="text-muted-foreground mb-2">{project.description}</p>
                 <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{project.category}</span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
