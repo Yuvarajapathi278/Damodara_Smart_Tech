@@ -7,7 +7,7 @@ export function HeroSection() {
   const { theme } = useTheme();
 
   // Typing animation for blog title
-  const blogTitle = "🔒💡 The Future of Cybersecurity: AI-Powered Defense Systems";
+  const blogTitle = "⚛️🚀 The Rise of Quantum Computing: What You Need to Know";
   const [typedTitle, setTypedTitle] = useState("");
 
   useEffect(() => {
@@ -56,9 +56,9 @@ export function HeroSection() {
                     {typedTitle}
                     <span className="animate-pulse">|</span>
                   </h2>
-                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">June 29, 2025</span>
+                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">1/7/25</span>
                   <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                    As cyber threats evolve at unprecedented speed, AI-powered defense systems are becoming the cornerstone of modern cybersecurity. These intelligent systems can detect, analyze, and respond to threats in real-time, providing organizations with proactive protection against sophisticated attacks.
+                    Quantum computing is set to revolutionize technology by solving problems that are impossible for classical computers. Learn what quantum computing is, how it works, and why it matters for the future of science, business, and everyday life.
                   </p>
                   <button
                     className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
