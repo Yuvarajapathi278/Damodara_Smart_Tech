@@ -24,7 +24,7 @@ const projects: Project[] = [
     category: "Web Development",
     image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=800&h=500",
     description: "Full-featured online store with product management and payment integration.",
-    video: "https://cdn.pixabay.com/video/2023/03/14/157092-813282858_large.mp4"
+    video: "/Ecommerce_Dashboard.mp4"
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const projects: Project[] = [
     category: "Digital Marketing",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800&h=500",
     description: "Comprehensive digital marketing campaign that increased brand awareness by 78%.",
-    video: "https://cdn.pixabay.com/video/2023/03/14/157094-813282860_large.mp4"
+    video: "/Branding_Campaign.mp4"
   }
 ];
 
