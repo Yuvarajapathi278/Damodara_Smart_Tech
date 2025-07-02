@@ -34,7 +34,7 @@ export function AboutSection() {
           <div className="order-2 lg:order-1">
             <div className="space-y-6">
               <p className="text-lg">
-                DAMODARA SMART TECH has been at the forefront of digital innovation,
+                Founded in 2024 by Dr. Dev and Dr. Chirag, DAMODARA SMART TECH has been at the forefront of digital innovation,
                 helping businesses of all sizes embrace technology and achieve their goals.
               </p>
               
@@ -98,6 +98,15 @@ export function AboutSection() {
                 </blockquote>
                 <p className="text-lg">
                   Our goal is not efficiency alone, but empowerment.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <blockquote className="text-xl italic text-muted-foreground">
+                  "A vision that Employs. Automation that Empowers."
+                </blockquote>
+                <p className="text-lg">
+                  Smart Solutions. Automate Services. Empower Lives.
                 </p>
               </div>
             </div>
