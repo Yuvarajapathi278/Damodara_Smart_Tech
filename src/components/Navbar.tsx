@@ -88,15 +88,17 @@ export function Navbar() {
       )}
     >
       <div className="flex items-center w-full px-6">
-        <button 
-          onClick={handleLogoClick}
-          className="text-2xl font-bold hover:opacity-80 transition-opacity bg-transparent border-none cursor-default select-none ml-0 md:ml-2"
-        >
-          A vision that employs. <span className="text-neon-purple">Automation that empowers</span>
-        </button>
+        <div className="ml-auto flex flex-col items-end" style={{ lineHeight: 1.1, minWidth: 'max-content' }}>
+          <span className="text-5xl md:text-5xl font-extrabold leading-tight tracking-normal" style={{ letterSpacing: '0em', color: '#2743A6', minWidth: 'max-content' }}>
+            Damodara Smart Tech
+          </span>
+          <span className="text-xl md:text-xl font-bold mt-[-0.2em] text-left" style={{ color: '#38BDF8', marginLeft: '-14rem' }}>
+            Smart Solutions. Automate Services.
+          </span>
+        </div>
         <div className="ml-auto">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-3 ml-8">
             {navItems.map((item) => (
               <button
                 key={item.label}
