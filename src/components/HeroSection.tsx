@@ -34,7 +34,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
             <div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6" style={{ color: '#7C3AED' }}>
                 Accelerate Growth and Innovation with Damodara Smart Tech
               </h1>
               <p className="text-base text-muted-foreground">
