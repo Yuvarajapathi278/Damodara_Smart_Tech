@@ -11,7 +11,7 @@ const BlogDetails = () => {
           .blog-sans-serif { font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
         `}</style>
         <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest Blog</span>
-        <h1 className="text-3xl font-bold mb-4 blog-sans-serif">🤖💼 The Future of Work: Automation, AI, and the Human Touch</h1>
+        <h1 className="text-3xl font-bold mb-4 blog-sans-serif">🦾🤝 The Future of Work: Automation, AI, and the Human Touch</h1>
         <span className="text-sm text-muted-foreground mb-4 block">3/7/25</span>
         <div className="prose prose-lg text-foreground mb-8 blog-sans-serif">
           <p>The workplace is evolving faster than ever, driven by rapid advances in automation and artificial intelligence. In this blog, we explore how technology is reshaping jobs, the skills needed for the future, and why the human touch remains irreplaceable in the age of smart machines.</p>
