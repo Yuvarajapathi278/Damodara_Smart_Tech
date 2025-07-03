@@ -7,7 +7,7 @@ export function HeroSection() {
   const { theme } = useTheme();
 
   // Typing animation for blog title
-  const blogTitle = "⚛️🚀 The Rise of Quantum Computing: What You Need to Know";
+  const blogTitle = "🦾🤝 The Future of Work: Automation, AI, and the Human Touch";
   const [typedTitle, setTypedTitle] = useState("");
 
   useEffect(() => {
@@ -56,9 +56,9 @@ export function HeroSection() {
                     {typedTitle}
                     <span className="animate-pulse">|</span>
                   </h2>
-                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">1/7/25</span>
+                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">3/7/25</span>
                   <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                    Quantum computing is set to revolutionize technology by solving problems that are impossible for classical computers. Learn what quantum computing is, how it works, and why it matters for the future of science, business, and everyday life.
+                    The workplace is evolving rapidly as automation and AI reshape jobs and required skills. Discover how technology and the human touch are shaping the future of work.
                   </p>
                   <button
                     className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
