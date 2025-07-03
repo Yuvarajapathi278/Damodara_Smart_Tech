@@ -11,28 +11,27 @@ const BlogDetails = () => {
           .blog-sans-serif { font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
         `}</style>
         <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest Blog</span>
-        <h1 className="text-3xl font-bold mb-4 blog-sans-serif">⚛️🚀 The Rise of Quantum Computing: What You Need to Know</h1>
-        <span className="text-sm text-muted-foreground mb-4 block">1/7/25</span>
+        <h1 className="text-3xl font-bold mb-4 blog-sans-serif">🤖💼 The Future of Work: Automation, AI, and the Human Touch</h1>
+        <span className="text-sm text-muted-foreground mb-4 block">3/7/25</span>
         <div className="prose prose-lg text-foreground mb-8 blog-sans-serif">
-          <p>Quantum computing is set to revolutionize technology by solving problems that are impossible for classical computers. In this blog, we explore what quantum computing is, how it works, and why it matters for the future of science, business, and everyday life.</p>
-          <h2>⚛️ What is Quantum Computing?</h2>
-          <p>Quantum computing leverages the principles of quantum mechanics to process information in fundamentally new ways. Unlike classical computers that use bits (0 or 1), quantum computers use quantum bits, or qubits, which can exist in multiple states at once thanks to superposition and entanglement.</p>
-          <h2>🚀 How Does It Work?</h2>
+          <p>The workplace is evolving faster than ever, driven by rapid advances in automation and artificial intelligence. In this blog, we explore how technology is reshaping jobs, the skills needed for the future, and why the human touch remains irreplaceable in the age of smart machines.</p>
+          <h2>🤖 What is Driving the Change?</h2>
+          <p>Automation and AI are transforming industries by taking over repetitive tasks, analyzing massive datasets, and enabling smarter decision-making. From manufacturing robots to AI-powered chatbots, technology is augmenting human capabilities and creating new opportunities.</p>
+          <h2>💡 The Skills of Tomorrow</h2>
           <ol>
-            <li><b>Qubits:</b> The basic unit of quantum information, capable of representing both 0 and 1 simultaneously.</li>
-            <li><b>Superposition:</b> Qubits can be in a combination of states, allowing quantum computers to process a vast number of possibilities at once.</li>
-            <li><b>Entanglement:</b> Qubits can be linked so that the state of one instantly influences the state of another, no matter the distance.</li>
-            <li><b>Quantum Gates:</b> Operations that manipulate qubits, enabling complex computations that are infeasible for classical computers.</li>
+            <li><b>Digital Literacy:</b> Understanding and leveraging digital tools is now essential in almost every field.</li>
+            <li><b>Creativity & Problem-Solving:</b> As machines handle routine work, uniquely human skills like creativity and critical thinking become more valuable.</li>
+            <li><b>Emotional Intelligence:</b> The ability to connect, empathize, and collaborate remains a key differentiator in the workplace.</li>
+            <li><b>Adaptability:</b> Lifelong learning and flexibility are crucial as roles and technologies evolve.</li>
           </ol>
-          <h2>🌟 Why Does It Matter?</h2>
+          <h2>🌍 The Human Touch</h2>
           <ul>
-            <li><strong>Unprecedented Speed:</strong> Quantum computers can solve certain problems exponentially faster than classical computers.</li>
-            <li><strong>Breakthroughs in Science:</strong> From drug discovery to materials science, quantum computing could unlock new frontiers.</li>
-            <li><strong>Advanced Cryptography:</strong> Quantum computers could break current encryption methods, leading to new, more secure systems.</li>
-            <li><strong>Optimization:</strong> Industries like logistics, finance, and manufacturing could benefit from solving complex optimization problems.</li>
+            <li><strong>Collaboration:</strong> Teams that blend human insight with AI-driven analysis achieve the best results.</li>
+            <li><strong>Ethics & Responsibility:</strong> Humans must guide the ethical use of technology and ensure it benefits society.</li>
+            <li><strong>Well-being:</strong> Balancing productivity with mental health and job satisfaction is more important than ever.</li>
           </ul>
-          <h3>🔮 The Future of Quantum Computing</h3>
-          <p>While practical, large-scale quantum computers are still in development, progress is accelerating. Companies and governments are investing heavily in quantum research, and the first real-world applications are beginning to emerge. Staying informed about quantum computing is essential for anyone interested in the future of technology.</p>
+          <h3>🔮 Looking Ahead</h3>
+          <p>The future of work is not about humans versus machines, but about partnership. By embracing technology and nurturing our uniquely human strengths, we can build a future where work is more meaningful, creative, and inclusive.</p>
         </div>
         <Button className="bg-gradient-blue-purple text-white" onClick={() => navigate("/")}>Back to Home</Button>
       </div>
