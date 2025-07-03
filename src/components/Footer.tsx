@@ -24,14 +24,6 @@ export function Footer() {
               >
                 <MessageCircle size={20} />
               </a>
-              <a
-                href="https://www.linkedin.com/company/damodara-smart-tech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-neon-pink transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
             </div>
           </div>
 
