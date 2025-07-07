@@ -87,8 +87,8 @@ export function Navbar() {
           : "bg-transparent py-6"
       )}
     >
-      <div className="flex items-center w-full px-6">
-        <div className="ml-auto flex flex-col items-end md:items-end items-center w-full md:w-auto" style={{ lineHeight: 1.1 }}>
+      <div className="flex items-center w-full px-6 md:px-6">
+        <div className="flex flex-col items-end md:items-end items-center w-full md:w-auto" style={{ lineHeight: 1.1 }}>
           <div className="flex items-center gap-3 cursor-pointer justify-center md:justify-end w-full md:w-auto" onClick={handleLogoClick}>
             <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 md:w-16 md:h-16" />
             <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-normal whitespace-nowrap" style={{ letterSpacing: '0em', color: '#2743A6' }}>
@@ -99,7 +99,7 @@ export function Navbar() {
             Smart Solutions. Automate Services.
           </span>
         </div>
-        <div className="ml-auto">
+        <div>
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-3 ml-8">
             {navItems.map((item) => (
