@@ -114,7 +114,7 @@ export function Navbar() {
         </nav>
 
         {/* Mobile Hamburger */}
-        <div className="flex items-center md:hidden gap-2 mt-4">
+        <div className="flex items-center md:hidden gap-2 ml-auto mt-0">
           <ThemeToggle />
           <Button variant="ghost" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -128,7 +128,7 @@ export function Navbar() {
           <div className="w-full flex flex-col items-center">
             <div className="flex items-center justify-center w-full mb-2">
               <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 mr-2" />
-              <span className="text-2xl font-bold text-primary">Damodara Smart Tech</span>
+              <span className="text-3xl font-extrabold text-primary">Damodara Smart Tech</span>
             </div>
             <span className="text-sky-400 text-base font-medium mt-1 text-center w-full">
               Smart Solutions. Automate Services.
