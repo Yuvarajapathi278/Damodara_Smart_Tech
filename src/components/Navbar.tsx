@@ -90,11 +90,11 @@ export function Navbar() {
         <div className="flex flex-col cursor-pointer" onClick={handleLogoClick}>
           <div className="flex items-center">
             <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 md:w-16 md:h-16 mr-3" />
-            <span className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-normal text-primary whitespace-nowrap">
+            <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-normal text-primary whitespace-nowrap">
               Damodara Smart Tech
             </span>
           </div>
-          <span className="text-sky-400 text-base xs:text-lg sm:text-xl md:text-2xl font-semibold mt-1 md:pl-8 self-end md:self-end md:pr-1" style={{ minWidth: 'max-content' }}>
+          <span className="text-sky-400 text-base xs:text-lg sm:text-xl md:text-2xl font-semibold mt-0.5 md:pl-8 self-end md:self-end md:pr-1" style={{ minWidth: 'max-content' }}>
             Smart Solutions. Automate Services.
           </span>
         </div>
@@ -128,9 +128,9 @@ export function Navbar() {
           <div className="w-full flex flex-col items-center">
             <div className="flex items-center justify-center w-full mb-2">
               <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 mr-2" />
-              <span className="text-3xl font-extrabold text-primary">Damodara Smart Tech</span>
+              <span className="text-4xl font-extrabold text-primary">Damodara Smart Tech</span>
             </div>
-            <span className="text-sky-400 text-base font-medium mt-1 text-center w-full">
+            <span className="text-sky-400 text-base font-medium mt-0.5 text-center w-full">
               Smart Solutions. Automate Services.
             </span>
           </div>
