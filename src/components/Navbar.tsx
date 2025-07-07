@@ -128,7 +128,7 @@ export function Navbar() {
           <div className="w-full flex flex-col items-center">
             <div className="flex items-center justify-center w-full mb-2">
               <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 mr-2" />
-              <span className="text-4xl font-extrabold text-primary text-center break-words max-w-full w-full block">Damodara Smart Tech</span>
+              <span className="text-3xl xs:text-4xl font-extrabold text-primary text-center break-words max-w-[90vw] w-full block leading-tight" style={{ wordBreak: 'break-word' }}>Damodara Smart Tech</span>
             </div>
             <span className="text-sky-400 text-base font-medium mt-0.5 text-center w-full">
               Smart Solutions. Automate Services.
