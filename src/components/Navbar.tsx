@@ -88,14 +88,14 @@ export function Navbar() {
       )}
     >
       <div className="flex items-center w-full px-6">
-        <div className="ml-auto flex flex-col items-end" style={{ lineHeight: 1.1, minWidth: 'max-content' }}>
-          <div className="flex items-center gap-3 cursor-pointer" onClick={handleLogoClick}>
+        <div className="ml-auto flex flex-col items-end md:items-end items-center w-full md:w-auto" style={{ lineHeight: 1.1 }}>
+          <div className="flex items-center gap-3 cursor-pointer justify-center md:justify-end w-full md:w-auto" onClick={handleLogoClick}>
             <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 md:w-16 md:h-16" />
-            <span className="text-5xl md:text-6xl font-extrabold leading-tight tracking-normal" style={{ letterSpacing: '0em', color: '#2743A6', minWidth: 'max-content' }}>
+            <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-normal whitespace-nowrap" style={{ letterSpacing: '0em', color: '#2743A6' }}>
               Damodara Smart Tech
             </span>
           </div>
-          <span className="text-xl md:text-2xl font-bold mt-[-0.2em] text-left" style={{ color: '#38BDF8', marginLeft: '-14rem' }}>
+          <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-center md:text-right block w-full md:w-auto mt-1" style={{ color: '#38BDF8' }}>
             Smart Solutions. Automate Services.
           </span>
         </div>
