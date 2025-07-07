@@ -130,13 +130,25 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[72px] bg-background/95 backdrop-blur-lg z-40 p-6 md:hidden animate-fade-in">
-          <nav className="flex flex-col gap-4">
+        <div className="fixed inset-0 top-0 bg-background/95 backdrop-blur-lg z-40 flex flex-col items-center p-6 md:hidden animate-fade-in overflow-y-auto">
+          {/* Branding at the top of mobile menu */}
+          <div className="flex flex-col items-center w-full mb-6">
+            <div className="flex items-center gap-3 mb-2 cursor-pointer justify-center w-full" onClick={handleLogoClick}>
+              <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12" />
+              <span className="text-2xl xs:text-3xl sm:text-4xl font-extrabold leading-tight tracking-normal whitespace-nowrap" style={{ letterSpacing: '0em', color: '#2743A6' }}>
+                Damodara Smart Tech
+              </span>
+            </div>
+            <span className="text-base xs:text-lg sm:text-xl font-bold text-center block w-full mt-1" style={{ color: '#38BDF8' }}>
+              Smart Solutions. Automate Services.
+            </span>
+          </div>
+          <nav className="flex flex-col gap-4 w-full">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.sectionId)}
-                className="text-lg py-2 border-b border-muted hover:text-neon-blue transition-colors text-left bg-transparent border-none cursor-pointer"
+                className="text-lg py-2 border-b border-muted hover:text-neon-blue transition-colors text-center bg-transparent border-none cursor-pointer w-full"
               >
                 {item.label}
               </button>
