@@ -36,7 +36,6 @@ export function Navbar() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
       navigate('/', { state: { scrollTo: sectionId } });
       return;
@@ -54,7 +53,6 @@ export function Navbar() {
     }
   };
 
-  // Handle scroll after navigation
   useEffect(() => {
     if (location.state?.scrollTo) {
       const sectionId = location.state.scrollTo;
@@ -87,87 +85,75 @@ export function Navbar() {
           : "bg-transparent py-6"
       )}
     >
-      <div className="flex items-center w-full px-6 md:px-6">
-        <div className="flex flex-col items-end md:items-end items-center w-full md:w-auto" style={{ lineHeight: 1.1 }}>
-          <div className="flex items-center gap-3 cursor-pointer justify-center md:justify-end w-full md:w-auto" onClick={handleLogoClick}>
-            <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 md:w-16 md:h-16" />
-            <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-normal whitespace-nowrap" style={{ letterSpacing: '0em', color: '#2743A6' }}>
+      <div className="w-full px-4 md:px-6 flex flex-col md:flex-row md:items-center md:justify-between">
+        {/* Left Section: Logo + Brand */}
+        <div className="flex flex-col cursor-pointer" onClick={handleLogoClick}>
+          <div className="flex items-center">
+            <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 md:w-16 md:h-16 mr-3" />
+            <span className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-normal text-primary whitespace-nowrap">
               Damodara Smart Tech
             </span>
           </div>
-          <span className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-center md:text-right block w-full md:w-auto mt-1" style={{ color: '#38BDF8' }}>
+          <span className="text-sky-400 text-base xs:text-lg sm:text-xl md:text-2xl font-semibold mt-1 md:pl-8 self-end md:self-end md:pr-1" style={{ minWidth: 'max-content' }}>
             Smart Solutions. Automate Services.
           </span>
         </div>
-        <div>
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-3 ml-8">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.sectionId)}
-                className="text-muted-foreground hover:text-foreground transition-colors py-1 px-2 bg-transparent border-none cursor-pointer"
-              >
-                {item.label}
-              </button>
-            ))}
-            <ThemeToggle />
-          </nav>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <div className="flex items-center gap-4 md:hidden">
+        {/* Right Section: Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-3 mt-4 md:mt-0">
+          {navItems.map((item) => (
+            <button
+              key={item.label}
+              onClick={() => scrollToSection(item.sectionId)}
+              className="text-muted-foreground hover:text-foreground transition-colors py-1 px-2"
+            >
+              {item.label}
+            </button>
+          ))}
           <ThemeToggle />
-          <Button 
-            variant="ghost" 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="hover:bg-transparent"
-          >
+        </nav>
+
+        {/* Mobile Hamburger */}
+        <div className="flex items-center md:hidden gap-2 mt-4">
+          <ThemeToggle />
+          <Button variant="ghost" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white dark:bg-background flex flex-col justify-between md:hidden animate-fade-in overflow-y-auto">
-          {/* Top bar with close button */}
-          <div className="flex justify-end p-4">
-            <Button variant="ghost" onClick={() => setMobileMenuOpen(false)} className="text-2xl p-2">
-              <X size={32} />
-            </Button>
-          </div>
-          {/* Branding at the top */}
-          <div className="flex flex-col items-center mt-2 mb-6 px-6">
-            <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 mb-2" />
-            <span className="text-3xl font-extrabold leading-tight tracking-normal text-center" style={{ color: '#2743A6' }}>
-              Damodara Smart Tech
-            </span>
-            <span className="text-lg font-bold text-center mt-2" style={{ color: '#38BDF8' }}>
+        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-y-auto animate-fade-in">
+          <div className="w-full flex flex-col items-center">
+            <div className="flex items-center justify-center w-full mb-2">
+              <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 mr-2" />
+              <span className="text-2xl font-bold text-primary">Damodara Smart Tech</span>
+            </div>
+            <span className="text-sky-400 text-base font-medium mt-1 text-center w-full">
               Smart Solutions. Automate Services.
             </span>
           </div>
-          {/* Navigation links */}
-          <nav className="flex flex-col items-center gap-6 flex-1 px-6">
+
+          <nav className="flex flex-col w-full gap-4 mt-6">
             {navItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => { scrollToSection(item.sectionId); setMobileMenuOpen(false); }}
-                className="text-2xl font-semibold py-2 w-full text-center border-b border-muted hover:text-neon-blue transition-colors bg-transparent border-none cursor-pointer"
+                onClick={() => scrollToSection(item.sectionId)}
+                className="text-lg font-medium w-full text-left py-2 border-b border-border hover:text-accent transition-colors"
               >
                 {item.label}
               </button>
             ))}
           </nav>
-          {/* Bottom actions */}
-          <div className="flex flex-col items-center gap-4 p-6">
-            <Button 
-              className="w-full bg-gradient-blue-purple hover:opacity-90 transition-opacity text-lg font-bold"
-              onClick={() => { scrollToSection('contact'); setMobileMenuOpen(false); }}
+
+          <div className="mt-auto w-full">
+            <Button
+              className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 text-white font-bold py-2"
+              onClick={() => scrollToSection('contact')}
             >
               Get Started
             </Button>
-            <ThemeToggle />
           </div>
         </div>
       )}
