@@ -34,8 +34,7 @@ export function AboutSection() {
           <div className="order-2 lg:order-1">
             <div className="space-y-6">
               <p className="text-lg">
-                Founded in 2024 by Dr. Dev and Dr. Chirag, DAMODARA SMART TECH has been at the forefront of digital innovation,
-                helping businesses of all sizes embrace technology and achieve their goals.
+                DAMODARA SMART TECH has been at the forefront of digital innovation, helping businesses of all sizes embrace technology and achieve their goals.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
