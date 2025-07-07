@@ -33,6 +33,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/apply" element={<Apply />} />
             <Route path="/blog/ai-cybersecurity-defense" element={<BlogDetails />} />
+            <Route path="/blog/edge-ai-2025" element={<BlogDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbot />
