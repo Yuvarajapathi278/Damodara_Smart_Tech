@@ -7,7 +7,7 @@ export function HeroSection() {
   const { theme } = useTheme();
 
   // Typing animation for blog title
-  const blogTitle = "🦾🤝 The Future of Work: Automation, AI, and the Human Touch";
+  const blogTitle = "🤖🌐 The Rise of Edge AI: Transforming Technology in 2025";
   const [typedTitle, setTypedTitle] = useState("");
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6" style={{ color: '#7C3AED' }}>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: '#8B5CF6' }}>
                 Accelerate Growth and Innovation with Damodara Smart Tech
               </h1>
               <p className="text-base text-muted-foreground">
@@ -51,18 +51,18 @@ export function HeroSection() {
               {/* 3D Visual element with blog card content */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-[88%] h-[88%] glass-card rounded-2xl flex flex-col justify-center items-center overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-500 animate-blog-glow px-6 py-8 md:px-8 md:py-10">
-                  <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block font-sans">Latest Blog</span>
-                  <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-3 min-h-[3.5em] text-center leading-snug break-words whitespace-normal font-['Space Grotesk'],font-['Inter'],sans-serif">
+                  <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-purple-700 bg-purple-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans">Latest Blog</span>
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-3 min-h-[3.5em] text-center leading-snug break-words whitespace-normal font-['Space Grotesk'],font-['Inter'],sans-serif" style={{ color: '#F59E42' }}>
                     {typedTitle}
                     <span className="animate-pulse">|</span>
                   </h2>
-                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">3/7/25</span>
+                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">7/7/25</span>
                   <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                    The workplace is evolving rapidly as automation and AI reshape jobs and required skills. Discover how technology and the human touch are shaping the future of work.
+                    Edge AI is revolutionizing technology by enabling real-time, secure, and efficient data processing directly on devices. Discover how Edge AI is shaping industries from healthcare to smart cities in 2025.
                   </p>
                   <button
                     className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
-                    onClick={() => window.location.href = '/blog/ai-cybersecurity-defense'}
+                    onClick={() => window.location.href = '/blog/edge-ai-2025'}
                   >
                     Read More
                   </button>
