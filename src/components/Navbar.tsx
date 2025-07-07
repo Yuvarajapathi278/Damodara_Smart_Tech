@@ -130,9 +130,9 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-0 bg-background/95 backdrop-blur-lg z-40 flex flex-col items-center p-6 md:hidden animate-fade-in overflow-y-auto">
+        <div className="fixed inset-0 top-0 bg-background/95 backdrop-blur-lg z-50 flex flex-col items-center p-6 md:hidden animate-fade-in overflow-y-auto">
           {/* Branding at the top of mobile menu */}
-          <div className="flex flex-col items-center w-full mb-6">
+          <div className="flex flex-col items-center w-full mb-6 mt-4">
             <div className="flex items-center gap-3 mb-2 cursor-pointer justify-center w-full" onClick={handleLogoClick}>
               <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12" />
               <span className="text-2xl xs:text-3xl sm:text-4xl font-extrabold leading-tight tracking-normal whitespace-nowrap" style={{ letterSpacing: '0em', color: '#2743A6' }}>
@@ -143,7 +143,8 @@ export function Navbar() {
               Smart Solutions. Automate Services.
             </span>
           </div>
-          <nav className="flex flex-col gap-4 w-full">
+          {/* Navigation links */}
+          <nav className="flex flex-col gap-4 w-full items-center mb-8">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -160,6 +161,10 @@ export function Navbar() {
               Get Started
             </Button>
           </nav>
+          {/* Theme toggle at the bottom, separated from nav */}
+          <div className="mt-auto mb-2 flex justify-center w-full">
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </header>
