@@ -11,27 +11,28 @@ const BlogDetails = () => {
           .blog-sans-serif { font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
         `}</style>
         <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest Blog</span>
-        <h1 className="text-3xl font-bold mb-4 blog-sans-serif">🦾🤝 The Future of Work: Automation, AI, and the Human Touch</h1>
-        <span className="text-sm text-muted-foreground mb-4 block">3/7/25</span>
+        <h1 className="text-3xl font-bold mb-4 blog-sans-serif">🤖🌐 The Rise of Edge AI: Transforming Technology in 2025</h1>
+        <span className="text-sm text-muted-foreground mb-4 block">7/7/25</span>
         <div className="prose prose-lg text-foreground mb-8 blog-sans-serif">
-          <p>The workplace is evolving faster than ever, driven by rapid advances in automation and artificial intelligence. In this blog, we explore how technology is reshaping jobs, the skills needed for the future, and why the human touch remains irreplaceable in the age of smart machines.</p>
-          <h2>🤖 What is Driving the Change?</h2>
-          <p>Automation and AI are transforming industries by taking over repetitive tasks, analyzing massive datasets, and enabling smarter decision-making. From manufacturing robots to AI-powered chatbots, technology is augmenting human capabilities and creating new opportunities.</p>
-          <h2>💡 The Skills of Tomorrow</h2>
-          <ol>
-            <li><b>Digital Literacy:</b> Understanding and leveraging digital tools is now essential in almost every field.</li>
-            <li><b>Creativity & Problem-Solving:</b> As machines handle routine work, uniquely human skills like creativity and critical thinking become more valuable.</li>
-            <li><b>Emotional Intelligence:</b> The ability to connect, empathize, and collaborate remains a key differentiator in the workplace.</li>
-            <li><b>Adaptability:</b> Lifelong learning and flexibility are crucial as roles and technologies evolve.</li>
-          </ol>
-          <h2>🌍 The Human Touch</h2>
+          <p>Edge AI is at the forefront of 2025's technology revolution, bringing intelligence and real-time decision-making directly to devices at the edge of networks. Unlike traditional cloud-based AI, Edge AI processes data locally, enabling faster responses, enhanced privacy, and reduced bandwidth usage.</p>
+          <h2>🌐 What is Edge AI?</h2>
+          <p>Edge AI refers to deploying artificial intelligence algorithms on local devices—such as smartphones, sensors, autonomous vehicles, and industrial machines—rather than relying solely on centralized cloud servers. This shift allows for real-time analytics and decision-making where data is generated.</p>
+          <h2>🚀 Key Benefits in 2025</h2>
           <ul>
-            <li><strong>Collaboration:</strong> Teams that blend human insight with AI-driven analysis achieve the best results.</li>
-            <li><strong>Ethics & Responsibility:</strong> Humans must guide the ethical use of technology and ensure it benefits society.</li>
-            <li><strong>Well-being:</strong> Balancing productivity with mental health and job satisfaction is more important than ever.</li>
+            <li><b>Ultra-Low Latency:</b> Instant processing for applications like autonomous vehicles, healthcare monitoring, and smart cities.</li>
+            <li><b>Enhanced Privacy:</b> Sensitive data stays on the device, reducing exposure and improving compliance with regulations.</li>
+            <li><b>Energy Efficiency:</b> Local processing reduces the need for constant data transmission, saving energy and bandwidth.</li>
+            <li><b>Scalability:</b> Supports the explosive growth of IoT and connected devices.</li>
           </ul>
-          <h3>🔮 Looking Ahead</h3>
-          <p>The future of work is not about humans versus machines, but about partnership. By embracing technology and nurturing our uniquely human strengths, we can build a future where work is more meaningful, creative, and inclusive.</p>
+          <h2>🏥 Real-World Applications</h2>
+          <ul>
+            <li><b>Healthcare:</b> Wearables and medical devices provide real-time health insights and early anomaly detection.</li>
+            <li><b>Manufacturing:</b> Predictive maintenance and quality control powered by on-site AI.</li>
+            <li><b>Smart Cities:</b> Traffic management, energy optimization, and public safety systems run efficiently with local AI.</li>
+            <li><b>Retail:</b> Personalized shopping experiences and inventory management in real time.</li>
+          </ul>
+          <h3>🔮 The Future of Edge AI</h3>
+          <p>As Edge AI continues to evolve, it will empower businesses and individuals with smarter, faster, and more secure technology. The fusion of AI and edge computing is set to redefine how we interact with the digital world in 2025 and beyond.</p>
         </div>
         <Button className="bg-gradient-blue-purple text-white" onClick={() => navigate("/")}>Back to Home</Button>
       </div>
