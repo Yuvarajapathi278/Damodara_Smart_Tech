@@ -12,7 +12,7 @@ const BlogDetails = () => {
         `}</style>
         <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest Blog</span>
         <h1 className="text-3xl font-bold mb-4 blog-sans-serif">🚀 Top 10 Technology Trends of 2025: AI, BCIs, and Sustainability</h1>
-        <span className="text-sm text-muted-foreground mb-4 block">7/8/25</span>
+        <span className="text-sm text-muted-foreground mb-4 block">8/7/25</span>
         <div className="prose prose-lg text-foreground mb-8 blog-sans-serif">
           <p>2025 is a landmark year for technology, with innovations reshaping every aspect of our lives. Here are the top 10 technology trends to watch:</p>
           <ol>
