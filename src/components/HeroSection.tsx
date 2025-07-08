@@ -7,7 +7,7 @@ export function HeroSection() {
   const { theme } = useTheme();
 
   // Typing animation for blog title
-  const blogTitle = "🤖🌐 The Rise of Edge AI: Transforming Technology in 2025";
+  const blogTitle = "🚀 Top 10 Technology Trends of 2025: AI, BCIs, and Sustainability";
   const [typedTitle, setTypedTitle] = useState("");
 
   useEffect(() => {
@@ -56,13 +56,13 @@ export function HeroSection() {
                     {typedTitle}
                     <span className="animate-pulse">|</span>
                   </h2>
-                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">7/7/25</span>
+                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">8/7/25</span>
                   <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                    Edge AI is revolutionizing technology by enabling real-time, secure, and efficient data processing directly on devices. Discover how Edge AI is shaping industries from healthcare to smart cities in 2025.
+                    Explore the top 10 technology trends of 2025, including Agentic AI, brain-computer interfaces, and the sustainability revolution. Discover how these innovations are shaping the future of business, society, and daily life.
                   </p>
                   <button
                     className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
-                    onClick={() => window.location.href = '/blog/edge-ai-2025'}
+                    onClick={() => window.location.href = '/blog/tech-trends-2025'}
                   >
                     Read More
                   </button>
