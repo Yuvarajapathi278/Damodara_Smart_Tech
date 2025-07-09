@@ -86,7 +86,7 @@ export function HeroSection() {
                   <span className="text-muted-foreground">2</span>
                   <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
                   <span className="font-semibold text-foreground">Application Deadline:</span>
-                  <span className="text-muted-foreground">12/7/25</span>
+                  <span className="text-muted-foreground">12th July 25</span>
                 </div>
                 <Button
                   size="lg"
