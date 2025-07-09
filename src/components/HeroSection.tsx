@@ -7,7 +7,7 @@ export function HeroSection() {
   const { theme } = useTheme();
 
   // Typing animation for blog title
-  const blogTitle = "🚀 Top 10 Technology Trends of 2025: AI, BCIs, and Sustainability";
+  const blogTitle = "\ud83d\ude80 The Next Wave: 2025’s Breakthroughs in AI, Quantum, and Green Tech";
   const [typedTitle, setTypedTitle] = useState("");
 
   useEffect(() => {
@@ -21,7 +21,10 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-20">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center pt-24 pb-20"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-1/4 w-72 h-72 bg-[hsl(var(--dusty-rose))]/20 rounded-full filter blur-[100px] animate-float"></div>
@@ -43,30 +46,28 @@ export function HeroSection() {
               </p>
             </div>
           </div>
-          {/* Right Side: Blog Card on angled glass card */}
-          <div className="relative animate-fade-in animate-float-slow" style={{ animationDelay: "0.2s" }}>
-            <div className="aspect-square w-full max-w-[420px] md:max-w-[480px] mx-auto relative">
-              {/* Abstract design elements */}
+          {/* Right Side: Animated Circle with Blog Text */}
+          <div className="relative flex items-center justify-center animate-fade-in animate-float-slow" style={{ animationDelay: '0.2s' }}>
+            <div className="aspect-square w-full max-w-[420px] md:max-w-[480px] mx-auto relative flex items-center justify-center">
+              {/* Animated Circle */}
               <div className="absolute inset-0 bg-[hsl(var(--soft-blue))]/30 rounded-full animate-pulse opacity-70"></div>
-              {/* 3D Visual element with blog card content */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[88%] h-[88%] glass-card rounded-2xl flex flex-col justify-center items-center overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-500 animate-blog-glow px-6 py-8 md:px-8 md:py-10">
-                  <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-purple-700 bg-purple-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans">Latest Blog</span>
-                  <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-3 min-h-[3.5em] text-center leading-snug break-words whitespace-normal font-['Space Grotesk'],font-['Inter'],sans-serif" style={{ color: '#F59E42' }}>
-                    {typedTitle}
-                    <span className="animate-pulse">|</span>
-                  </h2>
-                  <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">8/7/25</span>
-                  <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                    Explore the top 10 technology trends of 2025, including Agentic AI, brain-computer interfaces, and the sustainability revolution. Discover how these innovations are shaping the future of business, society, and daily life.
-                  </p>
-                  <button
-                    className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
-                    onClick={() => window.location.href = '/blog/tech-trends-2025'}
-                  >
-                    Read More
-                  </button>
-                </div>
+              {/* Blog text centered in circle */}
+              <div className="relative z-10 flex flex-col justify-center items-center w-[80%] h-[80%] mx-auto text-center">
+                <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-purple-700 bg-purple-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans">Latest Blog</span>
+                <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-3 min-h-[3.5em] text-center leading-snug break-words whitespace-normal font-['Space Grotesk'],font-['Inter'],sans-serif" style={{ color: '#F59E42' }}>
+                  {typedTitle}
+                  <span className="animate-pulse">|</span>
+                </h2>
+                <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">9th July 25</span>
+                <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
+                  Explore how 2025 is set to redefine technology with advances in generative AI, quantum computing, sustainable tech, and more. Discover what’s next for business, society, and innovation.
+                </p>
+                <button
+                  className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
+                  onClick={() => window.location.href = '/blog/tech-trends-2025'}
+                >
+                  Read More
+                </button>
               </div>
             </div>
           </div>
