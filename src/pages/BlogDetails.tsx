@@ -10,25 +10,25 @@ const BlogDetails = () => {
         <style>{`
           .blog-sans-serif { font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
         `}</style>
-        <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest Blog</span>
-        <h1 className="text-3xl font-bold mb-4 blog-sans-serif">🚀 Top 10 Technology Trends of 2025: AI, BCIs, and Sustainability</h1>
-        <span className="text-sm text-muted-foreground mb-4 block">8/7/25</span>
+        <span className="text-xs uppercase tracking-wider text-neon-blue bg-neon-blue/10 px-3 py-1 rounded-full mb-2 inline-block">Latest INFO</span>
+        <h1 className="text-3xl font-bold mb-4 blog-sans-serif">🚀 The Next Wave: 2025’s Breakthroughs in AI, Quantum, and Green Tech</h1>
+        <span className="text-sm text-muted-foreground mb-4 block">9th July 25</span>
         <div className="prose prose-lg text-foreground mb-8 blog-sans-serif">
-          <p>2025 is a landmark year for technology, with innovations reshaping every aspect of our lives. Here are the top 10 technology trends to watch:</p>
+          <p>2025 is set to redefine the boundaries of technology. Here are the most important breakthroughs to watch this year:</p>
           <ol>
-            <li><b>Agentic AI:</b> Autonomous AI agents are revolutionizing business operations, decision-making, and productivity. Expect to see AI-powered assistants and digital workers in every industry.</li>
-            <li><b>Brain-Computer Interfaces (BCIs):</b> Direct communication between the brain and devices is expanding human potential, from medical recovery to new ways of interacting with technology.</li>
-            <li><b>Polyfunctional Robots:</b> Human-machine synergy is enabling robots to perform multiple tasks, adapt quickly, and work alongside people in manufacturing, healthcare, and logistics.</li>
-            <li><b>Spatial Computing:</b> AR, VR, and mixed reality are merging digital and physical worlds, transforming entertainment, education, and design.</li>
-            <li><b>Tailored AI Models:</b> Businesses are moving from general-purpose AI to custom models for better performance, privacy, and cost savings.</li>
-            <li><b>Post-Quantum Cryptography:</b> New encryption methods are being developed to protect data from future quantum computers.</li>
-            <li><b>AI-Powered Cybersecurity:</b> Proactive, automated defense systems are reducing response times and increasing threat detection accuracy.</li>
-            <li><b>Hardware Innovation:</b> Advances like 3D chip stacking and photonic computing are pushing the limits of performance and efficiency.</li>
-            <li><b>Sustainability Revolution:</b> Green tech and renewable energy are at the core of digital transformation, with companies racing to reduce their carbon footprint.</li>
-            <li><b>Disinformation Defense:</b> New tools and regulations are emerging to combat AI-generated misinformation and ensure authenticity online.</li>
+            <li><b>Generative AI Everywhere:</b> AI is moving beyond text and images to generate code, music, video, and even physical product designs, transforming creative industries and business workflows.</li>
+            <li><b>Quantum Computing Advances:</b> Quantum computers are solving problems once thought impossible, with breakthroughs in cryptography, drug discovery, and logistics optimization.</li>
+            <li><b>Green Tech Revolution:</b> Sustainability is at the core of innovation, with new materials, energy storage, and carbon capture technologies scaling up worldwide.</li>
+            <li><b>Edge AI & IoT:</b> Smarter, faster AI at the edge is powering autonomous vehicles, smart cities, and real-time analytics in manufacturing and healthcare.</li>
+            <li><b>AI-Driven Cybersecurity:</b> Proactive, adaptive security systems are using AI to detect and neutralize threats before they cause harm.</li>
+            <li><b>Spatial Computing:</b> AR, VR, and mixed reality are merging digital and physical worlds for immersive experiences in work, education, and entertainment.</li>
+            <li><b>Personalized AI Agents:</b> Custom AI assistants are becoming indispensable for productivity, learning, and personal health.</li>
+            <li><b>Decentralized Infrastructure:</b> Blockchain and Web3 technologies are enabling new models for finance, identity, and data ownership.</li>
+            <li><b>Human-Tech Synergy:</b> Brain-computer interfaces and advanced prosthetics are expanding human potential and accessibility.</li>
+            <li><b>Authenticity & Trust:</b> New standards and tools are emerging to combat deepfakes and misinformation, ensuring trust in digital content.</li>
           </ol>
-          <h3>🌟 Why These Trends Matter</h3>
-          <p>These trends are not just buzzwords—they are shaping the future of business, society, and daily life. From smarter cities and healthcare to secure data and sustainable innovation, 2025 is set to be a year of transformation. Stay ahead by understanding and embracing these changes!</p>
+          <h3>🌟 Why These Breakthroughs Matter</h3>
+          <p>These trends are shaping the future of business, society, and daily life. Staying ahead means understanding and embracing these changes—2025 is the year to innovate boldly!</p>
         </div>
         <Button className="bg-gradient-blue-purple text-white" onClick={() => navigate("/")}>Back to Home</Button>
       </div>
