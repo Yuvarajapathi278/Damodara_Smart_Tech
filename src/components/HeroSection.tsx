@@ -53,7 +53,7 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-[hsl(var(--soft-blue))]/30 rounded-full animate-pulse opacity-70"></div>
               {/* Blog text centered in circle */}
               <div className="relative z-10 flex flex-col justify-center items-center w-[80%] h-[80%] mx-auto text-center">
-                <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-purple-700 bg-purple-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans">Latest Blog</span>
+                <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-purple-700 bg-purple-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans">Latest Info</span>
                 <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-3 min-h-[3.5em] text-center leading-snug break-words whitespace-normal font-['Space Grotesk'],font-['Inter'],sans-serif" style={{ color: '#F59E42' }}>
                   {typedTitle}
                   <span className="animate-pulse">|</span>
