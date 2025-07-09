@@ -20,6 +20,20 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  // Typing animation for Premier Job Opportunity label
+  const labelText = "Premier Job Opportunity";
+  const [typedLabel, setTypedLabel] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedLabel(labelText.slice(0, i + 1));
+      i++;
+      if (i === labelText.length) clearInterval(interval);
+    }, 40);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -46,28 +60,41 @@ export function HeroSection() {
               </p>
             </div>
           </div>
-          {/* Right Side: Animated Circle with Blog Text */}
+          {/* Right Side: Animated Circle with Hot Job Vacancy */}
           <div className="relative flex items-center justify-center animate-fade-in animate-float-slow" style={{ animationDelay: '0.2s' }}>
             <div className="aspect-square w-full max-w-[420px] md:max-w-[480px] mx-auto relative flex items-center justify-center">
               {/* Animated Circle */}
               <div className="absolute inset-0 bg-[hsl(var(--soft-blue))]/30 rounded-full animate-pulse opacity-70"></div>
-              {/* Blog text centered in circle */}
-              <div className="relative z-10 flex flex-col justify-center items-center w-[80%] h-[80%] mx-auto text-center">
-                <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-purple-700 bg-purple-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans">Latest Info</span>
-                <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-3 min-h-[3.5em] text-center leading-snug break-words whitespace-normal font-['Space Grotesk'],font-['Inter'],sans-serif" style={{ color: '#F59E42' }}>
-                  {typedTitle}
-                  <span className="animate-pulse">|</span>
+              {/* Hot Job Vacancy text centered in circle */}
+              <div className="relative z-10 flex flex-col justify-center items-center w-[85%] h-[85%] mx-auto text-center">
+                {/* Premier Job Opportunity label with typing animation */}
+                <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-red-700 bg-red-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
+                  {typedLabel}
+                  {typedLabel.length < labelText.length && <span className="animate-pulse">|</span>}
+                </span>
+                <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-2 min-h-[2.5em] text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif">
+                  Vacancies for Full Stack Developer
                 </h2>
-                <span className="text-xs md:text-sm text-muted-foreground mb-3 block font-sans">9th July 25</span>
-                <p className="text-xs md:text-sm lg:text-base mb-4 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                  Explore how 2025 is set to redefine technology with advances in generative AI, quantum computing, sustainable tech, and more. Discover what’s next for business, society, and innovation.
+                <p className="text-xs md:text-sm lg:text-base mb-2 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
+                  We're recruiting Full Stack Developers to help us build innovative, high-quality web and mobile applications. If you're passionate about app development and eager to work with modern technologies, we'd love to hear from you.
                 </p>
-                <button
-                  className="bg-gradient-blue-purple text-white px-4 py-2 rounded font-semibold text-xs md:text-sm lg:text-base hover:opacity-90 transition-opacity font-sans"
-                  onClick={() => window.location.href = '/blog/tech-trends-2025'}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-xs md:text-sm mb-2 justify-center">
+                  <span className="font-semibold text-foreground">Role:</span>
+                  <span className="text-muted-foreground">Full Stack Developer</span>
+                  <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
+                  <span className="font-semibold text-foreground">Vacancies:</span>
+                  <span className="text-muted-foreground">2</span>
+                  <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
+                  <span className="font-semibold text-foreground">Application Deadline:</span>
+                  <span className="text-muted-foreground">12/7/25</span>
+                </div>
+                <Button
+                  size="lg"
+                  className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md hover:scale-105 transition-transform mt-2"
+                  onClick={() => window.location.href = '/apply'}
                 >
-                  Read More
-                </button>
+                  Apply Now
+                </Button>
               </div>
             </div>
           </div>
