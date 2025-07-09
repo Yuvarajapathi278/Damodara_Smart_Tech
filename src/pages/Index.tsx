@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { VideoBackground } from "@/components/VideoBackground";
@@ -14,6 +14,8 @@ const Index = () => {
   const navigate = useNavigate();
   const [angle, setAngle] = useState(0);
 
+  // No AOS needed, Framer Motion handles animations
+
   return (
     <div className="min-h-screen flex flex-col">
       <VideoBackground />
@@ -28,7 +30,7 @@ const Index = () => {
         <div id="services">
           <ServicesSection />
         </div>
-        <div id="why-choose-us" className="py-20 relative">
+        <div id="why-choose-us" className="py-20 relative" data-aos="fade-up" data-aos-delay="300">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-4xl md:text-5xl tracking-wider text-neon-purple mb-3 font-bold">Why Choose Us</h2>
@@ -65,7 +67,7 @@ const Index = () => {
         <div id="portfolio">
           <PortfolioSection />
         </div>
-        <div id="careers" className="py-20 relative">
+        <div id="careers" className="py-20 relative" data-aos="fade-up" data-aos-delay="500">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-4xl md:text-5xl tracking-wider text-neon-purple mb-3 font-bold">Careers</h2>
@@ -77,15 +79,53 @@ const Index = () => {
                 Explore exciting career opportunities with us.
               </p>
             </div>
-            <div className="flex justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                onClick={() => navigate('/apply')}
-              >
-                Apply Now
-              </Button>
-            </div>
+            {/* Premier Job Opportunity 3D Hover Card */}
+            {(() => {
+              const labelText = "Premier Job Opportunity";
+              const [typedLabel, setTypedLabel] = React.useState("");
+              React.useEffect(() => {
+                let i = 0;
+                const interval = setInterval(() => {
+                  setTypedLabel(labelText.slice(0, i + 1));
+                  i++;
+                  if (i === labelText.length) clearInterval(interval);
+                }, 40);
+                return () => clearInterval(interval);
+              }, []);
+              return (
+                <div className="flex justify-center">
+                  <div className="glass-card rounded-2xl border border-white/10 p-3 md:p-4 flex flex-col gap-2 md:gap-3 items-center w-full max-w-lg shadow-xl transition-transform hover:scale-[1.025] hover:shadow-2xl bg-background/80" style={{ perspective: '800px', transformStyle: 'preserve-3d' }}>
+                    <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-red-700 bg-red-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
+                      {typedLabel}
+                      {typedLabel.length < labelText.length && <span className="animate-pulse">|</span>}
+                    </span>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-1 text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif">
+                      Vacancies for Full Stack Developer
+                    </h4>
+                    <p className="text-xs md:text-sm lg:text-base mb-1 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
+                      We're recruiting Full Stack Developers to help us build innovative, high-quality web and mobile applications. If you're passionate about app development and eager to work with modern technologies, we'd love to hear from you.
+                    </p>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-xs md:text-sm mb-1 justify-center">
+                      <span className="font-semibold text-foreground">Role:</span>
+                      <span className="text-muted-foreground">Full Stack Developer</span>
+                      <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
+                      <span className="font-semibold text-foreground">Vacancies:</span>
+                      <span className="text-muted-foreground">2</span>
+                      <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
+                      <span className="font-semibold text-foreground">Application Deadline:</span>
+                      <span className="text-muted-foreground">12th July 25</span>
+                    </div>
+                    <Button
+                      size="lg"
+                      className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md hover:scale-105 transition-transform mt-1"
+                      onClick={() => navigate('/apply')}
+                    >
+                      Apply Now
+                    </Button>
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         </div>
         <div id="contact" className="py-20 relative">
