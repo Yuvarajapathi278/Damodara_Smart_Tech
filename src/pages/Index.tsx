@@ -94,7 +94,7 @@ const Index = () => {
               }, []);
               return (
                 <div className="flex justify-center">
-                  <div className="glass-card rounded-2xl border border-white/10 p-3 md:p-4 flex flex-col gap-2 md:gap-3 items-center w-full max-w-lg shadow-xl transition-transform hover:scale-[1.025] hover:shadow-2xl bg-background/80" style={{ perspective: '800px', transformStyle: 'preserve-3d' }}>
+                  <div className="glass-card rounded-2xl border border-white/10 p-3 md:p-4 flex flex-col gap-2 md:gap-3 items-center w-full max-w-2xl shadow-xl transition-transform hover:scale-[1.025] hover:shadow-2xl bg-background/80" style={{ perspective: '800px', transformStyle: 'preserve-3d' }}>
                     <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-red-700 bg-red-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
                       {typedLabel}
                       {typedLabel.length < labelText.length && <span className="animate-pulse">|</span>}
@@ -105,7 +105,7 @@ const Index = () => {
                     <p className="text-xs md:text-sm lg:text-base mb-1 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
                       We're recruiting Full Stack Developers to help us build innovative, high-quality web and mobile applications. If you're passionate about app development and eager to work with modern technologies, we'd love to hear from you.
                     </p>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 text-xs md:text-sm mb-1 justify-center">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-x-1 gap-y-1 text-xs md:text-sm mb-1 justify-center">
                       <span className="font-semibold text-foreground">Role:</span>
                       <span className="text-muted-foreground">Full Stack Developer</span>
                       <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
