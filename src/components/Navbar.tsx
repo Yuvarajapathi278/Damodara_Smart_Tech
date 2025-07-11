@@ -94,7 +94,7 @@ export function Navbar() {
               Damodara Smart Tech
             </span>
           </div>
-          <span className="text-dst-gold text-base xs:text-lg sm:text-xl md:text-2xl font-semibold mt-0.5 md:pl-8 self-end md:self-end md:pr-1" style={{ minWidth: 'max-content' }}>
+          <span className="text-dst-gold text-base xs:text-lg sm:text-xl md:text-2xl font-semibold mt-0 md:pl-8 self-end md:self-end md:pr-1" style={{ minWidth: 'max-content' }}>
             Smart Solutions. Automate Services.
           </span>
         </div>
@@ -132,7 +132,7 @@ export function Navbar() {
                 Damodara Smart<wbr/> Tech
               </span>
             </div>
-            <span className="text-dst-gold text-base font-medium mt-0.5 text-center w-full">
+            <span className="text-dst-gold text-base font-medium mt-0 text-center w-full">
               Smart Solutions. Automate Services.
             </span>
           </div>
