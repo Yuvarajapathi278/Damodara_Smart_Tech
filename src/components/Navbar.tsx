@@ -123,20 +123,19 @@ export function Navbar() {
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-y-auto animate-fade-in">
           {/* Mobile Brand Block */}
           <div className="w-full flex flex-col items-center">
-            <div className="flex flex-col items-center justify-center w-full">
-              <img
-                src="/DST_logo.png"
-                alt="Damodara Smart Tech Logo"
-                className="w-16 h-16 rounded-full object-cover mb-1"
-              />
-              <span className="text-2xl font-extrabold text-dst-darkgreen text-center leading-tight tracking-tight">
-                Damodara Smart Tech
-              </span>
-            </div>
-            <span className="text-dst-gold text-sm font-semibold text-center leading-tight mt-0.5">
-              Smart Solutions. Automate Services.
-            </span>
-          </div>
+  <div className="flex items-center justify-center w-full mb-2">
+    <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 rounded-full object-cover" />
+    <div className="ml-2 flex flex-col items-start">
+      <span className="text-xl font-extrabold text-dst-darkgreen leading-snug tracking-tight">
+        Damodara Smart Tech
+      </span>
+      <span className="text-dst-gold text-sm font-semibold leading-snug tracking-normal">
+        Smart Solutions. Automate Services.
+      </span>
+    </div>
+  </div>
+</div>
+
 
           <nav className="flex flex-col w-full gap-4 mt-6">
             {navItems.map((item) => (
