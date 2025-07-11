@@ -89,12 +89,12 @@ export function Navbar() {
         {/* Left Section: Logo + Brand */}
         <div className="flex flex-col cursor-pointer" onClick={handleLogoClick}>
           <div className="flex items-center">
-            <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 md:w-16 md:h-16 mr-3" />
-            <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-normal text-primary whitespace-nowrap">
+            <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-white/20" />
+            <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-normal text-dst-darkgreen whitespace-nowrap">
               Damodara Smart Tech
             </span>
           </div>
-          <span className="text-sky-400 text-base xs:text-lg sm:text-xl md:text-2xl font-semibold mt-0.5 md:pl-8 self-end md:self-end md:pr-1" style={{ minWidth: 'max-content' }}>
+          <span className="text-dst-gold text-base xs:text-lg sm:text-xl md:text-2xl font-semibold mt-0.5 md:pl-8 self-end md:self-end md:pr-1" style={{ minWidth: 'max-content' }}>
             Smart Solutions. Automate Services.
           </span>
         </div>
@@ -127,12 +127,12 @@ export function Navbar() {
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-y-auto animate-fade-in">
           <div className="w-full flex flex-col items-center">
             <div className="flex items-center justify-center w-full mb-2">
-              <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-12 h-12 mr-2" />
-              <span className="text-3xl xs:text-4xl font-extrabold text-primary text-center max-w-full w-full block leading-tight whitespace-pre-line" style={{ wordBreak: 'break-word', minWidth: 0, overflowWrap: 'break-word' }}>
+              <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 rounded-full object-cover border border-white/20" />
+              <span className="text-3xl xs:text-4xl font-extrabold text-dst-darkgreen text-center max-w-full w-full block leading-tight whitespace-pre-line" style={{ wordBreak: 'break-word', minWidth: 0, overflowWrap: 'break-word' }}>
                 Damodara Smart<wbr/> Tech
               </span>
             </div>
-            <span className="text-sky-400 text-base font-medium mt-0.5 text-center w-full">
+            <span className="text-dst-gold text-base font-medium mt-0.5 text-center w-full">
               Smart Solutions. Automate Services.
             </span>
           </div>
