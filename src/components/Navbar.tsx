@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -30,7 +30,6 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -40,15 +39,11 @@ export function Navbar() {
       navigate('/', { state: { scrollTo: sectionId } });
       return;
     }
-
     const element = document.getElementById(sectionId);
     if (element) {
       const headerHeight = 80;
       const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: elementPosition, behavior: "smooth" });
       setMobileMenuOpen(false);
     }
   };
@@ -60,10 +55,7 @@ export function Navbar() {
       if (element) {
         const headerHeight = 80;
         const elementPosition = element.offsetTop - headerHeight;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: elementPosition, behavior: "smooth" });
       }
     }
   }, [location]);
@@ -86,7 +78,7 @@ export function Navbar() {
       )}
     >
       <div className="w-full px-4 md:px-6 flex flex-col md:flex-row md:items-center md:justify-between">
-        {/* Left Section: Logo + Brand */}
+        {/* Logo and Branding */}
         <div className="flex flex-col cursor-pointer" onClick={handleLogoClick}>
           <div className="flex items-center">
             <img
@@ -103,7 +95,7 @@ export function Navbar() {
           </span>
         </div>
 
-        {/* Right Section: Desktop Navigation */}
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-3 mt-4 md:mt-0">
           {navItems.map((item) => (
             <button
@@ -117,7 +109,7 @@ export function Navbar() {
           <ThemeToggle />
         </nav>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Nav Toggle */}
         <div className="flex items-center md:hidden gap-2 ml-auto mt-0">
           <ThemeToggle />
           <Button variant="ghost" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -126,23 +118,24 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Panel */}
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-y-auto animate-fade-in">
+          {/* Mobile Brand Block */}
           <div className="w-full flex flex-col items-center">
             <div className="flex flex-col items-center justify-center w-full">
               <img
                 src="/DST_logo.png"
                 alt="Damodara Smart Tech Logo"
-                className="w-16 h-16 rounded-full object-cover"
+                className="w-16 h-16 rounded-full object-cover mb-1"
               />
-              <span className="text-3xl xs:text-4xl font-extrabold text-dst-darkgreen text-center leading-none mb-0">
+              <span className="text-2xl font-extrabold text-dst-darkgreen text-center leading-tight tracking-tight">
                 Damodara Smart Tech
               </span>
-              <span className="text-dst-gold text-base font-medium text-center leading-none mt-0 -mt-2">
-                Smart Solutions. Automate Services.
-              </span>
             </div>
+            <span className="text-dst-gold text-sm font-semibold text-center leading-tight mt-0.5">
+              Smart Solutions. Automate Services.
+            </span>
           </div>
 
           <nav className="flex flex-col w-full gap-4 mt-6">
