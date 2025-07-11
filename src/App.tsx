@@ -2,9 +2,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Chatbot } from "./components/Chatbot";
+import { useEffect } from "react";
+import { pageview } from "./lib/ga";
 
 // Pages
 import Index from "./pages/Index";
@@ -18,6 +20,26 @@ import BlogDetails from "./pages/BlogDetails";
 
 const queryClient = new QueryClient();
 
+function AppWithGA() {
+  const location = useLocation();
+  useEffect(() => {
+    pageview(location.pathname + location.search);
+  }, [location]);
+
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/apply" element={<Apply />} />
+      <Route path="/blog/tech-trends-2025" element={<BlogDetails />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
@@ -25,16 +47,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/apply" element={<Apply />} />
-            <Route path="/blog/tech-trends-2025" element={<BlogDetails />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppWithGA />
           <Chatbot />
         </BrowserRouter>
       </TooltipProvider>
