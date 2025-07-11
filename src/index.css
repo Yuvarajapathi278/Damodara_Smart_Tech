@@ -191,6 +191,13 @@
   @apply bg-[hsl(var(--accent-green))];
 }
 
+.text-dst-darkgreen {
+  color: #14532d; /* Deep dark green, adjust if needed to match logo */
+}
+.text-dst-gold {
+  color: #FFD700; /* Gold, adjust if needed to match logo tagline */
+}
+
 /* Animations */
 @keyframes float {
   0%, 100% {
