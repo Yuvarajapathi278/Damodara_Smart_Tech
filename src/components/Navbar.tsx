@@ -130,17 +130,17 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-y-auto animate-fade-in">
           <div className="w-full flex flex-col items-center">
-            <div className="flex items-center justify-center w-full mb-2">
+            <div className="flex flex-col items-center justify-center w-full">
               <img
                 src="/DST_logo.png"
                 alt="Damodara Smart Tech Logo"
-                className="w-16 h-16 rounded-full object-cover"
+                className="w-16 h-16 rounded-full object-cover mb-1"
               />
-              <span className="text-3xl xs:text-4xl font-extrabold text-dst-darkgreen text-center max-w-full w-full block leading-tight whitespace-pre-line" style={{ wordBreak: 'break-word', minWidth: 0, overflowWrap: 'break-word' }}>
-                Damodara Smart<wbr /> Tech
+              <span className="text-3xl xs:text-4xl font-extrabold text-dst-darkgreen text-center leading-tight">
+                Damodara Smart Tech
               </span>
             </div>
-            <span className="text-dst-gold text-base font-medium text-center w-full leading-tight -mt-2">
+            <span className="text-dst-gold text-base font-medium text-center leading-snug -mt-1">
               Smart Solutions. Automate Services.
             </span>
           </div>
