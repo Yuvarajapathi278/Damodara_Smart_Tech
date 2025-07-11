@@ -134,13 +134,13 @@ export function Navbar() {
               <img
                 src="/DST_logo.png"
                 alt="Damodara Smart Tech Logo"
-                className="w-16 h-16 rounded-full object-cover mb-1"
+                className="w-16 h-16 rounded-full object-cover"
               />
-              <span className="text-3xl xs:text-4xl font-extrabold text-dst-darkgreen text-center leading-tight">
+              <span className="text-3xl xs:text-4xl font-extrabold text-dst-darkgreen text-center leading-none">
                 Damodara Smart Tech
               </span>
             </div>
-            <span className="text-dst-gold text-base font-medium text-center leading-snug -mt-1">
+            <span className="text-dst-gold text-base font-medium text-center leading-none -mt-2">
               Smart Solutions. Automate Services.
             </span>
           </div>
