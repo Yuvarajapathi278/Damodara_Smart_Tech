@@ -125,11 +125,11 @@ export function Navbar() {
           <div className="w-full flex flex-col items-center">
   <div className="flex items-center justify-center w-full mb-2">
     <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 rounded-full object-cover" />
-    <div className="ml-2 flex flex-col items-start">
-      <span className="text-xl font-extrabold text-dst-darkgreen leading-snug tracking-tight">
+    <div className="ml-2 flex flex-col items-start justify-center">
+      <span className="text-xl font-extrabold text-dst-darkgreen leading-none tracking-tight mb-0">
         Damodara Smart Tech
       </span>
-      <span className="text-dst-gold text-sm font-semibold leading-snug tracking-normal">
+      <span className="text-dst-gold text-sm font-semibold leading-none tracking-normal mt-0">
         Smart Solutions. Automate Services.
       </span>
     </div>
