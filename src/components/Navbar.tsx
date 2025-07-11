@@ -89,7 +89,7 @@ export function Navbar() {
         {/* Left Section: Logo + Brand */}
         <div className="flex flex-col cursor-pointer" onClick={handleLogoClick}>
           <div className="flex items-center">
-            <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-white/20" />
+            <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover" />
             <span className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-normal text-dst-darkgreen whitespace-nowrap">
               Damodara Smart Tech
             </span>
@@ -127,7 +127,7 @@ export function Navbar() {
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-y-auto animate-fade-in">
           <div className="w-full flex flex-col items-center">
             <div className="flex items-center justify-center w-full mb-2">
-              <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 rounded-full object-cover border border-white/20" />
+              <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 rounded-full object-cover" />
               <span className="text-3xl xs:text-4xl font-extrabold text-dst-darkgreen text-center max-w-full w-full block leading-tight whitespace-pre-line" style={{ wordBreak: 'break-word', minWidth: 0, overflowWrap: 'break-word' }}>
                 Damodara Smart<wbr/> Tech
               </span>
