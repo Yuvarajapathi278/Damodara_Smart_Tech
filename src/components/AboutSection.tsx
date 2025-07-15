@@ -14,12 +14,12 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-20 relative" data-aos="fade-up">
       {/* Gradient background effect */}
       <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
       
       <div className="container relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200">
           <h2 className="text-4xl md:text-5xl tracking-wider text-neon-purple mb-3 font-bold">About Us</h2>
           <h3 className="text-xl md:text-2xl mb-6">
             Transforming Ideas Into <span className="gradient-text">Digital Excellence</span>
