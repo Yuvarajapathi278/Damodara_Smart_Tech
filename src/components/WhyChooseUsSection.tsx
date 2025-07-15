@@ -133,9 +133,9 @@ export function WhyChooseUsSection() {
   }, []);
 
   return (
-    <section id="why-choose-us" className="py-20 px-4 bg-gradient-to-br from-background via-background to-accent/5">
+    <section id="why-choose-us" className="py-20 px-4 bg-gradient-to-br from-background via-background to-accent/5" data-aos="fade-up">
       <div className="container">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="zoom-in" data-aos-delay="200">
           <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Why Choose Us</h2>
           <h3 className="text-2xl md:text-3xl font-bold mb-6">
             Your Trusted <span className="gradient-text">Technology Partner</span>
@@ -147,7 +147,7 @@ export function WhyChooseUsSection() {
         </div>
 
         {/* Main Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16" data-aos="fade-up" data-aos-delay="400">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
