@@ -74,9 +74,9 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-20" data-aos="fade-up">
       <div className="container">
-        <div className="text-center">
+        <div className="text-center" data-aos="zoom-in" data-aos-delay="200">
           <h2 className="text-4xl md:text-5xl tracking-wider text-neon-purple mb-3 font-bold">Our Services</h2>
           <h3 className="text-xl md:text-2xl font-bold mb-6">
             Comprehensive <span className="gradient-text">Digital Solutions</span>
@@ -86,7 +86,7 @@ export function ServicesSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="400">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
