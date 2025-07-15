@@ -117,10 +117,10 @@ const Index = () => {
                     </div>
                     <Button
                       size="lg"
-                      className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md hover:scale-105 transition-transform mt-1"
-                      onClick={() => navigate('/apply')}
+                      className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1 opacity-60 cursor-not-allowed"
+                      disabled
                     >
-                      Apply Now
+                      Application Closed
                     </Button>
                   </div>
                 </div>
