@@ -155,7 +155,7 @@ export function HeroSection() {
                   {typedBlog.length < blogPhrases[blogIndex].length && <span className="animate-pulse">|</span>}
                 </h2>
                 <p className="text-xs sm:text-sm md:text-base mb-2 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))] max-w-full break-words">
-                  Explore world-class favorite books, stories, and more!
+                  Explore world-class most useful information to live a complete life
                 </p>
                 <Button
                   size="sm"
