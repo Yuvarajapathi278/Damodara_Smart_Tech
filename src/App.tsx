@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Chatbot } from "./components/Chatbot";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { pageview } from "./lib/ga";
 
 // Pages
@@ -40,19 +40,41 @@ function AppWithGA() {
   );
 }
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AppWithGA />
-          <Chatbot />
-        </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
-);
+function App() {
+  // Opening animation state
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 1800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      {showSplash && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-[#18181b] via-[#8B5CF6] to-[#18181b] animate-fade-in-out">
+          <div className="flex flex-col items-center gap-4">
+            <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-24 h-24 rounded-full shadow-2xl animate-bounce-slow" />
+            <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-wide animate-gradient-text bg-gradient-to-r from-white via-[#8B5CF6] to-white bg-clip-text text-transparent">Welcome to Damodara Smart Tech</h1>
+            <span className="text-base md:text-lg text-white/80 animate-fade-in">Empowering Your Digital Journey...</span>
+          </div>
+        </div>
+      )}
+      {/* Main App Content */}
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <AppWithGA />
+              <Chatbot />
+            </BrowserRouter>
+          </TooltipProvider>
+        </ThemeProvider>
+      </QueryClientProvider>
+    </>
+  );
+}
 
 export default App;
