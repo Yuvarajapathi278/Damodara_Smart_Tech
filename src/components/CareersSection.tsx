@@ -43,7 +43,7 @@ Please attach your resume to this email.`;
   };
 
   return (
-    <section id="careers" className="py-20 relative">
+    <section id="careers" className="py-20 relative" data-aos="fade-up">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[hsl(var(--royal-blue))]/10 rounded-full filter blur-[100px]"></div>
@@ -51,7 +51,7 @@ Please attach your resume to this email.`;
       </div>
 
       <div className="container relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200">
           <h2 className="text-5xl md:text-6xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Careers</h2>
           <h3 className="text-2xl md:text-3xl font-bold mb-6">
             Join Our <span className="gradient-text">Innovation Journey</span>
