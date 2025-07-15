@@ -32,7 +32,7 @@ export function HeroSection() {
   }, [techIndex]);
 
   // Typewriter for Book Blog Circle
-  const blogPhrase = 'Explore, Review, Inspire';
+  const blogPhrase = 'Words that empowers. Wisdom that transforms.';
   const [typedBlog, setTypedBlog] = useState("");
   const [blogLoop, setBlogLoop] = useState(0);
 
@@ -134,14 +134,14 @@ export function HeroSection() {
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-yellow-400/30 bg-gradient-to-br from-yellow-100 via-yellow-50 to-yellow-300 border-4 border-yellow-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-1 sm:px-2 py-2 overflow-hidden">
                 <span className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-green-700 bg-green-200/40 px-2 sm:px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold max-w-full break-words whitespace-normal text-center">
-                  Explore life's most important aspects
+                  Damodara Smart Posts
                 </span>
                 <h2 className="text-xs sm:text-sm md:text-lg font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif max-w-full break-words">
                   {typedBlog}
                   {typedBlog.length < blogPhrase.length && <span className="animate-pulse">|</span>}
                 </h2>
                 <p className="text-xs sm:text-sm md:text-base mb-2 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))] max-w-full break-words">
-                Explore world-class most useful information to live a complete life
+                  Explore world-class most useful information to live a complete life
                 </p>
                 <Button
                   size="sm"
