@@ -116,10 +116,10 @@ export function HeroSection() {
                 </div>
                 <Button
                   size="sm"
-                  className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md hover:scale-105 transition-transform mt-1 text-xs"
-                  onClick={() => window.location.href = '/apply'}
+                  className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1 text-xs opacity-60 cursor-not-allowed"
+                  disabled
                 >
-                  Apply Now
+                  Application Closed
                 </Button>
               </div>
             </div>
