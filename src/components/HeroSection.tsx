@@ -32,28 +32,23 @@ export function HeroSection() {
   }, [techIndex]);
 
   // Typewriter for Book Blog Circle
-  const blogPhrases = [
-    'Explore, Review, Inspire',
-    'Stories, Books & More'
-  ];
-  const [blogIndex, setBlogIndex] = useState(0);
+  const blogPhrase = 'Explore, Review, Inspire';
   const [typedBlog, setTypedBlog] = useState("");
+  const [blogLoop, setBlogLoop] = useState(0);
+
   useEffect(() => {
     let i = 0;
     setTypedBlog("");
     const interval = setInterval(() => {
-      setTypedBlog(blogPhrases[blogIndex].slice(0, i + 1));
+      setTypedBlog(blogPhrase.slice(0, i + 1));
       i++;
-      if (i === blogPhrases[blogIndex].length) {
+      if (i === blogPhrase.length) {
         clearInterval(interval);
-        setTimeout(() => {
-          setBlogIndex((prev) => (prev + 1) % blogPhrases.length);
-        }, 1800);
+        setTimeout(() => setBlogLoop(loop => loop + 1), 1800); // restart after delay
       }
     }, 40);
     return () => clearInterval(interval);
-    // eslint-disable-next-line
-  }, [blogIndex]);
+  }, [blogLoop]);
 
   // Typing animation for Premier Job Opportunity label
   const labelText = "Premier Job Opportunity";
@@ -85,13 +80,10 @@ export function HeroSection() {
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left: Tech Circle */}
-          <div className="flex-1 flex justify-center md:justify-start mb-8 md:mb-0"
-            data-aos="fade-right"
-            data-aos-delay="200"
-          >
+          <div className="flex-1 flex justify-center md:justify-start mb-8 md:mb-0" data-aos="fade-right" data-aos-delay="200">
             <div className="aspect-square w-56 sm:w-64 md:w-96 max-w-[90vw] relative flex items-center justify-center ">
               {/* 3D-like effect */}
-              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
+              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]" />
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-1 sm:px-2 py-2 overflow-hidden">
                 <span className="text-xs md:text-sm uppercase tracking-wider text-red-700 bg-red-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
                   {typedLabel}
@@ -126,10 +118,7 @@ export function HeroSection() {
           </div>
 
           {/* Center: Main Heading and Paragraph (static) */}
-          <div className="flex-1 flex flex-col items-center justify-center text-center px-2 md:px-8 mb-8 md:mb-0"
-            data-aos="zoom-in"
-            data-aos-delay="400"
-          >
+          <div className="flex-1 flex flex-col items-center justify-center text-center px-2 md:px-8 mb-8 md:mb-0" data-aos="zoom-in" data-aos-delay="400">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: '#8B5CF6', minHeight: '2.5em' }}>
               Grow Your Innovation with Damodara Smart Tech
             </h1>
@@ -139,10 +128,7 @@ export function HeroSection() {
           </div>
 
           {/* Right: Book Blog Circle */}
-          <div className="flex-1 flex justify-center md:justify-end"
-            data-aos="fade-left"
-            data-aos-delay="600"
-          >
+          <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-56 sm:w-64 md:w-96 max-w-[90vw] relative flex items-center justify-center ">
               {/* 3D-like effect */}
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-yellow-400/30 bg-gradient-to-br from-yellow-100 via-yellow-50 to-yellow-300 border-4 border-yellow-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
@@ -152,10 +138,10 @@ export function HeroSection() {
                 </span>
                 <h2 className="text-xs sm:text-sm md:text-lg font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif max-w-full break-words">
                   {typedBlog}
-                  {typedBlog.length < blogPhrases[blogIndex].length && <span className="animate-pulse">|</span>}
+                  {typedBlog.length < blogPhrase.length && <span className="animate-pulse">|</span>}
                 </h2>
                 <p className="text-xs sm:text-sm md:text-base mb-2 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))] max-w-full break-words">
-                  Explore world-class most useful information to live a complete life
+                Explore world-class most useful information to live a complete life
                 </p>
                 <Button
                   size="sm"
