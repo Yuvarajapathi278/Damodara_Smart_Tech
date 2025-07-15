@@ -34,7 +34,7 @@ Message: ${formData.message}`;
   };
 
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-20 relative" data-aos="fade-up">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-neon-blue/10 rounded-full filter blur-[100px]"></div>
@@ -42,7 +42,7 @@ Message: ${formData.message}`;
       </div>
       
       <div className="container relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200">
           <h2 className="text-4xl md:text-5xl tracking-wider text-neon-purple mb-3 font-bold">Contact Us</h2>
           <h3 className="text-xl md:text-2xl font-bold mb-6">
             Start Your <span className="gradient-text">Digital Journey</span>
@@ -53,7 +53,7 @@ Message: ${formData.message}`;
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12" data-aos="fade-up" data-aos-delay="400">
           {/* Contact Form */}
           <div>
             <div className="glass-card rounded-xl p-8">
