@@ -89,10 +89,10 @@ export function HeroSection() {
             data-aos="fade-right"
             data-aos-delay="200"
           >
-            <div className="aspect-square w-64 md:w-96 max-w-[380px] relative flex items-center justify-center ">
+            <div className="aspect-square w-56 sm:w-64 md:w-96 max-w-[90vw] relative flex items-center justify-center ">
               {/* 3D-like effect */}
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
-              <div className="relative z-10 flex flex-col justify-center items-center w-[85%] h-[85%] mx-auto text-center">
+              <div className="relative z-10 flex flex-col justify-center items-center w-[90%] h-[90%] mx-auto text-center px-1 sm:px-2 py-2 overflow-hidden">
                 <span className="text-xs md:text-sm uppercase tracking-wider text-red-700 bg-red-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
                   {typedLabel}
                   {typedLabel.length < labelText.length && <span className="animate-pulse">|</span>}
@@ -143,18 +143,18 @@ export function HeroSection() {
             data-aos="fade-left"
             data-aos-delay="600"
           >
-            <div className="aspect-square w-64 md:w-96 max-w-[380px] relative flex items-center justify-center ">
+            <div className="aspect-square w-56 sm:w-64 md:w-96 max-w-[90vw] relative flex items-center justify-center ">
               {/* 3D-like effect */}
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-yellow-400/30 bg-gradient-to-br from-yellow-100 via-yellow-50 to-yellow-300 border-4 border-yellow-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
-              <div className="relative z-10 flex flex-col justify-center items-center w-[85%] h-[85%] mx-auto text-center">
-                <span className="text-xs md:text-sm uppercase tracking-wider text-green-700 bg-green-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
+              <div className="relative z-10 flex flex-col justify-center items-center w-[90%] h-[90%] mx-auto text-center px-1 sm:px-2 py-2 overflow-hidden">
+                <span className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-green-700 bg-green-200/40 px-2 sm:px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold max-w-[90%] break-words whitespace-normal text-center">
                   Explore life's most important aspects
                 </span>
-                <h2 className="text-base md:text-lg font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif">
+                <h2 className="text-xs sm:text-sm md:text-lg font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-green-500 to-yellow-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif max-w-full break-words">
                   {typedBlog}
                   {typedBlog.length < blogPhrases[blogIndex].length && <span className="animate-pulse">|</span>}
                 </h2>
-                <p className="text-xs md:text-sm mb-2 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
+                <p className="text-xs sm:text-sm md:text-base mb-2 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))] max-w-full break-words">
                   Explore world-class favorite books, stories, and more!
                 </p>
                 <Button
@@ -162,7 +162,7 @@ export function HeroSection() {
                   className="w-full md:w-auto shadow-md mt-1 text-base opacity-80 cursor-not-allowed bg-white"
                   disabled
                 >
-                  <span className="bg-gradient-to-r from-green-400 via-yellow-400 to-blue-500 bg-clip-text text-transparent animate-gradient-text font-extrabold drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]" style={{WebkitTextStroke: '0.5px #222'}}>
+                  <span className="bg-gradient-to-r from-green-400 via-yellow-400 to-blue-500 bg-clip-text text-transparent animate-gradient-text font-extrabold drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]" style={{WebkitTextStroke: '0.5px #222', fontSize: 'clamp(0.85rem, 3vw, 1.15rem)'}}>
                     Info Coming Soon
                   </span>
                 </Button>
