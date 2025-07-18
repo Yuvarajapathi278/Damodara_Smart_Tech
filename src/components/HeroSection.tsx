@@ -44,16 +44,21 @@ export function HeroSection() {
             <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
               {/* Original size glowing 3D blue circle, matching right side */}
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
-              <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-4 overflow-hidden">
-                <h2 className="text-base md:text-lg font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
-                  Personal App: Your Digital Identity, Income Engine & Creative Space
+              <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-3 overflow-hidden">
+                <h2 className="text-base md:text-lg font-extrabold mb-1 text-center leading-snug break-words whitespace-normal text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
+                  Personal App Revolution
                 </h2>
-                <p className="text-xs md:text-sm mb-2 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-blue-900 break-words max-w-[90%]">
-                  The next revolution is here: <b>The Personal App Revolution</b>. Unlike social media or websites, a Personal App is your own digital home—fully owned, fully yours. It’s your mind space, work space, growth space, connect space, and income engine—all in one. No code or team needed. <b>It’s your OS for life, powered by your values.</b>
-                </p>
+                <div className="text-sm md:text-base text-blue-900 font-medium leading-snug max-w-[90%] space-y-1 break-words whitespace-normal overflow-hidden">
+                  <p className="mb-1">Your Digital Identity, Income Engine & Creative Space</p>
+                  <ul className="list-disc list-inside text-left mx-auto w-fit">
+                    <li>Food & machines: The agricultural and industrial revolutions.</li>
+                    <li>Knowledge: The information revolution.</li>
+                  </ul>
+                  <p className="mt-1 font-semibold text-center">Now, a new era begins—<br/>The Personal App Revolution.</p>
+                </div>
                 <Button
                   size="sm"
-                  className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1"
+                  className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-2"
                   onClick={() => navigate('/personal-app')}
                 >
                   Read More
