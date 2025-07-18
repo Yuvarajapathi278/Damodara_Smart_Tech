@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Apply from "./pages/Apply";
 import BlogDetails from "./pages/BlogDetails";
+import PersonalAppPage from "./pages/personal-app";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ function AppWithGA() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/apply" element={<Apply />} />
       <Route path="/blog/tech-trends-2025" element={<BlogDetails />} />
+      <Route path="/personal-app" element={<PersonalAppPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
