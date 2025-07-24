@@ -33,8 +33,8 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-2">
                 <Mail size={20} className="text-muted-foreground" />
-                <a href="mailto:damodarasmarttech@gmail.com" className="text-muted-foreground hover:text-foreground transition-colors">
-                  damodarasmarttech@gmail.com
+                <a href="mailto:contact@damodarastech.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                  contact@damodarastech.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
