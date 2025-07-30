@@ -1,0 +1,104 @@
+import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "./ThemeProvider";
+import { useNavigate } from "react-router-dom";
+
+export function HeroSection() {
+  const { theme } = useTheme();
+  const navigate = useNavigate();
+
+  // Typewriter for Book Blog Circle (right)
+  const blogPhrase = 'Words that empowers. Wisdom that transforms.';
+  const [typedBlog, setTypedBlog] = useState("");
+  const [blogLoop, setBlogLoop] = useState(0);
+  useEffect(() => {
+    let i = 0;
+    setTypedBlog("");
+    const interval = setInterval(() => {
+      setTypedBlog(blogPhrase.slice(0, i + 1));
+      i++;
+      if (i === blogPhrase.length) {
+        clearInterval(interval);
+        setTimeout(() => setBlogLoop(loop => loop + 1), 1800); // restart after delay
+      }
+    }, 40);
+    return () => clearInterval(interval);
+  }, [blogLoop]);
+
+  return (
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center pt-24 pb-20"
+      data-aos="fade-up"
+    >
+      {/* Background Effects (remove left circle) */}
+      <div className="absolute inset-0 z-0">
+        {/* Soap blue 3D-like effect on the left, matching right side */}
+        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-[hsl(var(--sage))]/20 rounded-full filter blur-[100px] animate-float" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-1/3 right-1/3 w-48 h-48 bg-[hsl(var(--peach))]/20 rounded-full filter blur-[80px] animate-float" style={{ animationDelay: "2s" }}></div>
+      </div>
+      <div className="container relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Left: Personal App Revolution summary inside original size glowing blue 3D circle */}
+          <div className="flex-1 flex justify-center md:justify-start mb-8 md:mb-0" data-aos="fade-right" data-aos-delay="200">
+            <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
+              {/* Original size glowing 3D blue circle, matching right side */}
+              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
+              <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-3 overflow-hidden">
+                <h2 className="text-base md:text-lg font-extrabold mb-1 text-center leading-snug break-words whitespace-normal text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
+                  Personal App Revolution
+                </h2>
+                <div className="text-sm md:text-base text-blue-900 font-medium leading-snug max-w-[90%] space-y-1 break-words whitespace-normal overflow-hidden">
+                  <p className="mb-1">Your Digital Identity, Income Engine & Creative Space</p>
+                  <ul className="list-disc list-inside text-left mx-auto w-fit">
+                    <li>Food & machines: The agricultural and industrial revolutions.</li>
+                    <li>Knowledge: The information revolution.</li>
+                  </ul>
+                  <p className="mt-1 font-semibold text-center">Now, a new era begins—<br/>The Personal App Revolution.</p>
+                </div>
+                <Button
+                  size="sm"
+                  className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-2"
+                  onClick={() => navigate('/personal-app')}
+                >
+                  Read More
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/* Center: Main Heading and Paragraph (static) */}
+          <div className="flex-1 flex flex-col items-center justify-center text-center px-2 md:px-8 mb-8 md:mb-0" data-aos="zoom-in" data-aos-delay="400">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: '#8B5CF6', minHeight: '2.5em' }}>
+              Grow Your Innovation with Damodara Smart Tech
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground max-w-xl">
+              We help forward-thinking companies build stunning digital experiences that drive growth and delight users. Founded in 2024, our mission is to empower your business with the latest in technology and creativity.
+            </p>
+          </div>
+          {/* Right: Book Blog Circle */}
+          <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
+            <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
+              {/* 3D-like effect */}
+              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-yellow-400/30 bg-gradient-to-br from-yellow-100 via-yellow-50 to-yellow-300 border-4 border-yellow-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
+              <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-4 overflow-hidden">
+                <h2 className="text-sm md:text-lg font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-yellow-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
+                  Happiness Is a Mindset
+                </h2>
+                <p className="text-xs md:text-base text-yellow-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2">
+                  The Endless Search and the Truth We Overlook from the people live in skyscrapers, from sages in solitude to CEOs in glass towers — every human being is in search of the same thing: <b>happiness</b>.
+                </p>
+                <Button
+                  size="sm"
+                  className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-yellow-900 w-full md:w-auto shadow-md mt-2"
+                  onClick={() => navigate('/happiness-mindset')}
+                >
+                  Read More
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
