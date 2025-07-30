@@ -35,8 +35,8 @@ const ServiceDetail: React.FC = () => {
       <div className="flex flex-col items-center justify-center min-h-screen text-center">
         <h1 className="text-4xl font-bold text-red-500">404 - Service Not Found</h1>
         <p className="mt-4 text-gray-600">The service you are looking for does not exist.</p>
-        <Link to="/services" className="mt-6 text-primary hover:underline">
-          Back to Services
+        <Link to="/" className="mt-6 text-primary hover:underline">
+          Back to Home
         </Link>
       </div>
     );
@@ -57,9 +57,9 @@ const ServiceDetail: React.FC = () => {
       <main className="flex-grow pt-24">
         <div className="container px-4 py-12 mx-auto">
           {/* Back Button */}
-          <Link to="/services" className="flex items-center gap-2 text-primary hover:underline mb-8">
+          <Link to="/" className="flex items-center gap-2 text-primary hover:underline mb-8">
             <ArrowLeft className="w-4 h-4" />
-            Back to Services
+            Back to Home
           </Link>
 
           {/* Service Details */}
