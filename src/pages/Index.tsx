@@ -95,32 +95,35 @@ const Index = () => {
               return (
                 <div className="flex justify-center">
                   <div className="glass-card rounded-2xl border border-white/10 p-3 md:p-4 flex flex-col gap-2 md:gap-3 items-center w-full max-w-2xl shadow-xl transition-transform hover:scale-[1.025] hover:shadow-2xl bg-background/80" style={{ perspective: '800px', transformStyle: 'preserve-3d' }}>
-                    <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-red-700 bg-red-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
+                    <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-green-700 bg-green-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
                       {typedLabel}
                       {typedLabel.length < labelText.length && <span className="animate-pulse">|</span>}
                     </span>
                     <h4 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-1 text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif">
-                      Vacancies for Full Stack Developer
+                      Python Web Scraper & UI/UX Designer
                     </h4>
                     <p className="text-xs md:text-sm lg:text-base mb-1 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                      We're recruiting Full Stack Developers to help us build innovative, high-quality web and mobile applications. If you're passionate about app development and eager to work with modern technologies, we'd love to hear from you.
+                      Build lean, fast applications combining Python web scraping automation with modern UI/UX design for our fast-growing tech solutions.
                     </p>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-x-1 gap-y-1 text-xs md:text-sm mb-1 justify-center">
-                      <span className="font-semibold text-foreground">Role:</span>
-                      <span className="text-muted-foreground">Full Stack Developer</span>
+                      <span className="font-semibold text-foreground">📍 Location:</span>
+                      <span className="text-muted-foreground">Chennai</span>
+                      <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
+                      <span className="font-semibold text-foreground">Type:</span>
+                      <span className="text-muted-foreground">Full-time</span>
                       <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
                       <span className="font-semibold text-foreground">Vacancies:</span>
                       <span className="text-muted-foreground">2</span>
-                      <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
-                      <span className="font-semibold text-foreground">Application Deadline:</span>
-                      <span className="text-muted-foreground">12th July 25</span>
+                    </div>
+                    <div className="text-xs md:text-sm text-center text-muted-foreground mb-2">
+                      <strong>Key Skills:</strong> Python web scraping • UI/UX design • Data extraction & automation
                     </div>
                     <Button
                       size="lg"
-                      className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1 opacity-60 cursor-not-allowed"
-                      disabled
+                      className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1"
+                      onClick={() => window.location.href = 'mailto:damodarasmarttech@gmail.com?subject=Application for Python Web Scraper & UI/UX Designer&body=Dear Hiring Team,%0D%0A%0D%0AI am interested in applying for the Python Web Scraper & UI/UX Designer position.%0D%0A%0D%0APlease find my details below:%0D%0A%0D%0AName: %0D%0APhone: %0D%0AExperience: %0D%0APortfolio/GitHub: %0D%0A%0D%0AI have attached my resume for your review.%0D%0A%0D%0AThank you for your consideration.%0D%0A%0D%0ABest regards'}
                     >
-                      Application Closed
+                      Apply Now
                     </Button>
                   </div>
                 </div>

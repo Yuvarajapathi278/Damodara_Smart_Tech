@@ -75,24 +75,29 @@ export function HeroSection() {
               We help forward-thinking companies build stunning digital experiences that drive growth and delight users. Founded in 2024, our mission is to empower your business with the latest in technology and creativity.
             </p>
           </div>
-          {/* Right: Book Blog Circle */}
+          {/* Right: Job Vacancy Circle */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
-              {/* 3D-like effect */}
-              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-yellow-400/30 bg-gradient-to-br from-yellow-100 via-yellow-50 to-yellow-300 border-4 border-yellow-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
+              {/* 3D-like effect - Changed to green/blue gradient */}
+              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-blue-50 to-green-300 border-4 border-green-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-4 overflow-hidden">
-                <h2 className="text-sm md:text-lg font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-yellow-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
-                  Happiness Is a Mindset
+                <h2 className="text-sm md:text-lg font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-green-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
+                  We're Hiring!
                 </h2>
-                <p className="text-xs md:text-base text-yellow-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2">
-                  The Endless Search and the Truth We Overlook from the people live in skyscrapers, from sages in solitude to CEOs in glass towers — every human being is in search of the same thing: <b>happiness</b>.
-                </p>
+                <h3 className="text-xs md:text-sm font-bold mb-1 text-center leading-tight text-green-800 max-w-[90%]">
+                  Python Web Scraper & UI/UX Designer
+                </h3>
+                <div className="text-xs md:text-sm text-green-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2 space-y-1">
+                  <p className="mb-1">📍 Chennai | Full-time</p>
+                  <p className="mb-1">🎯 2 Openings Available</p>
+                  <p className="text-[10px] md:text-xs">Build automation tools & design user experiences</p>
+                </div>
                 <Button
                   size="sm"
-                  className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 text-yellow-900 w-full md:w-auto shadow-md mt-2"
-                  onClick={() => navigate('/happiness-mindset')}
+                  className="bg-gradient-to-r from-green-400 via-green-300 to-green-500 text-green-900 w-full md:w-auto shadow-md mt-2"
+                  onClick={() => window.location.href = 'mailto:damodarasmarttech@gmail.com?subject=Application for Python Web Scraper & UI/UX Designer&body=Dear Hiring Team,%0D%0A%0D%0AI am interested in applying for the Python Web Scraper & UI/UX Designer position.%0D%0A%0D%0APlease find my details below:%0D%0A%0D%0AName: %0D%0APhone: %0D%0AExperience: %0D%0APortfolio/GitHub: %0D%0A%0D%0AI have attached my resume for your review.%0D%0A%0D%0AThank you for your consideration.%0D%0A%0D%0ABest regards'}
                 >
-                  Read More
+                  Apply Now
                 </Button>
               </div>
             </div>
