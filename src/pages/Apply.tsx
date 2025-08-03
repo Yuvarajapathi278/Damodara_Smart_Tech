@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 export default function Apply() {
   const navigate = useNavigate();
+  const location = useLocation();
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +19,18 @@ export default function Apply() {
     message: '',
     portfolio_links: ''
   });
+
+  // Auto-fill position if coming from job opportunity
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const position = searchParams.get('position');
+    if (position) {
+      setFormData(prev => ({
+        ...prev,
+        position: decodeURIComponent(position)
+      }));
+    }
+  }, [location]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +55,7 @@ Best regards,
 ${formData.name}
 
 ==================================================
-IMPORTANT: PLEASE ATTACH YOUR RESUME TO THIS EMAIL
+📎 ⭐ IMPORTANT: PLEASE ATTACH YOUR RESUME ⭐ 📎
 ==================================================
     `.trim();
 
@@ -192,4 +206,4 @@ IMPORTANT: PLEASE ATTACH YOUR RESUME TO THIS EMAIL
       </div>
     </div>
   );
-} 
+}

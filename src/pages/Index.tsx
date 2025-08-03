@@ -121,7 +121,7 @@ const Index = () => {
                     <Button
                       size="lg"
                       className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1"
-                      onClick={() => window.location.href = 'mailto:damodarasmarttech@gmail.com?subject=Application for Python Web Scraper & UI/UX Designer&body=Dear Hiring Team,%0D%0A%0D%0AI am interested in applying for the Python Web Scraper & UI/UX Designer position.%0D%0A%0D%0APlease find my details below:%0D%0A%0D%0AName: %0D%0APhone: %0D%0AExperience: %0D%0APortfolio/GitHub: %0D%0A%0D%0AI have attached my resume for your review.%0D%0A%0D%0AThank you for your consideration.%0D%0A%0D%0ABest regards'}
+                      onClick={() => navigate('/apply?position=Python%20Web%20Scraper%20%26%20UI%2FUX%20Designer')}
                     >
                       Apply Now
                     </Button>
