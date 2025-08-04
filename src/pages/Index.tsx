@@ -113,9 +113,8 @@ const Index = () => {
                       <span className="text-muted-foreground">Full-time</span>
                       <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
                       <span className="font-semibold text-foreground">Vacancies:</span>
-                      <span className="text-muted-foreground">2</span>
-                      <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
-                      <span className="font-semibold text-foreground">Application Deadline:</span>
+                      <span className="text-muted-foreground">2 </span>
+                      <span className="font-semibold text-foreground">| Application Deadline:</span>
                       <span className="text-muted-foreground">10 Aug 2025</span>
                     </div>
                     <div className="text-xs md:text-sm text-center text-muted-foreground mb-2">
