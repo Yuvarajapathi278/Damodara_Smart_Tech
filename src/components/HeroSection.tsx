@@ -90,6 +90,7 @@ export function HeroSection() {
                 <div className="text-sm md:text-base lg:text-base text-green-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2 space-y-1">
                   <p className="mb-1">📍 Chennai | Full-time</p>
                   <p className="mb-1">🎯 2 Openings Available</p>
+                  <p className="mb-1 font-semibold">⏰ Application Deadline: 10 Aug 2025</p>
                   <p className="text-xs md:text-sm lg:text-sm">Build automation tools & design user experiences</p>
                 </div>
                 <Button
