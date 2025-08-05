@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, MessageCircle, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -24,9 +24,9 @@ export function Footer() {
               >
                 <MessageCircle size={20} />
               </a>
-              {/* YouTube Channel */}
+              {/* YouTube Channel - Now with your specified link */}
               <a
-                href="https://www.youtube.com/channel/0" // Use your provided YouTube link here
+                href="https://youtube.com/@damodarasmarttechpvtlted?si=80YucvYFKOzbmGqw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-neon-blue transition-colors"
