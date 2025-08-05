@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "./ThemeProvider";
 import { useNavigate } from "react-router-dom";
-import { Youtube } from "lucide-react"; // Import the YouTube icon
+import { Youtube } from "lucide-react";
 
 export function HeroSection() {
   const { theme } = useTheme();
   const navigate = useNavigate();
 
-  // Typewriter for Book Blog Circle (right) - This is now unused, but I'll keep the hook for consistency in case you want to use it elsewhere.
+  // Typewriter for Book Blog Circle (right)
   const blogPhrase = 'Words that empowers. Wisdom that transforms.';
   const [typedBlog, setTypedBlog] = useState("");
   const [blogLoop, setBlogLoop] = useState(0);
@@ -91,22 +91,22 @@ export function HeroSection() {
                 <div className="text-sm md:text-base lg:text-base text-green-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2 space-y-1">
                   <p className="mb-1">📍 Chennai | Full-time</p>
                   <p className="mb-1">🎯 2 Openings Available</p>
-                  {/* Removed this line: <p className="text-xs md:text-sm lg:text-sm">Build automation tools & design user experiences</p> */}
                   <p className="mb-1 font-semibold">⏰ Application Deadline: 10 Aug 2025</p>
                 </div>
-                {/* Added the new YouTube subscription section */}
+                {/* Added the new YouTube subscription section with "click here" */}
                 <div className="flex flex-col items-center mt-2">
                   <p className="text-xs md:text-sm font-semibold text-green-800">
-                    Subscribe to our YouTube channel for latest updates
+                    Subscribe to our YouTube channel for latest updates,{" "}
+                    <a
+                      href="https://youtube.com/@damodarasmarttechpvtlted?si=4UUnn7yl48bKIXw4"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-green-800 hover:text-green-600 transition-colors underline"
+                    >
+                      click here{" "}
+                      <Youtube size={16} className="ml-1 neon-glow-icon" />
+                    </a>
                   </p>
-                  <a
-                    href="https://youtube.com/@damodarasmarttechpvtlted?si=4UUnn7yl48bKIXw4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-800 hover:text-green-600 transition-colors mt-1 neon-text-green"
-                  >
-                    <Youtube size={24} className="neon-glow-icon" />
-                  </a>
                 </div>
                 <Button
                   size="sm"
