@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, MessageCircle, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -24,6 +24,19 @@ export function Footer() {
               >
                 <MessageCircle size={20} />
               </a>
+              {/* YouTube Channel */}
+              <a
+                href="https://www.youtube.com/channel/0" // Use your provided YouTube link here
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-neon-blue transition-colors"
+              >
+                <Youtube size={20} />
+              </a>
+            </div>
+            {/* New section for YouTube subscription */}
+            <div className="mt-4">
+              <p className="text-sm text-muted-foreground">Subscribe to our YouTube channel for latest updates.</p>
             </div>
           </div>
 
@@ -54,7 +67,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Damodara Smart Tech. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Damodara Smart Tech. All rights reserved.</p>
         </div>
       </div>
     </footer>
