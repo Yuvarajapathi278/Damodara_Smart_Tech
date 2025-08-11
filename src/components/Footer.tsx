@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, MessageCircle, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Youtube, Linkedin } from "lucide-react"; // Added Linkedin import
 
 export function Footer() {
   return (
@@ -15,6 +15,7 @@ export function Footer() {
             <p className="text-muted-foreground mt-2 mb-6">
               Founded in 2024 by Dr. Dev and Dr. Chirag, creating innovative digital solutions for forward-thinking businesses.
             </p>
+            {/* Social Icons Section - UPDATED */}
             <div className="flex space-x-4">
               <a
                 href="https://wa.me/919342832456"
@@ -24,7 +25,15 @@ export function Footer() {
               >
                 <MessageCircle size={20} />
               </a>
-              {/* YouTube Channel - Now with your specified link */}
+              {/* LinkedIn Icon Added Here */}
+              <a
+                href="https://www.linkedin.com/in/damodara-smart-tech-pvt-ltd-1810b0377"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-neon-blue transition-colors"
+              >
+                <Linkedin size={20} />
+              </a>
               <a
                 href="https://youtube.com/@damodarasmarttechpvtlted?si=80YucvYFKOzbmGqw"
                 target="_blank"
@@ -34,7 +43,6 @@ export function Footer() {
                 <Youtube size={20} />
               </a>
             </div>
-            {/* New section for YouTube subscription */}
             <div className="mt-4">
               <p className="text-sm text-muted-foreground">Subscribe to our YouTube channel for latest updates.</p>
             </div>
