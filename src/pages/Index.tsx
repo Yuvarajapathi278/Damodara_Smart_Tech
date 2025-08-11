@@ -8,13 +8,9 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-// import RotatableSeatMap from '../components/RotatableSeatMap';
 
 const Index = () => {
   const navigate = useNavigate();
-  const [angle, setAngle] = useState(0);
-
-  // No AOS needed, Framer Motion handles animations
 
   return (
     <div className="min-h-screen flex flex-col">

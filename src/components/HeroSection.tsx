@@ -34,7 +34,6 @@ export function HeroSection() {
     >
       {/* Background Effects (remove left circle) */}
       <div className="absolute inset-0 z-0">
-        {/* Soap blue 3D-like effect on the left, matching right side */}
         <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-[hsl(var(--sage))]/20 rounded-full filter blur-[100px] animate-float" style={{ animationDelay: "1s" }}></div>
         <div className="absolute top-1/3 right-1/3 w-48 h-48 bg-[hsl(var(--peach))]/20 rounded-full filter blur-[80px] animate-float" style={{ animationDelay: "2s" }}></div>
       </div>
@@ -43,7 +42,6 @@ export function HeroSection() {
           {/* Left: Personal App Revolution summary inside original size glowing blue 3D circle */}
           <div className="flex-1 flex justify-center md:justify-start mb-8 md:mb-0" data-aos="fade-right" data-aos-delay="200">
             <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
-              {/* Original size glowing 3D blue circle, matching right side */}
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-3 overflow-hidden">
                 <h2 className="text-base md:text-lg font-extrabold mb-1 text-center leading-snug break-words whitespace-normal text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
@@ -76,10 +74,9 @@ export function HeroSection() {
               We help forward-thinking companies build stunning digital experiences that drive growth and delight users. Founded in 2024, our mission is to empower your business with the latest in technology and creativity.
             </p>
           </div>
-          {/* Right: Job Vacancy Circle - UPDATED */}
+          {/* Right: Job Vacancy Circle - UPDATED FOR CLOSED APPLICATION */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
-              {/* 3D-like effect - Changed to gray/muted gradient */}
               <div className="absolute inset-0 rounded-full opacity-80 shadow-2xl shadow-gray-400/30 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-300 border-4 border-gray-200 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-4 overflow-hidden">
                 <h2 className="text-base md:text-xl lg:text-2xl font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-gray-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
