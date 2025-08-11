@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "./ThemeProvider";
 import { useNavigate } from "react-router-dom";
-import { Youtube, Linkedin } from "lucide-react"; // Added Linkedin import
+import { Youtube, Linkedin } from "lucide-react";
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -56,14 +56,14 @@ export function HeroSection() {
               We help forward-thinking companies build stunning digital experiences that drive growth and delight users. Founded in 2024, our mission is to empower your business with the latest in technology and creativity.
             </p>
           </div>
-          {/* Right: Job Vacancy Circle - UPDATED WITH GREEN THEME */}
+          {/* Right: Job Vacancy Circle - FIXED */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
-              {/* FIXED: Using green theme for the glowing effect */}
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-200 via-green-100 to-green-300 border-4 border-green-200 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-4 overflow-hidden">
+                {/* FIXED: Title restored to "We're Hiring!" */}
                 <h2 className="text-base md:text-xl lg:text-2xl font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-green-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
-                  Position Closed
+                  We're Hiring!
                 </h2>
                 <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1 text-center leading-tight text-green-800 max-w-[90%]">
                   Python Web Scraper & UI/UX Designer
