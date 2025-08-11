@@ -80,7 +80,7 @@ const Index = () => {
             </div>
             {/* Premier Job Opportunity 3D Hover Card - UPDATED FOR CLOSED APPLICATION */}
             {(() => {
-              const labelText = "Position Closed";
+              const labelText = "Premier Job Opportunity";
               const [typedLabel, setTypedLabel] = React.useState("");
               React.useEffect(() => {
                 let i = 0;
