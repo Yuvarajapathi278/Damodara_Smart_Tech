@@ -74,63 +74,18 @@ const Index = () => {
               <h3 className="text-xl md:text-2xl font-bold mb-6">
                 <span className="gradient-text">Join Our Innovative Team</span>
               </h3>
-              <p className="text-base text-muted-foreground">
-                Be part of a dynamic team that's shaping the future of digital technology. 
-                Explore exciting career opportunities with us.
-              </p>
             </div>
-            {/* Premier Job Opportunity 3D Hover Card */}
-            {(() => {
-              const labelText = "Premier Job Opportunity";
-              const [typedLabel, setTypedLabel] = React.useState("");
-              React.useEffect(() => {
-                let i = 0;
-                const interval = setInterval(() => {
-                  setTypedLabel(labelText.slice(0, i + 1));
-                  i++;
-                  if (i === labelText.length) clearInterval(interval);
-                }, 40);
-                return () => clearInterval(interval);
-              }, []);
-              return (
-                <div className="flex justify-center">
-                  <div className="glass-card rounded-2xl border border-white/10 p-3 md:p-4 flex flex-col gap-2 md:gap-3 items-center w-full max-w-2xl shadow-xl transition-transform hover:scale-[1.025] hover:shadow-2xl bg-background/80" style={{ perspective: '800px', transformStyle: 'preserve-3d' }}>
-                    <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-green-700 bg-green-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
-                      {typedLabel}
-                      {typedLabel.length < labelText.length && <span className="animate-pulse">|</span>}
-                    </span>
-                    <h4 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-1 text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif">
-                      Python Web Scraper & UI/UX Designer
+            {/* Follow for Updates Section */}
+            <div className="flex justify-center">
+                <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col gap-4 items-center w-full max-w-2xl shadow-xl text-center bg-background/80">
+                    <h4 className="text-xl font-bold text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                        Stay Connected for Future Opportunities
                     </h4>
-                    <p className="text-xs md:text-sm lg:text-base mb-1 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                      Build lean, fast applications combining Python web scraping automation with modern UI/UX design for our fast-growing tech solutions.
+                    <p className="text-base text-muted-foreground">
+                        For the latest technology insights and career opportunities, follow our official social media channels and regularly visit our website.
                     </p>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-x-1 gap-y-1 text-xs md:text-sm mb-1 justify-center">
-                      <span className="font-semibold text-foreground">📍 Location:</span>
-                      <span className="text-muted-foreground">Chennai</span>
-                      <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
-                      <span className="font-semibold text-foreground">Type:</span>
-                      <span className="text-muted-foreground">Full-time</span>
-                      <span className="hidden sm:inline mx-2 text-muted-foreground">|</span>
-                      <span className="font-semibold text-foreground">Vacancies:</span>
-                      <span className="text-muted-foreground">2 </span>
-                      <span className="font-semibold text-foreground">| Application Deadline:</span>
-                      <span className="text-muted-foreground">10 Aug 2025</span>
-                    </div>
-                    <div className="text-xs md:text-sm text-center text-muted-foreground mb-2">
-                      <strong>Key Skills:</strong> Python web scraping • UI/UX design • Data extraction & automation
-                    </div>
-                    <Button
-                      size="lg"
-                      className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1"
-                      onClick={() => navigate('/apply?position=Python%20Web%20Scraper%20%26%20UI%2FUX%20Designer')}
-                    >
-                      Apply Now
-                    </Button>
-                  </div>
                 </div>
-              );
-            })()}
+            </div>
           </div>
         </div>
         <div id="contact" className="py-20 relative">
