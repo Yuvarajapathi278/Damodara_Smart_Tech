@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "./ThemeProvider";
 import { useNavigate } from "react-router-dom";
-import { Youtube } from "lucide-react";
+import { Youtube, Linkedin } from "lucide-react"; // Added Linkedin import
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -56,40 +56,48 @@ export function HeroSection() {
               We help forward-thinking companies build stunning digital experiences that drive growth and delight users. Founded in 2024, our mission is to empower your business with the latest in technology and creativity.
             </p>
           </div>
-          {/* Right: Job Vacancy Circle - FIXED */}
+          {/* Right: Job Vacancy Circle - UPDATED WITH GREEN THEME */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
-              {/* FIXED: Restored animate-pulse and updated to a red theme for "closed" status */}
-              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-red-400/30 bg-gradient-to-br from-red-200 via-red-100 to-red-300 border-4 border-red-200 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
+              {/* FIXED: Using green theme for the glowing effect */}
+              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-200 via-green-100 to-green-300 border-4 border-green-200 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-4 overflow-hidden">
-                <h2 className="text-base md:text-xl lg:text-2xl font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-red-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
+                <h2 className="text-base md:text-xl lg:text-2xl font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-green-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
                   Position Closed
                 </h2>
-                <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1 text-center leading-tight text-red-800 max-w-[90%]">
+                <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1 text-center leading-tight text-green-800 max-w-[90%]">
                   Python Web Scraper & UI/UX Designer
                 </h3>
-                <div className="text-sm md:text-base lg:text-base text-red-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2 space-y-1">
+                <div className="text-sm md:text-base lg:text-base text-green-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2 space-y-1">
                   <p className="mb-1 font-semibold">⏰ Deadline Passed: 10 Aug 2025</p>
                 </div>
                 <Button
                   size="sm"
-                  className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 text-red-900 w-full md:w-auto shadow-md mt-2 opacity-60 cursor-not-allowed"
+                  className="bg-gradient-to-r from-green-400 via-green-300 to-green-500 text-green-900 w-full md:w-auto shadow-md mt-2 opacity-60 cursor-not-allowed"
                   disabled
                 >
                   Application Closed
                 </Button>
-                <div className="flex flex-col items-center mt-3">
-                  <p className="text-xs md:text-sm font-semibold text-red-800">
-                    Follow us for future updates:{" "}
+                <div className="flex flex-col items-center mt-3 text-xs md:text-sm font-semibold text-green-800">
+                  <p>Follow us for future updates</p>
+                  <div className="flex items-center gap-4 mt-1">
                     <a
                       href="https://youtube.com/@damodarasmarttechpvtlted?si=4UUnn7yl48bKIXw4"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-red-800 hover:text-red-600 transition-colors"
+                      className="inline-flex items-center hover:text-green-600 transition-colors underline"
                     >
-                      <Youtube size={16} className="ml-1" />
+                      Click here <Youtube size={16} className="ml-1" />
                     </a>
-                  </p>
+                    <a
+                      href="https://www.linkedin.com/in/damodara-smart-tech-pvt-ltd-1810b0377"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center hover:text-blue-600 transition-colors"
+                    >
+                      <Linkedin size={16} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
