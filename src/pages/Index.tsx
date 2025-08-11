@@ -8,9 +8,13 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+// import RotatableSeatMap from '../components/RotatableSeatMap';
 
 const Index = () => {
   const navigate = useNavigate();
+  const [angle, setAngle] = useState(0);
+
+  // No AOS needed, Framer Motion handles animations
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -70,18 +74,54 @@ const Index = () => {
               <h3 className="text-xl md:text-2xl font-bold mb-6">
                 <span className="gradient-text">Join Our Innovative Team</span>
               </h3>
+              <p className="text-base text-muted-foreground">
+                For the latest technology insights and future career opportunities, follow our official social media channels and regularly visit our website.
+              </p>
             </div>
-            {/* Follow for Updates Section */}
-            <div className="flex justify-center">
-                <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col gap-4 items-center w-full max-w-2xl shadow-xl text-center bg-background/80">
-                    <h4 className="text-xl font-bold text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                        Stay Connected for Future Opportunities
+            {/* Premier Job Opportunity 3D Hover Card - UPDATED FOR CLOSED APPLICATION */}
+            {(() => {
+              const labelText = "Position Closed";
+              const [typedLabel, setTypedLabel] = React.useState("");
+              React.useEffect(() => {
+                let i = 0;
+                const interval = setInterval(() => {
+                  setTypedLabel(labelText.slice(0, i + 1));
+                  i++;
+                  if (i === labelText.length) clearInterval(interval);
+                }, 40);
+                return () => clearInterval(interval);
+              }, []);
+              return (
+                <div className="flex justify-center">
+                  <div className="glass-card rounded-2xl border border-white/10 p-3 md:p-4 flex flex-col gap-2 md:gap-3 items-center w-full max-w-2xl shadow-xl transition-transform hover:scale-[1.025] hover:shadow-2xl bg-background/80" style={{ perspective: '800px', transformStyle: 'preserve-3d' }}>
+                    <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-red-700 bg-red-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
+                      {typedLabel}
+                      {typedLabel.length < labelText.length && <span className="animate-pulse">|</span>}
+                    </span>
+                    <h4 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-1 text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif">
+                      Python Web Scraper & UI/UX Designer
                     </h4>
-                    <p className="text-base text-muted-foreground">
-                        For the latest technology insights and career opportunities, follow our official social media channels and regularly visit our website.
+                    <p className="text-xs md:text-sm lg:text-base mb-1 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
+                      This position is no longer accepting applications. Please follow our social channels for future openings.
                     </p>
+                    <div className="flex flex-wrap sm:flex-nowrap sm:items-center gap-x-4 gap-y-1 text-xs md:text-sm mb-1 justify-center">
+                      <span>📍 Location: Chennai</span>
+                      <span className="hidden sm:inline">|</span>
+                      <span>Type: Full-time</span>
+                      <span className="hidden sm:inline">|</span>
+                      <span>⏰ Deadline: 10 Aug 2025</span>
+                    </div>
+                    <Button
+                      size="lg"
+                      className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1 opacity-60 cursor-not-allowed"
+                      disabled
+                    >
+                      Application Closed
+                    </Button>
+                  </div>
                 </div>
-            </div>
+              );
+            })()}
           </div>
         </div>
         <div id="contact" className="py-20 relative">
