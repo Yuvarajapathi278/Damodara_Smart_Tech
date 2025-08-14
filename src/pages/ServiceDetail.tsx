@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { services } from "@/serviceData";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+//import { Footer } from "@/components/Footer";
 import { VideoBackground } from "@/components/VideoBackground";
 
 // Map of icons for services
@@ -115,7 +115,7 @@ const ServiceDetail: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <Footer />
+      
     </div>
   );
 };
