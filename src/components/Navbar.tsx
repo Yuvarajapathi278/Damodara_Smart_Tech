@@ -14,7 +14,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Home", sectionId: "hero" },
   { label: "About", sectionId: "about" },
-  { label: "Services", path: "/services" }, // Changed to use path
+  { label: "Services", path: "services" }, // Changed to use path
   { label: "Why Choose Us", sectionId: "why-choose-us" },
   { label: "Portfolio", sectionId: "portfolio" },
   { label: "Careers", sectionId: "careers" },

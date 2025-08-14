@@ -1,6 +1,19 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Code, Brain, Cloud, Lock, Rocket, MonitorSmartphone, Database, Bug, BarChart2, Globe, FileText } from "lucide-react";
+import {
+  ArrowLeft,
+  Code,
+  Brain,
+  Cloud,
+  Lock,
+  Rocket,
+  MonitorSmartphone,
+  Database,
+  Bug,
+  BarChart2,
+  Globe,
+  FileText
+} from "lucide-react";
 import { services } from "@/serviceData";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -23,18 +36,17 @@ const iconMap = {
 };
 
 const ServiceDetail: React.FC = () => {
-  // Extract the `slug` parameter from the URL (e.g., /services/ai-data)
   const { slug } = useParams<{ slug: string }>();
-
-  // Find the service that matches the `slug`
   const service = services.find((s) => s.slug === slug);
 
-  // If the service is not found, show a 404-like message
+  // Handle invalid slug (404)
   if (!service) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen text-center">
         <h1 className="text-4xl font-bold text-red-500">404 - Service Not Found</h1>
-        <p className="mt-4 text-gray-600">The service you are looking for does not exist.</p>
+        <p className="mt-4 text-gray-600">
+          The service you are looking for does not exist.
+        </p>
         <Link to="/" className="mt-6 text-primary hover:underline">
           Back to Home
         </Link>
@@ -42,7 +54,6 @@ const ServiceDetail: React.FC = () => {
     );
   }
 
-  // Get the corresponding icon for the service
   const Icon = iconMap[service.title];
 
   return (
@@ -54,12 +65,16 @@ const ServiceDetail: React.FC = () => {
       <Navbar />
 
       {/* Main Content */}
-      <main className="flex-grow pt-24">
+      {/* FIX: Added pb-20 so footer won't overlap last section */}
+      <main className="flex-grow pt-24 pb-20">
         <div className="container px-4 py-12 mx-auto">
           {/* Back Button */}
-          <Link to="/" className="flex items-center gap-2 text-primary hover:underline mb-8">
+          <Link
+            to="/#services"
+            className="flex items-center gap-2 text-primary hover:underline mb-8"
+          >
             <ArrowLeft className="w-4 h-4" />
-            Back to Home
+            Back to Services
           </Link>
 
           {/* Service Details */}
@@ -81,7 +96,9 @@ const ServiceDetail: React.FC = () => {
             <div className="mt-8">
               {service.detailedInfo.map((section, index) => (
                 <div key={index} className="mb-8">
-                  <h2 className="text-xl font-semibold mb-4 text-primary">{section.title}</h2>
+                  <h2 className="text-xl font-semibold mb-4 text-primary">
+                    {section.title}
+                  </h2>
                   <ul className="space-y-2">
                     {section.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start">
