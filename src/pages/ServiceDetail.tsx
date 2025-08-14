@@ -70,12 +70,14 @@ const ServiceDetail: React.FC = () => {
         <div className="container px-4 py-12 mx-auto">
           {/* Back Button */}
           <Link
-            to="/#services"
-            className="flex items-center gap-2 text-primary hover:underline mb-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Services
-          </Link>
+  to="/"
+  state={{ scrollTo: "services" }} // ✅ Tell homepage which section to scroll to
+  className="flex items-center gap-2 text-primary hover:underline mb-8"
+>
+  <ArrowLeft className="w-4 h-4" />
+  Back to Services
+</Link>
+
 
           {/* Service Details */}
           <div className="bg-white p-8 rounded-lg shadow-md">
