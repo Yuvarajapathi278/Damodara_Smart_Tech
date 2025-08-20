@@ -56,30 +56,31 @@ export function HeroSection() {
               We help forward-thinking companies build stunning digital experiences that drive growth and delight users. Founded in 2024, our mission is to empower your business with the latest in technology and creativity.
             </p>
           </div>
-          {/* Right: Job Vacancy Circle - FIXED */}
+          {/* Right: Job Vacancy Circle - RE-ENABLED */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-56 sm:w-64 md:w-96 relative flex items-center justify-center ">
-              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-200 via-green-100 to-green-300 border-4 border-green-200 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
+              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-blue-50 to-green-300 border-4 border-green-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-2 py-4 overflow-hidden">
-                {/* FIXED: Title restored to "We're Hiring!" */}
                 <h2 className="text-base md:text-xl lg:text-2xl font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-green-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
                   We're Hiring!
                 </h2>
                 <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1 text-center leading-tight text-green-800 max-w-[90%]">
-                  Python Web Scraper & UI/UX Designer
+                  3 Exciting Positions Available
                 </h3>
-                <div className="text-sm md:text-base lg:text-base text-green-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2 space-y-1">
-                  <p className="mb-1 font-semibold">⏰ Deadline Passed: 10 Aug 2025</p>
+                <div className="text-xs md:text-sm lg:text-base text-green-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-2 space-y-1">
+                  <p className="mb-1">📍 Chennai | Full-time</p>
+                  <p className="mb-1">🎯 6 Total Openings (2 each)</p>
+                  <p className="text-xs md:text-xs lg:text-sm">Full Stack Dev • UI/UX Designer • Python Scraper</p>
                 </div>
                 <Button
                   size="sm"
-                  className="bg-gradient-to-r from-green-400 via-green-300 to-green-500 text-green-900 w-full md:w-auto shadow-md mt-2 opacity-60 cursor-not-allowed"
-                  disabled
+                  className="bg-gradient-to-r from-green-400 via-green-300 to-green-500 text-green-900 w-full md:w-auto shadow-md mt-2"
+                  onClick={() => navigate('/apply')}
                 >
-                  Application Closed
+                  Apply Now
                 </Button>
                 <div className="flex flex-col items-center mt-3 text-xs md:text-sm font-semibold text-green-800">
-                  <p>Follow us for future updates</p>
+                  <p>Follow us for updates</p>
                   <div className="flex items-center gap-4 mt-1">
                     <a
                       href="https://youtube.com/@damodarasmarttechpvtlted?si=4UUnn7yl48bKIXw4"

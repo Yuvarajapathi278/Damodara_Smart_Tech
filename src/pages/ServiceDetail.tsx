@@ -77,8 +77,6 @@ const ServiceDetail: React.FC = () => {
   <ArrowLeft className="w-4 h-4" />
   Back to Services
 </Link>
-
-
           {/* Service Details */}
           <div className="bg-white p-8 rounded-lg shadow-md">
             {/* Icon */}
@@ -115,11 +113,9 @@ const ServiceDetail: React.FC = () => {
           </div>
         </div>
       </main>
-
+                                                                
       {/* Footer */}
-      
     </div>
   );
 };
-
 export default ServiceDetail;

@@ -60,11 +60,11 @@ ${formData.name}
     `.trim();
 
     // Use Gmail's mailto format
-    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent(`New Job Application by ${formData.name}`)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent(`New Job Application - ${formData.position} by ${formData.name}`)}&body=${encodeURIComponent(emailBody)}`;
     window.open(mailtoLink, '_blank');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -87,9 +87,13 @@ ${formData.name}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
           <p className="text-muted-foreground text-lg">
-            We're always looking for talented individuals to join our team. 
-            Fill out the form below to apply for a position.
+            We're expanding our team with 3 exciting positions! Choose your role and start your journey with us.
           </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
+            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full Stack Developer (2 openings)</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">UI/UX Designer (2 openings)</span>
+            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Python Web Scraper (2 openings)</span>
+          </div>
         </div>
 
         <Card className="p-6">
@@ -143,14 +147,19 @@ ${formData.name}
                 <label htmlFor="position" className="text-sm font-medium">
                   Position *
                 </label>
-                <Input
+                <select
                   id="position"
                   name="position"
                   required
                   value={formData.position}
                   onChange={handleChange}
-                  placeholder="Position you're applying for"
-                />
+                  className="w-full px-3 py-2 border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+                >
+                  <option value="">Select a position</option>
+                  <option value="Full Stack Developer">Full Stack Developer (2 openings)</option>
+                  <option value="UI/UX Designer">UI/UX Designer (2 openings)</option>
+                  <option value="Python Web Scraper">Python Web Scraper (2 openings)</option>
+                </select>
               </div>
             </div>
 
@@ -167,7 +176,7 @@ ${formData.name}
                 step="0.1"
                 value={formData.experience}
                 onChange={handleChange}
-                placeholder="Your years of experience"
+                placeholder="Your years of experience (e.g., 2.5)"
               />
             </div>
 
@@ -180,8 +189,11 @@ ${formData.name}
                 name="portfolio_links"
                 value={formData.portfolio_links}
                 onChange={handleChange}
-                placeholder="https://your-portfolio.com"
+                placeholder="https://github.com/yourname or https://yourportfolio.com"
               />
+              <p className="text-xs text-muted-foreground">
+                For developers: GitHub profile is highly recommended. For designers: Behance/Dribbble portfolio.
+              </p>
             </div>
 
             <div className="space-y-2">
@@ -193,16 +205,38 @@ ${formData.name}
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tell us about yourself and why you want to join us..."
+                placeholder="Tell us about yourself, your relevant experience, and why you want to join our team..."
                 className="min-h-[150px]"
               />
             </div>
 
-            <Button type="submit" className="w-full">
+            {/* Important Notice */}
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <span className="text-yellow-600 text-xl">📋</span>
+                </div>
+                <div className="ml-3">
+                  <h3 className="text-sm font-medium text-yellow-800">
+                    Important: Resume Required
+                  </h3>
+                  <div className="mt-2 text-sm text-yellow-700">
+                    <p>Please attach your updated resume when the email opens. Applications without resumes will not be considered.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90">
               Submit Application
             </Button>
           </form>
         </Card>
+
+        {/* Additional Information */}
+        <div className="mt-8 text-center text-sm text-muted-foreground">
+          <p>📍 Location: Chennai | 💼 Employment Type: Full-time | ⏰ We'll respond within 3-5 business days</p>
+        </div>
       </div>
     </div>
   );

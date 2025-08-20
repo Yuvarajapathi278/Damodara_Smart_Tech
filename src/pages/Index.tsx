@@ -8,13 +8,10 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-// import RotatableSeatMap from '../components/RotatableSeatMap';
 
 const Index = () => {
   const navigate = useNavigate();
   const [angle, setAngle] = useState(0);
-
-  // No AOS needed, Framer Motion handles animations
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -75,53 +72,76 @@ const Index = () => {
                 <span className="gradient-text">Join Our Innovative Team</span>
               </h3>
               <p className="text-base text-muted-foreground">
-                For the latest technology insights and future career opportunities, follow our official social media channels and regularly visit our website.
+                We're expanding our team with multiple exciting opportunities. Be part of building the future of technology.
               </p>
             </div>
-            {/* Premier Job Opportunity 3D Hover Card - UPDATED FOR CLOSED APPLICATION */}
-            {(() => {
-              const labelText = "Premier Job Opportunity";
-              const [typedLabel, setTypedLabel] = React.useState("");
-              React.useEffect(() => {
-                let i = 0;
-                const interval = setInterval(() => {
-                  setTypedLabel(labelText.slice(0, i + 1));
-                  i++;
-                  if (i === labelText.length) clearInterval(interval);
-                }, 40);
-                return () => clearInterval(interval);
-              }, []);
-              return (
-                <div className="flex justify-center">
-                  <div className="glass-card rounded-2xl border border-white/10 p-3 md:p-4 flex flex-col gap-2 md:gap-3 items-center w-full max-w-2xl shadow-xl transition-transform hover:scale-[1.025] hover:shadow-2xl bg-background/80" style={{ perspective: '800px', transformStyle: 'preserve-3d' }}>
-                    <span className="text-xs md:text-sm lg:text-base uppercase tracking-wider text-red-700 bg-red-200/40 px-3 py-1 rounded-full mb-2 inline-block font-sans font-bold">
-                      {typedLabel}
-                      {typedLabel.length < labelText.length && <span className="animate-pulse">|</span>}
-                    </span>
-                    <h4 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-1 text-center leading-snug break-words whitespace-normal text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-['Space Grotesk'],font-['Inter'],sans-serif">
-                      Python Web Scraper & UI/UX Designer
-                    </h4>
-                    <p className="text-xs md:text-sm lg:text-base mb-1 text-center leading-relaxed font-medium font-['Space Grotesk'],font-['Inter'],sans-serif text-[hsl(var(--foreground))]">
-                      This position is no longer accepting applications. Please follow our social channels for future openings.
-                    </p>
-                    <div className="flex flex-wrap sm:flex-nowrap sm:items-center gap-x-4 gap-y-1 text-xs md:text-sm mb-1 justify-center">
-                      <span>📍 Location: Chennai</span>
-                      <span className="hidden sm:inline">|</span>
-                      <span>Type: Full-time</span>
-                      <span className="hidden sm:inline">|</span>
-                      <span>⏰ Deadline: 10 Aug 2025</span>
-                    </div>
-                    <Button
-                      size="lg"
-                      className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-1 opacity-60 cursor-not-allowed"
-                      disabled
-                    >
-                      Application Closed
-                    </Button>
-                  </div>
+            
+            {/* Job Opportunities Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {/* Full Stack Developer */}
+              <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col items-center text-center bg-background/80 hover:scale-105 transition-transform">
+                <span className="text-sm uppercase tracking-wider text-blue-700 bg-blue-200/40 px-3 py-1 rounded-full mb-4 font-bold">
+                  2 Openings
+                </span>
+                <h4 className="text-xl font-bold mb-3 text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                  Full Stack Developer
+                </h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Build end-to-end web applications with modern frameworks and scalable architecture.
+                </p>
+                <div className="text-xs text-muted-foreground mb-4">
+                  <strong>Skills:</strong> React • Node.js • Database Design • API Development
                 </div>
-              );
-            })()}
+              </div>
+
+              {/* UI/UX Designer */}
+              <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col items-center text-center bg-background/80 hover:scale-105 transition-transform">
+                <span className="text-sm uppercase tracking-wider text-green-700 bg-green-200/40 px-3 py-1 rounded-full mb-4 font-bold">
+                  2 Openings
+                </span>
+                <h4 className="text-xl font-bold mb-3 text-gradient bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
+                  UI/UX Designer
+                </h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Create intuitive and beautiful user experiences that delight our clients and users.
+                </p>
+                <div className="text-xs text-muted-foreground mb-4">
+                  <strong>Skills:</strong> Figma • User Research • Prototyping • Design Systems
+                </div>
+              </div>
+
+              {/* Python Web Scraper */}
+              <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col items-center text-center bg-background/80 hover:scale-105 transition-transform">
+                <span className="text-sm uppercase tracking-wider text-purple-700 bg-purple-200/40 px-3 py-1 rounded-full mb-4 font-bold">
+                  2 Openings
+                </span>
+                <h4 className="text-xl font-bold mb-3 text-gradient bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                  Python Web Scraper
+                </h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Develop robust data extraction and automation solutions for various web platforms.
+                </p>
+                <div className="text-xs text-muted-foreground mb-4">
+                  <strong>Skills:</strong> Python • BeautifulSoup • Scrapy • Data Processing
+                </div>
+              </div>
+            </div>
+
+            {/* Central Apply Button */}
+            <div className="flex justify-center mt-8">
+              <Button
+                size="lg"
+                className="bg-gradient-blue-purple text-white shadow-lg hover:shadow-xl transition-all"
+                onClick={() => navigate('/apply')}
+              >
+                Apply for Any Position
+              </Button>
+            </div>
+
+            {/* Additional Info */}
+            <div className="text-center mt-6 text-sm text-muted-foreground">
+              <p>📍 <strong>Location:</strong> Chennai | <strong>Type:</strong> Full-time | <strong>Total Positions:</strong> 6</p>
+            </div>
           </div>
         </div>
         <div id="contact" className="py-20 relative">
