@@ -89,11 +89,17 @@ ${formData.name}
           <p className="text-muted-foreground text-lg">
             We're expanding our team with 3 exciting positions! Choose your role and start your journey with us.
           </p>
+          
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full Stack Developer (2 openings)</span>
             <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">UI/UX Designer (2 openings)</span>
             <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Python Web Scraper (2 openings)</span>
           </div>
+          {/* NEW DEADLINE NOTICE */}
+  <div className="mt-4 inline-block bg-red-100 text-red-800 px-6 py-3 rounded-lg font-semibold border border-red-200">
+    ⏰ Application Deadline: 26th August 2025
+  </div>
+          
         </div>
 
         <Card className="p-6">
