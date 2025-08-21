@@ -97,7 +97,7 @@ ${formData.name}
           </div>
           {/* NEW DEADLINE NOTICE */}
   <div className="mt-4 inline-block bg-red-100 text-red-800 px-6 py-3 rounded-lg font-semibold border border-red-200">
-    ⏰ Application Deadline: 26th August 2025
+    ⏰ Application Deadline: 31st August 2025
   </div>
           
         </div>

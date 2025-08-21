@@ -75,7 +75,7 @@ const Index = () => {
                 We're expanding our team with multiple exciting opportunities. Be part of building the future of technology.
               </p>
               <div className="mt-4 inline-block bg-red-100 text-red-800 px-4 py-2 rounded-lg font-semibold">
-        ⏰ Application Deadline: 26th August 2025
+        ⏰ Application Deadline: 31st August 2025
       </div>
             </div>
             
