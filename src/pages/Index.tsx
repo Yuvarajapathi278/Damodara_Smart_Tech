@@ -8,6 +8,7 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Youtube, Linkedin } from "lucide-react";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -75,8 +76,8 @@ const Index = () => {
                 We're expanding our team with multiple exciting opportunities. Be part of building the future of technology.
               </p>
               <div className="mt-4 inline-block bg-red-100 text-red-800 px-4 py-2 rounded-lg font-semibold">
-        ⏰ Application Deadline: 31st August 2025
-      </div>
+                ⏰ Application Deadline: 26th August 2025
+              </div>
             </div>
             
             {/* Job Opportunities Cards */}
@@ -139,6 +140,36 @@ const Index = () => {
               >
                 Apply for Any Position
               </Button>
+            </div>
+
+            {/* UPDATED SUBSCRIPTION SECTION WITH "IT WOULD BE NICE" */}
+            <div className="text-center mt-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 max-w-2xl mx-auto border border-white/20">
+              <h4 className="text-lg font-bold mb-3 text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Stay Connected with Us!
+              </h4>
+              <p className="text-sm text-muted-foreground mb-4">
+                It's delightful to subscribe for present & future updates on tech insights, job openings, and company news.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a
+                  href="https://youtube.com/@damodarasmarttechpvtlted?si=4UUnn7yl48bKIXw4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors font-medium shadow-lg hover:shadow-xl"
+                >
+                  <Youtube size={20} className="mr-2" />
+                  Subscribe on YouTube
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/damodara-smart-tech-pvt-ltd-1810b0377"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors font-medium shadow-lg hover:shadow-xl"
+                >
+                  <Linkedin size={20} className="mr-2" />
+                  Follow on LinkedIn
+                </a>
+              </div>
             </div>
 
             {/* Additional Info */}
