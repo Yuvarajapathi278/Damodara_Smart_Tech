@@ -160,18 +160,8 @@ const Index = () => {
                   <Youtube size={20} className="mr-2" />
                   Subscribe on YouTube
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/damodara-smart-tech-pvt-ltd-1810b0377"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors font-medium shadow-lg hover:shadow-xl"
-                >
-                  <Linkedin size={20} className="mr-2" />
-                  Follow on LinkedIn
-                </a>
               </div>
             </div>
-
             {/* Additional Info */}
             <div className="text-center mt-6 text-sm text-muted-foreground">
               <p>📍 <strong>Location:</strong> Chennai | <strong>Type:</strong> Full-time | <strong>Total Positions:</strong> 6</p>

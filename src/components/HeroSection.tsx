@@ -21,25 +21,25 @@ export function HeroSection() {
       </div>
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Left: Personal App Revolution - INCREASED SIZE & FIXED MOBILE ALIGNMENT */}
+          {/* Left: Personal App Revolution - FIXED MOBILE TEXT OVERFLOW */}
           <div className="flex-1 flex justify-center md:justify-start mb-8 md:mb-0" data-aos="fade-right" data-aos-delay="200">
-            <div className="aspect-square w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] relative flex items-center justify-center">
+            <div className="aspect-square w-56 sm:w-64 md:w-80 lg:w-96 relative flex items-center justify-center">
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
-              <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-3 py-4 overflow-hidden">
-                <h2 className="text-base md:text-lg lg:text-xl xl:text-2xl font-extrabold mb-2 text-center leading-snug break-words whitespace-normal text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
+              <div className="relative z-10 flex flex-col justify-center items-center w-10/12 h-10/12 mx-auto text-center px-2 py-2 overflow-hidden">
+                <h2 className="text-xs sm:text-sm md:text-base lg:text-lg font-extrabold mb-1 text-center leading-tight break-words text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-full">
                   Personal App Revolution
                 </h2>
-                <div className="text-sm md:text-base lg:text-lg xl:text-xl text-blue-900 font-medium leading-snug max-w-[90%] space-y-2 break-words whitespace-normal overflow-hidden">
-                  <p className="mb-2">Your Digital Identity, Income Engine & Creative Space</p>
-                  <ul className="list-disc list-inside text-left mx-auto w-fit text-sm md:text-base lg:text-lg">
-                    <li>Food & machines: The agricultural and industrial revolutions.</li>
-                    <li>Knowledge: The information revolution.</li>
+                <div className="text-xs sm:text-xs md:text-sm lg:text-base text-blue-900 font-medium leading-tight max-w-full space-y-1 break-words overflow-hidden">
+                  <p className="mb-1 text-xs sm:text-xs md:text-sm">Your Digital Identity, Income Engine & Creative Space</p>
+                  <ul className="list-disc list-inside text-left mx-auto w-fit text-xs sm:text-xs md:text-sm leading-tight">
+                    <li>Food & machines: Agricultural & industrial revolutions</li>
+                    <li>Knowledge: Information revolution</li>
                   </ul>
-                  <p className="mt-2 font-semibold text-center text-sm md:text-base lg:text-lg">Now, a new era begins—<br/>The Personal App Revolution.</p>
+                  <p className="mt-1 font-semibold text-center text-xs sm:text-xs md:text-sm leading-tight">Now, a new era begins—<br/>The Personal App Revolution.</p>
                 </div>
                 <Button
                   size="sm"
-                  className="bg-gradient-blue-purple text-white w-full md:w-auto shadow-md mt-3 text-sm md:text-base"
+                  className="bg-gradient-blue-purple text-white w-full shadow-md mt-2 text-xs sm:text-sm md:text-sm py-1"
                   onClick={() => navigate('/personal-app')}
                 >
                   Read More
@@ -58,41 +58,41 @@ export function HeroSection() {
             </p>
           </div>
           
-          {/* Right: Job Vacancy Circle - INCREASED SIZE WITH SWEET SUBSCRIPTION TEXT */}
+          {/* Right: Job Vacancy Circle - WITH DELIGHTFUL SUBSCRIPTION TEXT */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
-            <div className="aspect-square w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] relative flex items-center justify-center">
+            <div className="aspect-square w-56 sm:w-64 md:w-80 lg:w-96 relative flex items-center justify-center">
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-blue-50 to-green-300 border-4 border-green-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
-              <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-3 py-4 overflow-hidden">
-                <h2 className="text-base md:text-xl lg:text-2xl xl:text-3xl font-extrabold mb-2 min-h-[2em] text-center leading-snug break-words whitespace-normal text-green-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
+              <div className="relative z-10 flex flex-col justify-center items-center w-10/12 h-10/12 mx-auto text-center px-2 py-2 overflow-hidden">
+                <h2 className="text-xs sm:text-sm md:text-lg lg:text-xl font-extrabold mb-1 text-center leading-tight break-words text-green-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-full">
                   We're Hiring!
                 </h2>
-                <h3 className="text-sm md:text-base lg:text-lg xl:text-xl font-bold mb-2 text-center leading-tight text-green-800 max-w-[90%]">
+                <h3 className="text-xs sm:text-xs md:text-base lg:text-lg font-bold mb-1 text-center leading-tight text-green-800 max-w-full">
                   3 Exciting Positions Available
                 </h3>
-                <div className="text-xs md:text-sm lg:text-base xl:text-lg text-green-900 font-medium leading-snug max-w-[90%] break-words whitespace-normal overflow-hidden mb-3 space-y-1">
+                <div className="text-xs sm:text-xs md:text-sm lg:text-base text-green-900 font-medium leading-tight max-w-full break-words overflow-hidden mb-2 space-y-1">
                   <p className="mb-1">📍 Chennai | Full-time</p>
                   <p className="mb-1">🎯 6 Total Openings (2 each)</p>
                   <p className="mb-1 font-semibold text-red-700">⏰ Deadline: 26 Aug 2025</p>
-                  <p className="text-xs md:text-sm lg:text-base">Full Stack Dev • UI/UX Designer • Python Scraper</p>
+                  <p className="text-xs leading-tight">Full Stack Dev • UI/UX Designer • Python Scraper</p>
                 </div>
                 <Button
                   size="sm"
-                  className="bg-gradient-to-r from-green-400 via-green-300 to-green-500 text-green-900 w-full md:w-auto shadow-md mt-2 text-sm md:text-base"
+                  className="bg-gradient-to-r from-green-400 via-green-300 to-green-500 text-green-900 w-full shadow-md mt-1 text-xs sm:text-sm py-1"
                   onClick={() => navigate('/apply')}
                 >
                   Apply Now
                 </Button>
-                <div className="flex flex-col items-center mt-3 text-xs md:text-sm lg:text-base font-semibold text-green-800">
-                  {/* UPDATED WITH "IT WOULD BE SWEET" */}
-                  <p className="text-center mb-2">It's delightful to subscribe for present & future updates on tech insights, job openings, and company news.!</p>
-                  <div className="flex items-center gap-4 mt-1">
+                <div className="flex flex-col items-center mt-2 text-xs sm:text-xs md:text-sm font-semibold text-green-800">
+                  {/* UPDATED WITH DELIGHTFUL MESSAGE */}
+                  <p className="text-center mb-1 leading-tight">It's delightful to subscribe for latest techs, jobs & updates!</p>
+                  <div className="flex items-center gap-3 mt-1">
                     <a
                       href="https://youtube.com/@damodarasmarttechpvtlted?si=4UUnn7yl48bKIXw4"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center hover:text-green-600 transition-colors underline"
+                      className="inline-flex items-center hover:text-green-600 transition-colors underline text-xs"
                     >
-                      Click here <Youtube size={16} className="ml-1" />
+                      Click here <Youtube size={12} className="ml-1" />
                     </a>
                     <a
                       href="https://www.linkedin.com/in/damodara-smart-tech-pvt-ltd-1810b0377"
@@ -100,7 +100,7 @@ export function HeroSection() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center hover:text-blue-600 transition-colors"
                     >
-                      <Linkedin size={16} />
+                      <Linkedin size={12} />
                     </a>
                   </div>
                 </div>
