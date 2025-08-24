@@ -72,7 +72,7 @@ export function HeroSection() {
                 <div className="text-xs md:text-sm lg:text-base text-green-900 font-medium leading-tight break-words overflow-hidden mb-2 space-y-1">
                   <p className="mb-1">📍 Chennai | Full-time</p>
                   <p className="mb-1">🎯 6 Total Openings (2 each)</p>
-                  <p className="mb-1 font-semibold text-red-700">⏰ Deadline: 26 Aug 2025</p>
+                  <p className="mb-1 font-semibold text-red-700">⏰ Deadline: 31st Aug 2025</p>
                   <p className="text-xs leading-tight">Full Stack • UI/UX • Python</p>
                 </div>
                 <Button
