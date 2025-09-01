@@ -58,38 +58,38 @@ export function HeroSection() {
             </p>
           </div>
           
-          {/* Right: Job Vacancy Circle - FIXED WITH LARGER MOBILE CIRCLES */}
+          {/* Right: Job Vacancy Circle - Updated for Closed Applications */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-80 sm:w-80 md:w-80 lg:w-96 relative flex items-center justify-center">
-              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-blue-50 to-green-300 border-4 border-green-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
+              <div className="absolute inset-0 rounded-full opacity-60 shadow-2xl shadow-gray-400/30 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-300 border-4 border-gray-100 transform-gpu transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-4 py-4 overflow-hidden">
-                <h2 className="text-sm md:text-lg lg:text-xl font-extrabold mb-2 text-center leading-tight break-words text-green-900 font-['Space Grotesk'],font-['Inter'],sans-serif">
-                  We're Hiring!
+                <h2 className="text-sm md:text-lg lg:text-xl font-extrabold mb-2 text-center leading-tight break-words text-gray-700 font-['Space Grotesk'],font-['Inter'],sans-serif">
+                  Job Opportunities
                 </h2>
-                <h3 className="text-xs md:text-base lg:text-lg font-bold mb-2 text-center leading-tight text-green-800">
-                  3 Exciting Positions Available
+                <h3 className="text-xs md:text-base lg:text-lg font-bold mb-2 text-center leading-tight text-gray-600">
+                  3 Positions (Applications Closed)
                 </h3>
-                <div className="text-xs md:text-sm lg:text-base text-green-900 font-medium leading-tight break-words overflow-hidden mb-2 space-y-1">
+                <div className="text-xs md:text-sm lg:text-base text-gray-600 font-medium leading-tight break-words overflow-hidden mb-2 space-y-1">
                   <p className="mb-1">📍 Chennai | Full-time</p>
                   <p className="mb-1">🎯 6 Total Openings (2 each)</p>
-                  <p className="mb-1 font-semibold text-red-700">⏰ Deadline: 31st Aug 2025</p>
+                  <p className="mb-1 font-semibold text-red-700">🚫 Applications Closed</p>
                   <p className="text-xs leading-tight">Full Stack • UI/UX • Python</p>
                 </div>
                 <Button
                   size="sm"
-                  className="bg-gradient-to-r from-green-400 via-green-300 to-green-500 text-green-900 w-4/5 shadow-md mt-2 text-xs md:text-sm py-2"
-                  onClick={() => navigate('/apply')}
+                  disabled
+                  className="bg-gray-400 text-gray-600 w-4/5 shadow-md mt-2 text-xs md:text-sm py-2 cursor-not-allowed opacity-60"
                 >
-                  Apply Now
+                  Applications Closed
                 </Button>
-                <div className="flex flex-col items-center mt-3 text-xs md:text-sm font-semibold text-green-800">
+                <div className="flex flex-col items-center mt-3 text-xs md:text-sm font-semibold text-gray-600">
                   <p className="text-center mb-1 leading-tight">It's delightful to subscribe for latest tech, jobs & updates!</p>
                   <div className="flex items-center gap-3 mt-1">
                     <a
                       href="https://youtube.com/@damodarasmarttechpvtlted?si=4UUnn7yl48bKIXw4"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center hover:text-green-600 transition-colors underline text-xs"
+                      className="inline-flex items-center hover:text-red-600 transition-colors underline text-xs"
                     >
                       Click here <Youtube size={12} className="ml-1" />
                     </a>
