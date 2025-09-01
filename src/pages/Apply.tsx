@@ -64,10 +64,11 @@ export default function Apply() {
             We're expanding our team with 3 exciting positions! Choose your role and start your journey with us.
           </p>
           
+          {/* ORIGINAL COLORS RETAINED */}
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full">Full Stack Developer (2 openings)</span>
-            <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full">UI/UX Designer (2 openings)</span>
-            <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full">Python Web Scraper (2 openings)</span>
+            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full Stack Developer (2 openings)</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">UI/UX Designer (2 openings)</span>
+            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Python Web Scraper (2 openings)</span>
           </div>
           
           {/* UPDATED DEADLINE NOTICE - APPLICATIONS CLOSED */}
@@ -76,11 +77,11 @@ export default function Apply() {
           </div>
         </div>
 
-        <Card className="p-6 opacity-75">
+        <Card className="p-6">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-gray-500">
+                <label htmlFor="name" className="text-sm font-medium">
                   Full Name *
                 </label>
                 <Input
@@ -90,11 +91,10 @@ export default function Apply() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Applications are closed"
-                  className="bg-gray-50"
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-gray-500">
+                <label htmlFor="email" className="text-sm font-medium">
                   Email *
                 </label>
                 <Input
@@ -105,14 +105,13 @@ export default function Apply() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Applications are closed"
-                  className="bg-gray-50"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-medium text-gray-500">
+                <label htmlFor="phone" className="text-sm font-medium">
                   Phone Number *
                 </label>
                 <Input
@@ -123,11 +122,10 @@ export default function Apply() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Applications are closed"
-                  className="bg-gray-50"
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="position" className="text-sm font-medium text-gray-500">
+                <label htmlFor="position" className="text-sm font-medium">
                   Position *
                 </label>
                 <select
@@ -136,7 +134,7 @@ export default function Apply() {
                   disabled
                   value={formData.position}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-input bg-gray-50 rounded-md focus:outline-none focus:ring-2 focus:ring-ring text-sm text-gray-500 cursor-not-allowed"
+                  className="w-full px-3 py-2 border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring text-sm cursor-not-allowed opacity-60"
                 >
                   <option value="">Applications are closed</option>
                   <option value="Full Stack Developer">Full Stack Developer (2 openings)</option>
@@ -147,7 +145,7 @@ export default function Apply() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="experience" className="text-sm font-medium text-gray-500">
+              <label htmlFor="experience" className="text-sm font-medium">
                 Years of Experience *
               </label>
               <Input
@@ -160,12 +158,11 @@ export default function Apply() {
                 value={formData.experience}
                 onChange={handleChange}
                 placeholder="Applications are closed"
-                className="bg-gray-50"
               />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="portfolio_links" className="text-sm font-medium text-gray-500">
+              <label htmlFor="portfolio_links" className="text-sm font-medium">
                 Portfolio/GitHub Links (Optional)
               </label>
               <Input
@@ -175,15 +172,14 @@ export default function Apply() {
                 value={formData.portfolio_links}
                 onChange={handleChange}
                 placeholder="Applications are closed"
-                className="bg-gray-50"
               />
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-muted-foreground">
                 For developers: GitHub profile is highly recommended. For designers: Behance/Dribbble portfolio.
               </p>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-gray-500">
+              <label htmlFor="message" className="text-sm font-medium">
                 Cover Letter (Optional)
               </label>
               <Textarea
@@ -193,7 +189,7 @@ export default function Apply() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Applications are closed"
-                className="min-h-[150px] bg-gray-50"
+                className="min-h-[150px]"
               />
             </div>
 
@@ -225,7 +221,7 @@ export default function Apply() {
           </form>
         </Card>
 
-        {/* Updated Additional Information */}
+        {/* Additional Information */}
         <div className="mt-8 text-center text-sm text-muted-foreground">
           <p>📍 Location: Chennai | 💼 Employment Type: Full-time | ❌ Application period has ended</p>
         </div>
