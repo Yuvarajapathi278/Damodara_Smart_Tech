@@ -75,9 +75,9 @@ const Index = () => {
               <p className="text-base text-muted-foreground">
                 We're expanding our team with multiple exciting opportunities. Be part of building the future of technology.
               </p>
-              {/* Updated deadline notice - ONLY TEXT CHANGED */}
-              <div className="mt-4 inline-block bg-red-100 text-red-800 px-4 py-2 rounded-lg font-semibold">
-                🚫 Applications Closed
+              {/* Updated status notice */}
+              <div className="mt-4 inline-block bg-amber-100 text-amber-800 px-4 py-2 rounded-lg font-semibold">
+                📋 The shortlisted candidates list will be published tomorrow
               </div>
             </div>
             
@@ -86,7 +86,7 @@ const Index = () => {
               {/* Full Stack Developer */}
               <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col items-center text-center bg-background/80 hover:scale-105 transition-transform">
                 <span className="text-sm uppercase tracking-wider text-blue-700 bg-blue-200/40 px-3 py-1 rounded-full mb-4 font-bold">
-                  2 Openings - Closed
+                  2 Openings
                 </span>
                 <h4 className="text-xl font-bold mb-3 text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                   Full Stack Developer
@@ -102,7 +102,7 @@ const Index = () => {
               {/* UI/UX Designer */}
               <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col items-center text-center bg-background/80 hover:scale-105 transition-transform">
                 <span className="text-sm uppercase tracking-wider text-green-700 bg-green-200/40 px-3 py-1 rounded-full mb-4 font-bold">
-                  2 Openings - Closed
+                  2 Openings
                 </span>
                 <h4 className="text-xl font-bold mb-3 text-gradient bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
                   UI/UX Designer
@@ -118,7 +118,7 @@ const Index = () => {
               {/* Python Web Scraper */}
               <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col items-center text-center bg-background/80 hover:scale-105 transition-transform">
                 <span className="text-sm uppercase tracking-wider text-purple-700 bg-purple-200/40 px-3 py-1 rounded-full mb-4 font-bold">
-                  2 Openings - Closed
+                  2 Openings
                 </span>
                 <h4 className="text-xl font-bold mb-3 text-gradient bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
                   Python Web Scraper
@@ -132,14 +132,13 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Non-functional Apply Button */}
+            {/* Active Stay Tuned Button */}
             <div className="flex justify-center mt-8">
               <Button
                 size="lg"
-                disabled
-                className="bg-gray-400 text-gray-600 shadow-lg cursor-not-allowed opacity-60"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg"
               >
-                Applications Closed
+                Stay Tuned
               </Button>
             </div>
 
@@ -166,7 +165,7 @@ const Index = () => {
             
             {/* Additional Info */}
             <div className="text-center mt-6 text-sm text-muted-foreground">
-              <p>📍 <strong>Location:</strong> Chennai | <strong>Type:</strong> Full-time | <strong>Status:</strong> Applications Closed</p>
+              <p>📍 <strong>Location:</strong> Chennai | <strong>Type:</strong> Full-time | <strong>Status:</strong> Results Tomorrow</p>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useNavigate, useLocation } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, CheckCircle, Clock } from "lucide-react";
 
 export default function Apply() {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ export default function Apply() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Prevent submission since applications are closed
+    // Applications are being processed
     return;
   };
 
@@ -59,171 +59,205 @@ export default function Apply() {
         </Button>
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            Join Our Team
+          </h1>
           <p className="text-muted-foreground text-lg">
             We're expanding our team with 3 exciting positions! Choose your role and start your journey with us.
           </p>
           
           {/* ORIGINAL COLORS RETAINED */}
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full Stack Developer (2 openings)</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">UI/UX Designer (2 openings)</span>
-            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Python Web Scraper (2 openings)</span>
+            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Full Stack Developer (2 openings)</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">UI/UX Designer (2 openings)</span>
+            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full font-medium">Python Web Scraper (2 openings)</span>
           </div>
           
-          {/* UPDATED DEADLINE NOTICE - APPLICATIONS CLOSED */}
-          <div className="mt-4 inline-block bg-red-100 text-red-800 px-6 py-3 rounded-lg font-semibold border border-red-200">
-            🚫 Applications Closed
+          {/* UPDATED STATUS - SHORTLISTED CANDIDATES ANNOUNCEMENT */}
+          <div className="mt-6 inline-block bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200 px-8 py-4 rounded-xl shadow-lg">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <Clock className="h-5 w-5 text-amber-600" />
+              <span className="text-amber-800 font-bold text-lg">📋 Exciting Update!</span>
+            </div>
+            <p className="text-amber-700 font-semibold text-base leading-relaxed">
+              The shortlisted candidates list will be published tomorrow
+            </p>
+            <div className="mt-2 flex items-center justify-center gap-2">
+              <CheckCircle className="h-4 w-4 text-green-600" />
+              <span className="text-green-700 font-medium text-sm">Stay Tuned for Results</span>
+            </div>
           </div>
         </div>
 
-        <Card className="p-6">
+        <Card className="p-8 shadow-xl border-0 bg-gradient-to-br from-white to-gray-50">
+          <div className="mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Application Form</h2>
+            <p className="text-gray-600">Complete your application details below</p>
+          </div>
+          
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Full Name *
+                <label htmlFor="name" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                  👤 Full Name *
                 </label>
                 <Input
                   id="name"
                   name="name"
-                  disabled
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Applications are closed"
+                  placeholder="Enter your full name"
+                  className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email *
+                <label htmlFor="email" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                  📧 Email *
                 </label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  disabled
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Applications are closed"
+                  placeholder="your.email@example.com"
+                  className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-medium">
-                  Phone Number *
+                <label htmlFor="phone" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                  📱 Phone Number *
                 </label>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
-                  disabled
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Applications are closed"
+                  placeholder="+91 XXXXX XXXXX"
+                  className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="position" className="text-sm font-medium">
-                  Position *
+                <label htmlFor="position" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                  💼 Position *
                 </label>
                 <select
                   id="position"
                   name="position"
-                  disabled
                   value={formData.position}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring text-sm cursor-not-allowed opacity-60"
+                  className="w-full px-4 py-3 border-2 border-gray-200 bg-white rounded-md focus:outline-none focus:border-purple-400 text-sm transition-colors"
                 >
-                  <option value="">Applications are closed</option>
-                  <option value="Full Stack Developer">Full Stack Developer (2 openings)</option>
-                  <option value="UI/UX Designer">UI/UX Designer (2 openings)</option>
-                  <option value="Python Web Scraper">Python Web Scraper (2 openings)</option>
+                  <option value="">Select your preferred position</option>
+                  <option value="Full Stack Developer">🚀 Full Stack Developer (2 openings)</option>
+                  <option value="UI/UX Designer">🎨 UI/UX Designer (2 openings)</option>
+                  <option value="Python Web Scraper">🐍 Python Web Scraper (2 openings)</option>
                 </select>
               </div>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="experience" className="text-sm font-medium">
-                Years of Experience *
+              <label htmlFor="experience" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                ⭐ Years of Experience *
               </label>
               <Input
                 id="experience"
                 name="experience"
                 type="number"
-                disabled
                 min="0"
                 step="0.1"
                 value={formData.experience}
                 onChange={handleChange}
-                placeholder="Applications are closed"
+                placeholder="e.g., 2.5"
+                className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
               />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="portfolio_links" className="text-sm font-medium">
-                Portfolio/GitHub Links (Optional)
+              <label htmlFor="portfolio_links" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                🔗 Portfolio/GitHub Links (Optional)
               </label>
               <Input
                 id="portfolio_links"
                 name="portfolio_links"
-                disabled
                 value={formData.portfolio_links}
                 onChange={handleChange}
-                placeholder="Applications are closed"
+                placeholder="https://github.com/yourusername or https://behance.net/yourprofile"
+                className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
               />
-              <p className="text-xs text-muted-foreground">
-                For developers: GitHub profile is highly recommended. For designers: Behance/Dribbble portfolio.
+              <p className="text-xs text-gray-500 bg-blue-50 p-2 rounded-md border border-blue-200">
+                💡 <strong>Tip:</strong> For developers: GitHub profile is highly recommended. For designers: Behance/Dribbble portfolio.
               </p>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium">
-                Cover Letter (Optional)
+              <label htmlFor="message" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                ✍️ Cover Letter (Optional)
               </label>
               <Textarea
                 id="message"
                 name="message"
-                disabled
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Applications are closed"
-                className="min-h-[150px]"
+                placeholder="Tell us about yourself, your passion for technology, and why you'd like to join our team..."
+                className="min-h-[150px] border-2 border-gray-200 focus:border-purple-400 transition-colors"
               />
             </div>
 
-            {/* Updated Notice for Closed Applications */}
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-              <div className="flex items-start">
-                <div className="flex-shrink-0">
-                  <span className="text-red-600 text-xl">🚫</span>
+            {/* Updated Notice for Shortlisted Candidates */}
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 rounded-xl p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 bg-blue-100 rounded-full p-2">
+                  <Clock className="h-6 w-6 text-blue-600" />
                 </div>
-                <div className="ml-3">
-                  <h3 className="text-sm font-medium text-red-800">
-                    Applications Closed
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-blue-800 mb-2 flex items-center gap-2">
+                    📋 Application Status Update
                   </h3>
-                  <div className="mt-2 text-sm text-red-700">
-                    <p>Thank you for your interest! The application period has ended and we are no longer accepting new applications for these positions.</p>
+                  <div className="space-y-2">
+                    <p className="text-blue-700 font-medium">
+                      Thank you for your interest in joining our team! We're currently reviewing all applications.
+                    </p>
+                    <div className="bg-white rounded-lg p-3 border border-blue-200">
+                      <p className="text-purple-700 font-semibold text-center">
+                        🎉 The shortlisted candidates list will be published tomorrow
+                      </p>
+                    </div>
+                    <p className="text-blue-600 text-sm">
+                      Please stay tuned to our official channels for updates and results.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Non-functional Submit Button */}
+            {/* Active Submit Button */}
             <Button 
-              type="button" 
-              disabled 
-              className="w-full bg-gray-400 cursor-not-allowed opacity-60"
+              type="submit" 
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 text-base shadow-lg transform hover:scale-105 transition-all duration-200"
             >
-              Applications Closed
+              🚀 Stay Tuned for Results
             </Button>
           </form>
         </Card>
 
         {/* Additional Information */}
-        <div className="mt-8 text-center text-sm text-muted-foreground">
-          <p>📍 Location: Chennai | 💼 Employment Type: Full-time | ❌ Application period has ended</p>
+        <div className="mt-8 text-center">
+          <div className="inline-flex items-center gap-6 bg-gray-50 px-8 py-4 rounded-full text-sm text-gray-600 shadow-sm">
+            <span className="flex items-center gap-2">
+              📍 <strong>Location:</strong> Chennai
+            </span>
+            <span className="flex items-center gap-2">
+              💼 <strong>Type:</strong> Full-time
+            </span>
+            <span className="flex items-center gap-2">
+              ⏰ <strong>Status:</strong> Results Tomorrow
+            </span>
+          </div>
         </div>
       </div>
     </div>

@@ -58,7 +58,7 @@ export function HeroSection() {
             </p>
           </div>
           
-          {/* Right: Job Vacancy Circle - Updated for Closed Applications */}
+          {/* Right: Job Vacancy Circle - Updated for Shortlisted Candidates */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-80 sm:w-80 md:w-80 lg:w-96 relative flex items-center justify-center">
               <div className="absolute inset-0 rounded-full opacity-60 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-green-50 to-green-300 border-4 border-green-100 transform-gpu transition-transform duration-700 blur-[1px]"></div>
@@ -67,20 +67,19 @@ export function HeroSection() {
                   Job Opportunities
                 </h2>
                 <h3 className="text-xs md:text-base lg:text-lg font-bold mb-2 text-center leading-tight text-gray-600">
-                  3 Positions (Applications Closed)
+                  3 Positions
                 </h3>
                 <div className="text-xs md:text-sm lg:text-base text-purple-600 font-medium leading-tight break-words overflow-hidden mb-2 space-y-1">
                   <p className="mb-1">📍 Chennai | Full-time</p>
                   <p className="mb-1">🎯 6 Total Openings (2 each)</p>
-                  <p className="mb-1 font-semibold text-red-700">🚫 Applications Closed</p>
+                  <p className="mb-1 font-semibold text-green-700">📋 The shortlisted candidates list will be published tomorrow</p>
                   <p className="text-xs leading-tight">Full Stack • UI/UX • Python</p>
                 </div>
                 <Button
                   size="sm"
-                  disabled
-                  className="bg-gray-400 text-gray-600 w-4/5 shadow-md mt-2 text-xs md:text-sm py-2 cursor-not-allowed opacity-60"
+                  className="bg-gradient-blue-purple text-white w-4/5 shadow-md mt-2 text-xs md:text-sm py-2"
                 >
-                  Applications Closed
+                  Stay Tuned...!!
                 </Button>
                 <div className="flex flex-col items-center mt-3 text-xs md:text-sm font-semibold text-gray-600">
                   <p className="text-center mb-1 leading-tight">It's delightful to subscribe for latest tech, jobs & updates!</p>
