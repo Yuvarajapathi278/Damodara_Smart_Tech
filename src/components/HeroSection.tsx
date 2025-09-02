@@ -94,7 +94,7 @@ export function HeroSection() {
                       Click here <Youtube size={12} className="ml-1" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/damodara-smart-tech-pvt-ltd-1810b0377"
+                      href="https://www.linkedin.com/company/damodara-smart-tech-pvt-ltd"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center hover:text-blue-600 transition-colors"

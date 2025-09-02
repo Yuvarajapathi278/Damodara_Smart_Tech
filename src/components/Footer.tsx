@@ -27,7 +27,7 @@ export function Footer() {
               </a>
               {/* LinkedIn Icon Added Here */}
               <a
-                href="https://www.linkedin.com/in/damodara-smart-tech-pvt-ltd-1810b0377"
+                href="https://www.linkedin.com/company/damodara-smart-tech-pvt-ltd"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-neon-blue transition-colors"
