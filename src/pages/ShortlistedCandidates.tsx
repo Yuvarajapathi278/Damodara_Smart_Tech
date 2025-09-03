@@ -7,7 +7,7 @@ import { ArrowLeft, MapPin, Users, Trophy, CheckCircle } from "lucide-react";
 export default function ShortlistedCandidates() {
   const navigate = useNavigate();
 
-  const candidates = [
+  const fullStackCandidates = [
     { name: "Sundhar A", location: "Chennai" },
     { name: "Rithik S", location: "" },
     { name: "Thangapandi B", location: "Chennai" },
@@ -18,7 +18,10 @@ export default function ShortlistedCandidates() {
     { name: "Harini S", location: "Thanjavur" },
     { name: "Kathir k", location: "Chennai" },
     { name: "Natshatra U", location: "Vellore" },
-    { name: "Nisha Jayakumar", location: "Chennai" },
+    { name: "Nisha Jayakumar", location: "Chennai" }
+  ];
+
+  const uiUxCandidates = [
     { name: "Akash", location: "Arani" },
     { name: "Natarajan p", location: "Chennai" },
     { name: "Julaika R", location: "Chennai" },
@@ -78,11 +81,11 @@ export default function ShortlistedCandidates() {
               <div className="flex flex-wrap justify-center gap-6 mb-8">
                 <div className="flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full">
                   <Users className="h-4 w-4" />
-                  <span className="font-semibold">{candidates.length} Shortlisted</span>
+                  <span className="font-semibold">{fullStackCandidates.length + uiUxCandidates.length} Shortlisted</span>
                 </div>
                 <div className="flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full">
                   <CheckCircle className="h-4 w-4" />
-                  <span className="font-semibold">3 Positions</span>
+                  <span className="font-semibold">2 Positions</span>
                 </div>
                 <div className="flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-2 rounded-full">
                   <MapPin className="h-4 w-4" />
@@ -100,7 +103,7 @@ export default function ShortlistedCandidates() {
               </h3>
               
               {/* Position Info */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 hover:scale-105 transition-transform">
                   <h4 className="font-bold text-blue-800 mb-2">🚀 Full Stack Developer</h4>
                   <p className="text-sm text-blue-600">2 Positions Available</p>
@@ -109,41 +112,77 @@ export default function ShortlistedCandidates() {
                   <h4 className="font-bold text-green-800 mb-2">🎨 UI/UX Designer</h4>
                   <p className="text-sm text-green-600">2 Positions Available</p>
                 </div>
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 hover:scale-105 transition-transform">
-                  <h4 className="font-bold text-purple-800 mb-2">🐍 Python Web Scraper</h4>
-                  <p className="text-sm text-purple-600">2 Positions Available</p>
-                </div>
               </div>
             </div>
 
-            {/* Candidates List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-              {candidates.map((candidate, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-lg p-4 hover:shadow-lg hover:scale-105 transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
-                        {index + 1}
+            {/* Full Stack Developer Candidates */}
+            <div className="mb-12">
+              <h4 className="text-xl font-bold text-blue-800 mb-6 text-center bg-blue-50 py-3 rounded-lg">
+                🚀 Full Stack Developer - Shortlisted Candidates
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {fullStackCandidates.map((candidate, index) => (
+                  <div
+                    key={index}
+                    className="bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-4 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">
+                            {candidate.name}
+                          </h4>
+                          {candidate.location && (
+                            <p className="text-xs text-gray-600 flex items-center gap-1">
+                              <MapPin className="h-3 w-3" />
+                              {candidate.location}
+                            </p>
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-800 text-sm">
-                          {candidate.name}
-                        </h4>
-                        {candidate.location && (
-                          <p className="text-xs text-gray-600 flex items-center gap-1">
-                            <MapPin className="h-3 w-3" />
-                            {candidate.location}
-                          </p>
-                        )}
-                      </div>
+                      <CheckCircle className="h-5 w-5 text-green-500" />
                     </div>
-                    <CheckCircle className="h-5 w-5 text-green-500" />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* UI/UX Designer Candidates */}
+            <div className="mb-8">
+              <h4 className="text-xl font-bold text-green-800 mb-6 text-center bg-green-50 py-3 rounded-lg">
+                🎨 UI/UX Designer - Shortlisted Candidates
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {uiUxCandidates.map((candidate, index) => (
+                  <div
+                    key={index}
+                    className="bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-lg p-4 hover:shadow-lg hover:scale-105 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-800 text-sm">
+                            {candidate.name}
+                          </h4>
+                          {candidate.location && (
+                            <p className="text-xs text-gray-600 flex items-center gap-1">
+                              <MapPin className="h-3 w-3" />
+                              {candidate.location}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <CheckCircle className="h-5 w-5 text-green-500" />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Thank You Message */}
@@ -188,7 +227,7 @@ export default function ShortlistedCandidates() {
                 💼 <strong>Type:</strong> Full-time
               </span>
               <span className="flex items-center gap-2">
-                🎯 <strong>Openings:</strong> 6 Positions
+                🎯 <strong>Openings:</strong> 4 Positions
               </span>
             </div>
           </div>
