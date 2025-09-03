@@ -76,12 +76,12 @@ const Index = () => {
                 We're expanding our team with multiple exciting opportunities. Be part of building the future of technology.
               </p>
               {/* Updated status notice */}
-              <div className="mt-4 inline-block bg-amber-100 text-amber-800 px-4 py-2 rounded-lg font-semibold">
-                📋 The shortlisted candidates list will be published tomorrow
+              <div className="mt-4 inline-block bg-green-100 text-green-800 px-4 py-2 rounded-lg font-semibold">
+                🎉 Shortlisted candidates announced!
               </div>
             </div>
             
-            {/* Job Opportunities Cards - ORIGINAL COLORS RETAINED */}
+            {/* Job Opportunities Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {/* Full Stack Developer */}
               <div className="glass-card rounded-2xl border border-white/10 p-6 flex flex-col items-center text-center bg-background/80 hover:scale-105 transition-transform">
@@ -132,17 +132,18 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Active Stay Tuned Button */}
+            {/* Active View Candidates Button */}
             <div className="flex justify-center mt-8">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg"
+                onClick={() => navigate('/shortlisted-candidates')}
               >
-                Stay Tuned
+                View Shortlisted Candidates
               </Button>
             </div>
 
-            {/* SUBSCRIPTION SECTION - ORIGINAL COLORS */}
+            {/* SUBSCRIPTION SECTION */}
             <div className="text-center mt-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 max-w-2xl mx-auto border border-white/20">
               <h4 className="text-lg font-bold mb-3 text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Stay Connected with Us!
@@ -165,7 +166,7 @@ const Index = () => {
             
             {/* Additional Info */}
             <div className="text-center mt-6 text-sm text-muted-foreground">
-              <p>📍 <strong>Location:</strong> Chennai | <strong>Type:</strong> Full-time | <strong>Status:</strong> Results Tomorrow</p>
+              <p>📍 <strong>Location:</strong> Chennai | <strong>Type:</strong> Full-time | <strong>Status:</strong> Shortlisted</p>
             </div>
           </div>
         </div>

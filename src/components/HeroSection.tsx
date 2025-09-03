@@ -21,7 +21,7 @@ export function HeroSection() {
       </div>
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Left: Personal App Revolution - FIXED WITH LARGER MOBILE CIRCLES */}
+          {/* Left: Personal App Revolution */}
           <div className="flex-1 flex justify-center md:justify-start mb-8 md:mb-0" data-aos="fade-right" data-aos-delay="200">
             <div className="aspect-square w-80 sm:w-80 md:w-80 lg:w-96 relative flex items-center justify-center">
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
@@ -61,7 +61,7 @@ export function HeroSection() {
           {/* Right: Job Vacancy Circle - Updated for Shortlisted Candidates */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-80 sm:w-80 md:w-80 lg:w-96 relative flex items-center justify-center">
-              <div className="absolute inset-0 rounded-full opacity-60 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-green-50 to-green-300 border-4 border-green-100 transform-gpu transition-transform duration-700 blur-[1px]"></div>
+              <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-green-50 to-green-300 border-4 border-green-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-4 py-4 overflow-hidden">
                 <h2 className="text-sm md:text-lg lg:text-xl font-extrabold mb-2 text-center leading-tight break-words text-green-700 font-['Space Grotesk'],font-['Inter'],sans-serif">
                   Job Opportunities
@@ -72,14 +72,15 @@ export function HeroSection() {
                 <div className="text-xs md:text-sm lg:text-base text-purple-600 font-medium leading-tight break-words overflow-hidden mb-2 space-y-1">
                   <p className="mb-1">📍 Chennai | Full-time</p>
                   <p className="mb-1">🎯 6 Total Openings (2 each)</p>
-                  <p className="mb-1 font-semibold text-green-700">📋 The shortlisted candidates list will be published tomorrow</p>
+                  <p className="mb-1 font-semibold text-green-700">🎉 Shortlisted candidates announced!</p>
                   <p className="text-xs leading-tight">Full Stack • UI/UX • Python</p>
                 </div>
                 <Button
                   size="sm"
                   className="bg-gradient-blue-purple text-white w-4/5 shadow-md mt-2 text-xs md:text-sm py-2"
+                  onClick={() => navigate('/shortlisted-candidates')}
                 >
-                  Stay Tuned...!!
+                  View Shortlisted Candidates
                 </Button>
                 <div className="flex flex-col items-center mt-3 text-xs md:text-sm font-semibold text-gray-600">
                   <p className="text-center mb-1 leading-tight">It's delightful to subscribe for latest tech, jobs & updates!</p>

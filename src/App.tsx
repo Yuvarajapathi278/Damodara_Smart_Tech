@@ -20,6 +20,7 @@ import BlogDetails from "./pages/BlogDetails";
 import PersonalAppPage from "./pages/personal-app";
 import HappinessMindsetPage from "./pages/happiness-mindset";
 import ServiceDetail from "./pages/ServiceDetail"; // 🚀 NEW
+import ShortlistedCandidates from "./pages/ShortlistedCandidates"; // 🎉 NEW
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ function AppWithGA() {
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/apply" element={<Apply />} />
+      <Route path="/shortlisted-candidates" element={<ShortlistedCandidates />} />
       <Route path="/blog/tech-trends-2025" element={<BlogDetails />} />
       <Route path="/personal-app" element={<PersonalAppPage />} />
       <Route path="/happiness-mindset" element={<HappinessMindsetPage />} />
