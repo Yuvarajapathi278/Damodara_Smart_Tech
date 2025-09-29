@@ -12,7 +12,6 @@ import { pageview } from "./lib/ga";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Apply from "./pages/Apply";
@@ -36,7 +35,6 @@ function AppWithGA() {
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/services/:slug" element={<ServiceDetail />} />
-      <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/apply" element={<Apply />} />
       <Route path="/selected-candidates" element={<SelectedCandidates />} />

@@ -52,7 +52,7 @@ export function PortfolioSection() {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section className="py-20 relative" data-aos="fade-up">
+    <section id="portfolio" className="py-20 relative" data-aos="fade-up">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-96 h-96 bg-neon-blue/10 rounded-full filter blur-[100px]"></div>
