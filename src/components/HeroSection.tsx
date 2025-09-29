@@ -58,29 +58,33 @@ export function HeroSection() {
             </p>
           </div>
           
-          {/* Right: Job Vacancy Circle - Updated for Shortlisted Candidates */}
+          {/* Right: Selected Candidates Circle */}
           <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
             <div className="aspect-square w-80 sm:w-80 md:w-80 lg:w-96 relative flex items-center justify-center">
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-green-50 to-green-300 border-4 border-green-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-4 py-4 overflow-hidden">
-                <h2 className="text-sm md:text-lg lg:text-xl font-extrabold mb-2 text-center leading-tight break-words text-green-700 font-['Space Grotesk'],font-['Inter'],sans-serif">
-                  Job Opportunities
+                <h2 className="text-sm md:text-lg lg:text-xl font-extrabold mb-3 text-center leading-tight break-words text-green-700 font-['Space Grotesk'],font-['Inter'],sans-serif">
+                  🎉 Selected Candidates
                 </h2>
-                <h3 className="text-xs md:text-base lg:text-lg font-bold mb-2 text-center leading-tight text-gray-600">
-                  3 Positions
-                </h3>
-                <div className="text-xs md:text-sm lg:text-base text-purple-600 font-medium leading-tight break-words overflow-hidden mb-2 space-y-1">
-                  <p className="mb-1">📍 Chennai | Full-time</p>
-                  <p className="mb-1">🎯 6 Total Openings (2 each)</p>
-                  <p className="mb-1 font-semibold text-green-700">🎉 Shortlisted candidates announced!</p>
-                  <p className="text-xs leading-tight">Full Stack • UI/UX • Python</p>
+                <div className="text-xs md:text-sm lg:text-base text-green-700 font-medium leading-tight break-words overflow-hidden mb-3 space-y-2">
+                  <div className="bg-white/80 rounded-lg p-2 border border-green-200">
+                    <p className="font-bold text-blue-800">Kathir K</p>
+                    <p className="text-xs text-gray-600">Full Stack Developer</p>
+                  </div>
+                  <div className="bg-white/80 rounded-lg p-2 border border-green-200">
+                    <p className="font-bold text-blue-800">Ramesh P</p>
+                    <p className="text-xs text-gray-600">Full Stack Developer</p>
+                  </div>
                 </div>
+                <p className="text-xs md:text-sm font-bold text-center leading-tight text-green-800 mb-2">
+                  Welcome Aboard! 🚀
+                </p>
                 <Button
                   size="sm"
                   className="bg-gradient-blue-purple text-white w-4/5 shadow-md mt-2 text-xs md:text-sm py-2"
-                  onClick={() => navigate('/shortlisted-candidates')}
+                  onClick={() => navigate('/selected-candidates')}
                 >
-                  View Shortlisted Candidates
+                  View Selected Candidates
                 </Button>
                 <div className="flex flex-col items-center mt-3 text-xs md:text-sm font-semibold text-gray-600">
                   <p className="text-center mb-1 leading-tight">It's delightful to subscribe for latest tech, jobs & updates!</p>

@@ -39,7 +39,12 @@ ${formData.coverLetter || 'Not provided'}
 
 Please attach your resume to this email.`;
 
-    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent('Career Application')}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent('Career Application - Future Opportunities')}&body=${encodeURIComponent(emailBody)}`;
+    
+    toast({
+      title: "Application Submitted!",
+      description: "Thank you for your interest. We'll contact you when new positions become available.",
+    });
   };
 
   return (
@@ -58,7 +63,7 @@ Please attach your resume to this email.`;
           </h3>
           <p className="text-base text-muted-foreground">
             We're always looking for talented individuals who are passionate about technology and innovation.
-            Join our team and be part of something extraordinary. Ready to start your journey? Apply now!
+            Join our team and be part of something extraordinary. Apply now for future opportunities!
           </p>
         </div>
 
@@ -67,10 +72,10 @@ Please attach your resume to this email.`;
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Users size={24} />
-                Submit Your Profile
+                Apply for Future Opportunities
               </CardTitle>
               <CardDescription>
-                Fill out the form below to submit your profile. We'll keep your details on file for future openings.
+                Submit your application and we'll contact you when new positions become available that match your skills.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -139,7 +144,7 @@ Please attach your resume to this email.`;
                     name="coverLetter"
                     value={formData.coverLetter}
                     onChange={handleChange}
-                    placeholder="Tell us about yourself..."
+                    placeholder="Tell us about yourself and your career interests..."
                     rows={4}
                   />
                 </div>
@@ -148,7 +153,7 @@ Please attach your resume to this email.`;
                   type="submit" 
                   className="w-full gradient-border-alt hover:opacity-90"
                 >
-                  Submit Profile
+                  Apply for Future Opportunities
                   <Send size={16} className="ml-2" />
                 </Button>
               </form>
