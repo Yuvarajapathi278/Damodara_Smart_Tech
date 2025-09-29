@@ -136,7 +136,7 @@ export function WhyChooseUsSection() {
     <section id="why-choose-us" className="py-20 px-4 bg-gradient-to-br from-background via-background to-accent/5" data-aos="fade-up">
       <div className="container">
         <div className="text-center mb-16" data-aos="zoom-in" data-aos-delay="200">
-          <h2 className="text-3xl md:text-4xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Why Choose Us</h2>
+          <h2 className="text-4xl md:text-5xl tracking-wider text-neon-purple mb-3 font-bold">Why Choose Us</h2>
           <h3 className="text-2xl md:text-3xl font-bold mb-6">
             Your Trusted <span className="gradient-text">Technology Partner</span>
           </h3>

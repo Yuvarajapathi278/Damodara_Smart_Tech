@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useNavigate, useLocation } from "react-router-dom";
-import { ArrowLeft, Send } from "lucide-react";
+import { ArrowLeft, Send, Mail } from "lucide-react";
 
 export default function Apply() {
   const navigate = useNavigate();
@@ -20,6 +20,16 @@ export default function Apply() {
     portfolio_links: ''
   });
 
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    position: '',
+    experience: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   // Auto-fill position if coming from job opportunity
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -32,10 +42,110 @@ export default function Apply() {
     }
   }, [location]);
 
+  // Validation functions
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    // Indian phone number format: +91 followed by 10 digits or just 10 digits
+    const phoneRegex = /^(\+91[\s\-]?)?[6-9]\d{9}$/;
+    return phoneRegex.test(phone.replace(/[\s\-]/g, ''));
+  };
+
+  const validateForm = () => {
+    const newErrors = {
+      name: '',
+      email: '',
+      phone: '',
+      position: '',
+      experience: ''
+    };
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = 'Full name is required';
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    // Phone validation
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!validatePhone(formData.phone)) {
+      newErrors.phone = 'Please enter a valid Indian phone number';
+    }
+
+    // Position validation
+    if (!formData.position) {
+      newErrors.position = 'Please select a position';
+    }
+
+    // Experience validation
+    if (!formData.experience) {
+      newErrors.experience = 'Experience is required';
+    } else if (parseFloat(formData.experience) < 0) {
+      newErrors.experience = 'Experience cannot be negative';
+    }
+
+    setErrors(newErrors);
+    return Object.values(newErrors).every(error => error === '');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission for future recruitments
-    alert("Thank you for your application! We'll contact you when new positions become available.");
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Create email body with all form details
+    const emailBody = `
+Dear Damodara Smart Tech Team,
+
+I am interested in applying for a position at your company. Please find my application details below:
+
+APPLICANT INFORMATION:
+======================
+Full Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Preferred Position: ${formData.position}
+Years of Experience: ${formData.experience}
+
+${formData.portfolio_links ? `Portfolio/GitHub: ${formData.portfolio_links}` : ''}
+
+COVER LETTER:
+=============
+${formData.message || 'No cover letter provided'}
+
+Note: I will attach my resume to this email.
+
+Best regards,
+${formData.name}
+    `.trim();
+
+    // Create Gmail compose URL
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent(`Job Application - ${formData.position} - ${formData.name}`)}&body=${encodeURIComponent(emailBody)}`;
+
+    // Open Gmail compose
+    window.open(gmailURL, '_blank');
+
+    // Show success message
+    setTimeout(() => {
+      setIsSubmitting(false);
+      alert("✅ Gmail opened successfully! Please attach your resume and click Send to submit your application.");
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -44,6 +154,14 @@ export default function Apply() {
       ...prev,
       [name]: value
     }));
+
+    // Clear error when user starts typing
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
   return (
@@ -74,11 +192,11 @@ export default function Apply() {
           
           <div className="mt-6 inline-block bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 px-8 py-4 rounded-xl shadow-lg">
             <div className="flex items-center justify-center gap-3 mb-2">
-              <Send className="h-5 w-5 text-blue-600" />
-              <span className="text-blue-800 font-bold text-lg">🚀 Future Opportunities</span>
+              <Mail className="h-5 w-5 text-blue-600" />
+              <span className="text-blue-800 font-bold text-lg">📧 Email Application</span>
             </div>
             <p className="text-blue-700 font-semibold text-base leading-relaxed">
-              Submit your application and we'll contact you when new positions open up
+              Complete the form below - we'll open Gmail for you to attach resume and send!
             </p>
           </div>
         </div>
@@ -101,9 +219,10 @@ export default function Apply() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Enter your full name"
-                  className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
+                  className={`border-2 transition-colors ${errors.name ? 'border-red-400 focus:border-red-400' : 'border-gray-200 focus:border-purple-400'}`}
                   required
                 />
+                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
               </div>
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
@@ -116,9 +235,10 @@ export default function Apply() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your.email@example.com"
-                  className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
+                  className={`border-2 transition-colors ${errors.email ? 'border-red-400 focus:border-red-400' : 'border-gray-200 focus:border-purple-400'}`}
                   required
                 />
+                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
               </div>
             </div>
 
@@ -134,9 +254,11 @@ export default function Apply() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+91 XXXXX XXXXX"
-                  className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
+                  className={`border-2 transition-colors ${errors.phone ? 'border-red-400 focus:border-red-400' : 'border-gray-200 focus:border-purple-400'}`}
                   required
                 />
+                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                <p className="text-xs text-gray-500">Format: +91 XXXXXXXXXX or XXXXXXXXXX</p>
               </div>
               <div className="space-y-2">
                 <label htmlFor="position" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
@@ -147,7 +269,7 @@ export default function Apply() {
                   name="position"
                   value={formData.position}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-200 bg-white rounded-md focus:outline-none focus:border-purple-400 text-sm transition-colors"
+                  className={`w-full px-4 py-3 border-2 bg-white rounded-md focus:outline-none text-sm transition-colors ${errors.position ? 'border-red-400 focus:border-red-400' : 'border-gray-200 focus:border-purple-400'}`}
                   required
                 >
                   <option value="">Select your preferred position</option>
@@ -155,6 +277,7 @@ export default function Apply() {
                   <option value="UI/UX Designer">🎨 UI/UX Designer</option>
                   <option value="Python Web Scraper">🐍 Python Web Scraper</option>
                 </select>
+                {errors.position && <p className="text-red-500 text-xs mt-1">{errors.position}</p>}
               </div>
             </div>
 
@@ -171,9 +294,10 @@ export default function Apply() {
                 value={formData.experience}
                 onChange={handleChange}
                 placeholder="e.g., 2.5"
-                className="border-2 border-gray-200 focus:border-purple-400 transition-colors"
+                className={`border-2 transition-colors ${errors.experience ? 'border-red-400 focus:border-red-400' : 'border-gray-200 focus:border-purple-400'}`}
                 required
               />
+              {errors.experience && <p className="text-red-500 text-xs mt-1">{errors.experience}</p>}
             </div>
 
             <div className="space-y-2">
@@ -207,22 +331,33 @@ export default function Apply() {
               />
             </div>
 
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-xl p-6 shadow-sm">
+            <div className="bg-gradient-to-r from-amber-50 to-blue-50 border-2 border-amber-200 rounded-xl p-6 shadow-sm">
               <div className="text-center">
-                <h3 className="text-lg font-bold text-green-800 mb-2">
-                  🌟 Ready to Join Our Team?
+                <h3 className="text-lg font-bold text-amber-800 mb-2">
+                  📧 How It Works
                 </h3>
-                <p className="text-green-700 font-medium">
-                  Submit your application and be the first to know about new opportunities!
-                </p>
+                <div className="text-amber-700 font-medium text-sm space-y-2">
+                  <p>1. ✅ Fill out the form completely</p>
+                  <p>2. 📧 Click "Apply Now" to open Gmail</p>
+                  <p>3. 📎 Attach your resume to the email</p>
+                  <p>4. ✉️ Click Send to submit your application</p>
+                </div>
               </div>
             </div>
 
             <Button 
               type="submit" 
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 text-base shadow-lg transform hover:scale-105 transition-all duration-200"
+              disabled={isSubmitting}
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 text-base shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:transform-none"
             >
-              🚀 Apply Now
+              {isSubmitting ? (
+                <>⏳ Opening Gmail...</>
+              ) : (
+                <>
+                  <Mail className="mr-2 h-4 w-4" />
+                  📧 Apply Now (Open Gmail)
+                </>
+              )}
             </Button>
           </form>
         </Card>

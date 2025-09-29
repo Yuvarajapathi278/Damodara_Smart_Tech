@@ -20,7 +20,7 @@ export function CareersSection() {
 
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16" data-aos="zoom-in" data-aos-delay="200">
-          <h2 className="text-3xl md:text-4xl uppercase tracking-wider text-neon-purple mb-3 font-bold">Careers</h2>
+          <h2 className="text-4xl md:text-5xl tracking-wider text-neon-purple mb-3 font-bold">Careers</h2>
           <h3 className="text-2xl md:text-3xl font-bold mb-6">
             Join Our <span className="gradient-text">Innovation Journey</span>
           </h3>
