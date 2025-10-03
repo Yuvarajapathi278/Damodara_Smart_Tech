@@ -52,11 +52,23 @@ export function AboutSection() {
           
           <div className="order-1 lg:order-2">
             <div className="relative">
-              {/* Mission Card */}
-              <div className="glass-card border border-white/10 shadow-lg transition-all duration-300">
-                <div className="p-4 bg-gradient-to-br from-neon-purple/20 to-neon-blue/20">
-                  <h4 className="text-4xl font-bold mb-4">Our Mission</h4>
-                  <p className="text-muted-foreground text-base">
+              {/* Mission Card with Background Image */}
+              <div className="glass-card border border-white/10 shadow-lg transition-all duration-300 overflow-hidden rounded-xl">
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)`,
+                  }}
+                />
+                
+                {/* Overlay for better text visibility */}
+                <div className="absolute inset-0 bg-black bg-opacity-60" />
+                
+                {/* Content */}
+                <div className="relative z-10 p-4 bg-gradient-to-br from-neon-purple/20 to-neon-blue/20">
+                  <h4 className="text-4xl font-bold mb-4 text-white drop-shadow-lg">Our Mission</h4>
+                  <p className="text-gray-200 text-base drop-shadow-md">
                     At Damodara Smart Tech, we deliver timely, smart, and innovative solutions that solve real-world problems, create dignified jobs that value every skill, automate impactful services for greater efficiency, and empower people to thrive with purpose in the modern world.
                   </p>
                 </div>
