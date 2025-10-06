@@ -141,18 +141,19 @@ export function Navbar() {
           <div className="w-full flex flex-col items-center">
             <div className="flex items-center justify-center w-full mb-2">
               <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 rounded-full object-cover" />
-              <div className="ml-3 flex flex-col items-start justify-center">
+              <div className="ml-3 flex flex-col items-start justify-center relative">
                 <span className="text-xl font-extrabold text-dst-darkgreen leading-none tracking-tight mb-1">
                   Damodara Smart Tech
                 </span>
-                <span className="text-dst-gold text-sm font-semibold leading-none tracking-normal">
+                {/* Mobile tagline positioned to start from middle and smaller */}
+                <span className="text-dst-gold text-xs font-medium leading-none tracking-normal absolute top-6 left-16 w-32 text-left">
                   Smart Solutions. Automate Services.
                 </span>
               </div>
             </div>
           </div>
 
-          <nav className="flex flex-col w-full gap-4 mt-6">
+          <nav className="flex flex-col w-full gap-4 mt-12">
             {navItems.map((item) => (
               <button
                 key={item.label}
