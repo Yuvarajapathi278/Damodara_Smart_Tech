@@ -146,7 +146,7 @@ export function Navbar() {
                   Damodara Smart Tech
                 </span>
                 {/* Mobile tagline positioned to start from middle and smaller */}
-                <span className="text-dst-gold text-xs font-medium leading-none tracking-normal absolute top-6 left-16 w-20 text-left">
+                <span className="text-dst-gold text-[0.6rem] font-light leading-none tracking-tight absolute top-6 left-16 w-16 truncate">
                   Smart Solutions. Automate Services.
                 </span>
               </div>
