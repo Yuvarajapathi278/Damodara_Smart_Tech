@@ -25,12 +25,12 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Email validation
-  const validateEmail = (email: string) => {
+  const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const validateForm = () => {
+  const validateForm = (): boolean => {
     const newErrors = {
       name: '',
       email: '',
@@ -60,7 +60,7 @@ export default function Contact() {
     return Object.values(newErrors).every(error => error === '');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (!validateForm()) {
@@ -100,7 +100,10 @@ Please reply directly to: ${formData.email}
       
       // Reset form after submission
       setFormData({
-        name: '', email: '', subject: '', message: ''
+        name: '', 
+        email: '', 
+        subject: '', 
+        message: ''
       });
     }, 1000);
   };

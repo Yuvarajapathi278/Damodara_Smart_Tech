@@ -1,33 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Send } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const navigate = useNavigate();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-Message: ${formData.message}`;
-
-    window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=damodarasmarttech@gmail.com&su=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+  const handleContactClick = () => {
+    navigate('/contact');
   };
 
   return (
@@ -44,84 +23,18 @@ Message: ${formData.message}`;
           <h3 className="text-xl md:text-2xl font-bold mb-4">
             Start Your <span className="gradient-text">Digital Journey</span>
           </h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground mb-8">
             Have a project in mind? We'd love to hear from you.
           </p>
-        </div>
-        
-        <div className="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
-          <div className="glass-card rounded-xl p-6">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
-                    Your Name
-                  </label>
-                  <Input 
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="bg-secondary/50 border-white/10"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
-                    Email Address
-                  </label>
-                  <Input 
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-secondary/50 border-white/10"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-1">
-                  Subject
-                </label>
-                <Input 
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="bg-secondary/50 border-white/10"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  Message
-                </label>
-                <Textarea 
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="bg-secondary/50 border-white/10"
-                  rows={4}
-                  required
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-gradient-blue-purple hover:opacity-90 transition-opacity"
-              >
-                Send Message
-                <Send size={16} className="ml-2" />
-              </Button>
-            </form>
-          </div>
+          
+          <Button 
+            onClick={handleContactClick}
+            className="bg-gradient-blue-purple hover:opacity-90 transition-opacity px-8 py-3 text-lg font-semibold"
+            data-aos="fade-up" 
+            data-aos-delay="400"
+          >
+            Contact Us
+          </Button>
         </div>
       </div>
     </section>
