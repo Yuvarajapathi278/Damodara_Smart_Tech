@@ -101,8 +101,8 @@ export function Navbar() {
               Damodara Smart Tech
             </span>
           </div>
-          {/* Tagline - Aligned with "Damodara" start */}
-          <div style={{ marginLeft: '12rem' }}>
+          {/* Tagline - Responsive positioning */}
+          <div className="ml-14 sm:ml-16 md:ml-20 lg:ml-24 xl:ml-28">
             <span className="text-dst-gold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold leading-tight block w-fit">
               Smart Solutions. Automate Services.
             </span>
@@ -142,10 +142,10 @@ export function Navbar() {
             <div className="flex items-center justify-center w-full mb-2">
               <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 rounded-full object-cover" />
               <div className="ml-3 flex flex-col items-start justify-center">
-                <span className="text-xl font-extrabold text-dst-darkgreen leading-none tracking-tight mb-2">
+                <span className="text-xl font-extrabold text-dst-darkgreen leading-none tracking-tight mb-1">
                   Damodara Smart Tech
                 </span>
-                <span className="text-dst-gold text-sm font-semibold leading-none tracking-normal mt-0.5">
+                <span className="text-dst-gold text-sm font-semibold leading-none tracking-normal">
                   Smart Solutions. Automate Services.
                 </span>
               </div>
