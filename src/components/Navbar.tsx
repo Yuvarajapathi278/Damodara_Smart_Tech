@@ -92,21 +92,33 @@ export function Navbar() {
         <div className="flex flex-col cursor-pointer" onClick={handleLogoClick}>
           {/* Logo + Company Name Row */}
           <div className="flex items-center">
-            <img
-              src="/DST_logo.png"
-              alt="Damodara Smart Tech Logo"
-              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full object-cover flex-shrink-0"
-            />
-            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-normal text-dst-darkgreen ml-2 md:ml-3 leading-tight">
-              Damodara Smart Tech
-            </span>
-          </div>
-          {/* Tagline - Responsive positioning */}
-          <div className="ml-14 sm:ml-16 md:ml-20 lg:ml-24 xl:ml-28">
-            <span className="text-dst-gold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold leading-tight block w-fit">
-              Smart Solutions. Automate Services.
-            </span>
-          </div>
+  <img
+    src="/DST_logo.png"
+    alt="Damodara Smart Tech Logo"
+    className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full object-cover flex-shrink-0"
+  />
+  <div className="flex flex-col ml-3" style={{ width: 'fit-content' }}>
+    <span
+      id="company"
+      className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-normal text-dst-darkgreen leading-tight whitespace-nowrap"
+      style={{ width: 'fit-content', display: 'block' }}
+    >
+      Damodara Smart Tech
+    </span>
+    <span
+      className="text-dst-gold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold leading-tight block pt-1 whitespace-nowrap"
+      style={{
+        textIndent: '6.1ch',   // adjust for how far in you want to start
+        maxWidth: '100%',    // won’t overflow parent width (matches company name)
+        overflow: 'hidden',  // if tagline's too long, it's clipped
+        textAlign: 'left',
+        display: 'block',
+      }}
+    >
+      Smart Solutions. Automate Services.
+    </span>
+  </div>
+</div>
         </div>
 
         {/* Desktop Navigation + Theme Toggle - RIGHT SIDE */}
