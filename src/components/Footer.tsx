@@ -35,7 +35,7 @@ export function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://youtube.com/@damodarasmarttechpvtlted?si=80YucvYFKOzbmGqw"
+                href="https://www.youtube.com/@DamodaraSmartTech"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-neon-blue transition-colors"

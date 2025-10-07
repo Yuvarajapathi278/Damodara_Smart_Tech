@@ -85,7 +85,7 @@ export function HeroSection() {
                   <p className="text-center mb-1 leading-tight">Subscribe for latest tech & updates!</p>
                   <div className="flex items-center gap-3 mt-1">
                     <a
-                      href="https://youtube.com/@damodarasmarttechpvtlted?si=4UUnn7yl48bKIXw4"
+                      href="https://www.youtube.com/@DamodaraSmartTech"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center hover:text-red-600 transition-colors underline text-xs"
