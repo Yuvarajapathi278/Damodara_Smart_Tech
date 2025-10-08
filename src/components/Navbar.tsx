@@ -95,7 +95,7 @@ export function Navbar() {
   <img
     src="/DST_logo.png"
     alt="Damodara Smart Tech Logo"
-    className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full object-cover flex-shrink-0"
+    className="w-28 h-30 sm:w-28 sm:h-30 md:w-28 md:h-30 lg:w-28 lg:h-30 rounded-full object-cover flex-shrink-0"
   />
   <div className="flex flex-col ml-3" style={{ width: 'fit-content' }}>
     <span
