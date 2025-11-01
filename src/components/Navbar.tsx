@@ -89,21 +89,24 @@ export function Navbar() {
     >
       <div className="w-full px-4 md:px-6 flex items-center justify-between flex-wrap gap-y-2">
         {/* Logo + Company Info */}
-        <div className="flex items-center gap-3 cursor-pointer" onClick={handleLogoClick}>
-          <img
-            src="/DST_logo.png"
-            alt="Damodara Smart Tech Logo"
-            className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover flex-shrink-0"
-          />
-          <div className="flex flex-col justify-center">
-            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-dst-darkgreen leading-tight tracking-tight whitespace-nowrap">
-              Damodara Smart Tech
-            </span>
-            <span className="text-dst-gold text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-tight tracking-tight pl-[6ch] max-w-full whitespace-nowrap">
-              Smart Solutions. Automate Services.
-            </span>
-          </div>
-        </div>
+       <div className="flex items-center gap-3 cursor-pointer" onClick={handleLogoClick}>
+  <img
+    src="/DST_logo.png"
+    alt="Damodara Smart Tech Logo"
+    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover flex-shrink-0"
+  />
+  <div className="flex flex-col justify-center">
+    {/* Company Name */}
+    <span className="text-2xl sm:text-3xl md:text-4xl font-black text-dst-darkgreen leading-tight tracking-tight whitespace-nowrap max-w-[28ch]">
+      Damodara Smart Tech
+    </span>
+
+    {/* Tagline — aligned and constrained */}
+    <span className="text-dst-gold text-lg sm:text-xl md:text-2xl font-semibold leading-tight tracking-tight pl-[6ch] max-w-[22ch] whitespace-nowrap">
+      Smart Solutions. Automate Services.
+    </span>
+  </div>
+</div>
 
         {/* Desktop Nav + Theme Toggle */}
         <div className="hidden md:flex items-center gap-1 lg:gap-2">
@@ -134,16 +137,16 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-y-auto animate-fade-in md:hidden">
           <div className="flex items-center gap-3">
-            <img src="/DST_logo.png" alt="Logo" className="w-14 h-14 rounded-full object-cover" />
-            <div className="flex flex-col">
-              <span className="text-lg font-black text-dst-darkgreen leading-tight">
-                Damodara Smart Tech
-              </span>
-              <span className="text-dst-gold text-[0.75rem] font-semibold leading-tight pl-[6ch] max-w-full whitespace-nowrap">
-                Smart Solutions. Automate Services.
-              </span>
-            </div>
-          </div>
+  <img src="/DST_logo.png" alt="Logo" className="w-14 h-14 rounded-full object-cover" />
+  <div className="flex flex-col">
+    <span className="text-xl sm:text-2xl font-black text-dst-darkgreen leading-tight whitespace-nowrap max-w-[28ch]">
+      Damodara Smart Tech
+    </span>
+    <span className="text-dst-gold text-sm sm:text-base font-semibold leading-tight pl-[6ch] max-w-[22ch] whitespace-nowrap">
+      Smart Solutions. Automate Services.
+    </span>
+  </div>
+</div>
 
           <nav className="flex flex-col w-full gap-4 mt-8">
             {navItems.map((item) => (
