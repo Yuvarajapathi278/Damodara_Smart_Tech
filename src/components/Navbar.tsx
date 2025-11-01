@@ -93,15 +93,18 @@ export function Navbar() {
           <img
             src="/DST_logo.png"
             alt="Damodara Smart Tech Logo"
-            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover flex-shrink-0"
+            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover flex-shrink-0"
           />
-          <div className="flex flex-col justify-center">
-            <span className="text-[1.8rem] sm:text-[2rem] md:text-[2.2rem] font-black text-dst-darkgreen leading-tight tracking-tight max-w-[28ch]">
+          <div className="flex flex-col justify-center h-full">
+            <div className="text-[1.8rem] sm:text-[2rem] md:text-[2.2rem] font-black text-dst-darkgreen leading-none tracking-tight">
               Damodara Smart Tech
-            </span>
-            <span className="text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] font-semibold text-dst-gold leading-tight tracking-tight pl-[6ch] max-w-[22ch]">
+            </div>
+            <div
+              className="text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] font-semibold text-dst-gold leading-none tracking-tight"
+              style={{ paddingLeft: "6ch", maxWidth: "22ch" }}
+            >
               Smart Solutions. Automate Services.
-            </span>
+            </div>
           </div>
         </div>
 
@@ -134,14 +137,17 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-auto min-h-screen md:hidden">
           <div className="flex items-center gap-3">
-            <img src="/DST_logo.png" alt="Logo" className="w-12 h-12 rounded-full object-cover" />
+            <img src="/DST_logo.png" alt="Logo" className="w-14 h-14 rounded-full object-cover" />
             <div className="flex flex-col">
-              <span className="text-[1.6rem] font-black text-dst-darkgreen leading-tight max-w-[28ch]">
+              <div className="text-[1.6rem] font-black text-dst-darkgreen leading-none max-w-[28ch]">
                 Damodara Smart Tech
-              </span>
-              <span className="text-[0.9rem] font-semibold text-dst-gold leading-tight pl-[6ch] max-w-[22ch]">
+              </div>
+              <div
+                className="text-[0.9rem] font-semibold text-dst-gold leading-none"
+                style={{ paddingLeft: "6ch", maxWidth: "22ch" }}
+              >
                 Smart Solutions. Automate Services.
-              </span>
+              </div>
             </div>
           </div>
 
