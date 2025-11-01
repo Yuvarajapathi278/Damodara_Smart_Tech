@@ -96,10 +96,10 @@ export function Navbar() {
             className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover flex-shrink-0"
           />
           <div className="flex flex-col justify-center">
-            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-dst-darkgreen leading-tight tracking-tight whitespace-nowrap">
+            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-dst-darkgreen leading-tight tracking-tight whitespace-nowrap">
               Damodara Smart Tech
             </span>
-            <span className="text-dst-gold text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-tight tracking-tight pl-[6ch] max-w-[20ch] truncate">
+            <span className="text-dst-gold text-sm sm:text-base md:text-lg lg:text-xl font-semibold leading-tight tracking-tight pl-[6ch] max-w-full whitespace-nowrap">
               Smart Solutions. Automate Services.
             </span>
           </div>
@@ -136,10 +136,10 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <img src="/DST_logo.png" alt="Logo" className="w-14 h-14 rounded-full object-cover" />
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-dst-darkgreen leading-tight">
+              <span className="text-lg font-black text-dst-darkgreen leading-tight">
                 Damodara Smart Tech
               </span>
-              <span className="text-dst-gold text-[0.65rem] font-medium leading-tight pl-[6ch] max-w-[20ch] truncate">
+              <span className="text-dst-gold text-[0.75rem] font-semibold leading-tight pl-[6ch] max-w-full whitespace-nowrap">
                 Smart Solutions. Automate Services.
               </span>
             </div>
