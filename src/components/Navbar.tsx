@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface NavItem {
   label: string;
@@ -88,20 +88,20 @@ export function Navbar() {
       )}
     >
       <div className="w-full px-4 md:px-6 flex items-center justify-between flex-wrap gap-y-2">
-        {/* Logo + Company Info */}
-        <div className="flex items-center gap-3 cursor-pointer" onClick={handleLogoClick}>
+        {/* Branding Block */}
+        <div className="flex items-center gap-3 cursor-pointer flex-shrink" onClick={handleLogoClick}>
           <img
             src="/DST_logo.png"
             alt="Damodara Smart Tech Logo"
-            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover flex-shrink-0"
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover"
           />
-          <div className="flex flex-col justify-center h-full">
-            <div className="text-[3.5rem] font-black text-dst-darkgreen leading-none tracking-tight">
+          <div className="flex flex-col justify-center overflow-hidden">
+            <div className="text-[1.5rem] sm:text-[2rem] md:text-[2.5rem] font-black text-dst-darkgreen leading-tight tracking-tight whitespace-nowrap">
               Damodara Smart Tech
             </div>
             <div
-              className="text-[1.9rem] font-semibold text-dst-gold leading-none tracking-tight"
-              style={{ paddingLeft: "3.5ch", maxWidth: "32ch" }}
+              className="text-[0.9rem] sm:text-[1.1rem] md:text-[1.3rem] font-semibold text-dst-gold leading-tight tracking-tight whitespace-nowrap"
+              style={{ paddingLeft: "4.7ch", maxWidth: "30ch", textOverflow: "ellipsis" }}
             >
               Smart Solutions. Automate Services.
             </div>
@@ -135,44 +135,18 @@ export function Navbar() {
 
       {/* Mobile Menu Panel */}
       {mobileMenuOpen && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-auto min-h-screen md:hidden">
-          <div className="flex items-center gap-3 w-full">
-            <img
-              src="/DST_logo.png"
-              alt="Logo"
-              className="w-14 h-14 rounded-full object-cover flex-shrink-0"
-            />
-            <div className="flex flex-col justify-center overflow-hidden">
-              <div className="text-[1.6rem] font-black text-dst-darkgreen leading-tight tracking-tight">
-                Damodara Smart Tech
-              </div>
-              <div
-                className="text-[1.1rem] font-semibold text-dst-gold leading-tight tracking-tight"
-                style={{
-                  paddingLeft: "3.5ch",
-                  maxWidth: "28ch",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                Smart Solutions. Automate Services.
-              </div>
-            </div>
-          </div>
-
-          <nav className="flex flex-col w-full gap-4 mt-8">
+        <div className="md:hidden fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-auto min-h-screen">
+          <nav className="flex flex-col w-full gap-4 mt-12">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item)}
-                className="text-base font-medium w-full text-left py-2 border-b border-border hover:text-accent transition-colors"
+                className="text-lg font-medium w-full text-left py-2 border-b border-border hover:text-accent transition-colors"
               >
                 {item.label}
               </button>
             ))}
           </nav>
-
           <div className="mt-auto w-full">
             <Button
               className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 text-white font-bold py-2"

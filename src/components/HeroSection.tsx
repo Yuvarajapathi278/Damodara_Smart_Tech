@@ -50,7 +50,7 @@ export function HeroSection() {
           
           {/* Center: Main Heading - UNCHANGED */}
           <div className="flex-1 flex flex-col items-center justify-center text-center px-2 md:px-8 mb-8 md:mb-0" data-aos="zoom-in" data-aos-delay="400">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-6" style={{ color: '#8B5CF6', minHeight: '2.5em' }}>
+            <h1 className="text-2.1xl md:text-2.9xl lg:text-3.9xl xl:text-4xl font-bold leading-tight mb-6" style={{ color: '#8B5CF6', minHeight: '2.5em' }}>
               Grow Your Innovation with Damodara Smart Tech
             </h1>
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl">
