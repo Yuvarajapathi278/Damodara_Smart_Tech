@@ -143,7 +143,7 @@ export function Navbar() {
                 Damodara Smart Tech
               </div>
               <div
-                className="text-[0.5rem] font-semibold text-dst-gold leading-none"
+                className="text-[1rem] font-semibold text-dst-gold leading-none"
                 style={{ paddingLeft: "3.5ch", maxWidth: "32ch" }}
               >
                 Smart Solutions. Automate Services.
