@@ -87,41 +87,25 @@ export function Navbar() {
           : "bg-transparent py-6"
       )}
     >
-      <div className="w-full px-4 md:px-6 flex items-center justify-between">
-        {/* Logo and Company Info - LEFT SIDE */}
-        <div className="flex flex-col cursor-pointer" onClick={handleLogoClick}>
-          {/* Logo + Company Name Row */}
-          <div className="flex items-center">
-  <img
-    src="/DST_logo.png"
-    alt="Damodara Smart Tech Logo"
-    className="w-28 h-30 sm:w-28 sm:h-30 md:w-28 md:h-30 lg:w-28 lg:h-30 rounded-full object-cover flex-shrink-0"
-  />
-  <div className="flex flex-col ml-3" style={{ width: 'fit-content' }}>
-    <span
-      id="company"
-      className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-normal text-dst-darkgreen leading-tight whitespace-nowrap"
-      style={{ width: 'fit-content', display: 'block' }}
-    >
-      Damodara Smart Tech
-    </span>
-    <span
-      className="text-dst-gold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold leading-tight block pt-1 whitespace-nowrap"
-      style={{
-        textIndent: '6.1ch',   // adjust for how far in you want to start
-        maxWidth: '100%',    // won’t overflow parent width (matches company name)
-        overflow: 'hidden',  // if tagline's too long, it's clipped
-        textAlign: 'left',
-        display: 'block',
-      }}
-    >
-      Smart Solutions. Automate Services.
-    </span>
-  </div>
-</div>
+      <div className="w-full px-4 md:px-6 flex items-center justify-between flex-wrap gap-y-2">
+        {/* Logo and Company Info */}
+        <div className="flex items-center gap-2 cursor-pointer" onClick={handleLogoClick}>
+          <img
+            src="/DST_logo.png"
+            alt="Damodara Smart Tech Logo"
+            className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover flex-shrink-0"
+          />
+          <div className="flex flex-col justify-center">
+            <span className="text-lg sm:text-xl md:text-2xl font-extrabold text-dst-darkgreen leading-tight whitespace-nowrap">
+              Damodara Smart Tech
+            </span>
+            <span className="text-dst-gold text-xs sm:text-sm md:text-base font-semibold leading-tight whitespace-nowrap">
+              Smart Solutions. Automate Services.
+            </span>
+          </div>
         </div>
 
-        {/* Desktop Navigation + Theme Toggle - RIGHT SIDE */}
+        {/* Desktop Nav + Theme Toggle */}
         <div className="hidden md:flex items-center gap-1 lg:gap-2">
           {navItems.map((item) => (
             <button
@@ -137,7 +121,7 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu Toggle - RIGHT SIDE */}
+        {/* Mobile Toggle */}
         <div className="flex items-center md:hidden gap-2">
           <ThemeToggle />
           <Button variant="ghost" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -149,28 +133,24 @@ export function Navbar() {
       {/* Mobile Menu Panel */}
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-y-auto animate-fade-in md:hidden">
-          {/* Mobile Brand Block */}
-          <div className="w-full flex flex-col items-center">
-            <div className="flex items-center justify-center w-full mb-2">
-              <img src="/DST_logo.png" alt="Damodara Smart Tech Logo" className="w-16 h-16 rounded-full object-cover" />
-              <div className="ml-3 flex flex-col items-start justify-center relative">
-                <span className="text-xl font-extrabold text-dst-darkgreen leading-none tracking-tight mb-1">
-                  Damodara Smart Tech
-                </span>
-                {/* Mobile tagline positioned to start from middle and smaller */}
-                <span className="text-dst-gold text-[0.6rem] font-light leading-none tracking-tight absolute top-6 left-16 w-16 truncate">
-                  Smart Solutions. Automate Services.
-                </span>
-              </div>
+          <div className="flex items-center gap-3">
+            <img src="/DST_logo.png" alt="Logo" className="w-14 h-14 rounded-full object-cover" />
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-dst-darkgreen leading-tight">
+                Damodara Smart Tech
+              </span>
+              <span className="text-dst-gold text-[0.65rem] font-medium leading-tight">
+                Smart Solutions. Automate Services.
+              </span>
             </div>
           </div>
 
-          <nav className="flex flex-col w-full gap-4 mt-12">
+          <nav className="flex flex-col w-full gap-4 mt-8">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item)}
-                className="text-lg font-medium w-full text-left py-2 border-b border-border hover:text-accent transition-colors"
+                className="text-base font-medium w-full text-left py-2 border-b border-border hover:text-accent transition-colors"
               >
                 {item.label}
               </button>
