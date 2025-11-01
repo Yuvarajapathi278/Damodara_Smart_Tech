@@ -54,7 +54,8 @@ export function HeroSection() {
               Grow Your Innovation with Damodara Smart Tech
             </h1>
             <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-xl">
-              We help forward-thinking companies build stunning digital experiences that drive growth and delight users. Founded in 2024, our mission is to empower your business with the latest in technology and creativity.
+            We provide cutting-edge digital solutions for all people, professions, and enterprises — crafting intelligent experiences that inspire, engage, and accelerate growth.
+            Our mission is to empower every idea with the perfect fusion of technology, creativity, and purpose.
             </p>
           </div>
           
