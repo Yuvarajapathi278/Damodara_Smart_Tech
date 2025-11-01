@@ -139,11 +139,11 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <img src="/DST_logo.png" alt="Logo" className="w-14 h-14 rounded-full object-cover" />
             <div className="flex flex-col">
-              <div className="text-[2.2rem] font-black text-dst-darkgreen leading-none max-w-[28ch]">
+              <div className="text-[1.5rem] font-black text-dst-darkgreen leading-none max-w-[28ch]">
                 Damodara Smart Tech
               </div>
               <div
-                className="text-[1rem] font-semibold text-dst-gold leading-none"
+                className="text-[0.9rem] font-semibold text-dst-gold leading-none"
                 style={{ paddingLeft: "3.5ch", maxWidth: "32ch" }}
               >
                 Smart Solutions. Automate Services.
