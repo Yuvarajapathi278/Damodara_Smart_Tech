@@ -137,7 +137,7 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-auto min-h-screen md:hidden">
           <div className="flex items-center gap-3">
-            <img src="/DST_logo.png" alt="Logo" className="w-14 h-14 rounded-full object-cover" />
+            <img src="/DST_logo.png" alt="Logo" className="w-17 h-17 rounded-full object-cover" />
             <div className="flex flex-col">
               <div className="text-[0.7rem] font-black text-dst-darkgreen leading-none max-w-[28ch]">
                 Damodara Smart Tech
