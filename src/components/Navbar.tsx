@@ -101,7 +101,7 @@ export function Navbar() {
             </div>
             <div
               className="text-[0.9rem] sm:text-[1.1rem] md:text-[1.3rem] font-semibold text-dst-gold leading-tight tracking-tight whitespace-nowrap"
-              style={{ paddingLeft: "4.7ch", maxWidth: "30ch", textOverflow: "ellipsis" }}
+              style={{ paddingLeft: "4.5ch", maxWidth: "30ch", textOverflow: "ellipsis" }}
             >
               Smart Solutions. Automate Services.
             </div>
