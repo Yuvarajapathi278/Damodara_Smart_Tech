@@ -96,11 +96,11 @@ export function Navbar() {
             className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover flex-shrink-0"
           />
           <div className="flex flex-col justify-center h-full">
-            <div className="text-[3.5rem] sm:text-[3.5rem] md:text-[3.5rem] font-black text-dst-darkgreen leading-none tracking-tight">
+            <div className="text-[3.5rem] font-black text-dst-darkgreen leading-none tracking-tight">
               Damodara Smart Tech
             </div>
             <div
-              className="text-[1.8rem] sm:text-[1.8rem] md:text-[1.9rem] font-semibold text-dst-gold leading-none tracking-tight"
+              className="text-[1.9rem] font-semibold text-dst-gold leading-none tracking-tight"
               style={{ paddingLeft: "3.5ch", maxWidth: "32ch" }}
             >
               Smart Solutions. Automate Services.
@@ -136,15 +136,25 @@ export function Navbar() {
       {/* Mobile Menu Panel */}
       {mobileMenuOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-white dark:bg-background flex flex-col items-center p-6 gap-6 overflow-auto min-h-screen md:hidden">
-          <div className="flex items-center gap-3">
-            <img src="/DST_logo.png" alt="Logo" className="w-17 h-17 rounded-full object-cover" />
-            <div className="flex flex-col">
-              <div className="text-[0.7rem] font-black text-dst-darkgreen leading-none max-w-[28ch]">
+          <div className="flex items-center gap-3 w-full">
+            <img
+              src="/DST_logo.png"
+              alt="Logo"
+              className="w-14 h-14 rounded-full object-cover flex-shrink-0"
+            />
+            <div className="flex flex-col justify-center overflow-hidden">
+              <div className="text-[1.6rem] font-black text-dst-darkgreen leading-tight tracking-tight">
                 Damodara Smart Tech
               </div>
               <div
-                className="text-[1rem] font-semibold text-dst-gold leading-none"
-                style={{ paddingLeft: "3.5ch", maxWidth: "32ch" }}
+                className="text-[1.1rem] font-semibold text-dst-gold leading-tight tracking-tight"
+                style={{
+                  paddingLeft: "3.5ch",
+                  maxWidth: "28ch",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
               >
                 Smart Solutions. Automate Services.
               </div>
