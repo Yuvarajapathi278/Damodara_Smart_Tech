@@ -27,16 +27,21 @@ export function HeroSection() {
       </div>
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Left: Curiosity Topic -- Consistent Font/Class */}
+          {/* Left: Curiosity Topic -- Consistent Font/Class & Compact Heading */}
           <div className="flex-1 flex justify-center md:justify-start mb-8 md:mb-0" data-aos="fade-right" data-aos-delay="200">
             <div className="aspect-square w-80 sm:w-80 md:w-80 lg:w-96 relative flex items-center justify-center">
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden">
-                <h2 className="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif">
-                  Make the hapiness to follow you!
+                <h2
+                  className="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[13rem] mx-auto"
+                  style={{ wordBreak: 'break-word' }}
+                >
+                  Just follow what's right;
+                  <br />
+                  happiness follows you
                 </h2>
-                <ul className="text-xs md:text-sm lg:text-base text-blue-900 font-medium space-y-2 text-left list-disc list-inside mb-3 mx-auto w-11/12">
-                  <li>Right action brings real ease—no chasing needed.</li>
+                <ul className="text-xs md:text-sm lg:text-base text-blue-900 font-medium space-y-2 text-left list-disc list-inside mb-3 mx-auto w-11/12 max-w-xs">
+                  <li>Right action brings ease—no chasing needed.</li>
                   <li>Happiness appears naturally, not by force.</li>
                   <li>Try it: choose rightness and feel the change.</li>
                 </ul>
