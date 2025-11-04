@@ -17,7 +17,7 @@ import NotFound from "./pages/NotFound";
 import Apply from "./pages/Apply";
 import BlogDetails from "./pages/BlogDetails";
 import PersonalAppPage from "./pages/personal-app";
-import HappinessMindsetPage from "./pages/happiness-mindset";
+//import HappinessMindsetPage from "./pages/happiness-mindset";
 import ServiceDetail from "./pages/ServiceDetail"; // 🚀 NEW
 import SelectedCandidates from "./pages/SelectedCandidates"; // 🎉 NEW
 
@@ -40,7 +40,6 @@ function AppWithGA() {
       <Route path="/selected-candidates" element={<SelectedCandidates />} />
       <Route path="/blog/tech-trends-2025" element={<BlogDetails />} />
       <Route path="/personal-app" element={<PersonalAppPage />} />
-      <Route path="/happiness-mindset" element={<HappinessMindsetPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
