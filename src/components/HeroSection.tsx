@@ -33,7 +33,7 @@ export function HeroSection() {
               <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
               <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden">
                 <h2 className="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif">
-                  Make the hapiness to follow you..!
+                  Make the hapiness to follow you!
                 </h2>
                 <ul className="text-xs md:text-sm lg:text-base text-blue-900 font-medium space-y-2 text-left list-disc list-inside mb-3 mx-auto w-11/12">
                   <li>Right action brings real ease—no chasing needed.</li>
