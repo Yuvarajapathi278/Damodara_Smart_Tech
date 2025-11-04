@@ -36,9 +36,7 @@ export function HeroSection() {
                   className="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[13rem] mx-auto"
                   style={{ wordBreak: 'break-word' }}
                 >
-                  Just follow what's right;
-                  <br />
-                  happiness follows you
+                  Make the happiness to follow you..!
                 </h2>
                 <ul className="text-xs md:text-sm lg:text-base text-blue-900 font-medium space-y-2 text-left list-disc list-inside mb-3 mx-auto w-11/12 max-w-xs">
                   <li>Right action brings ease—no chasing needed.</li>
