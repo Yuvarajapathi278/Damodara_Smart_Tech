@@ -11,7 +11,7 @@ const PersonalAppPage = () => {
         ← Back
       </Button>
       <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gradient bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-        Happiness & Rightness: A Simple Science for a Joyful Life
+        Make the happiness to follow you..!
       </h1>
       <p className="mb-4 text-base md:text-lg text-blue-900 font-medium">
         <b>True happiness is not something to chase or wait for—it's what remains when life is aligned with what’s right.</b>
