@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy - FocusGrid</title>
 
-    <!-- FAVICON (browser tab logo) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/focusgrid/privacy-policy/App_Logo.png" />
 
     <style>
-      /* Basic reset */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-      /* Glassmorphism background */
+      /* Background */
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
@@ -25,16 +24,15 @@
         -webkit-backdrop-filter: blur(28px) saturate(180%);
         min-height: 100vh;
         padding: 60px 20px;
-        position: relative;
         overflow-x: hidden;
         background-image: linear-gradient(
           135deg,
           rgba(255, 255, 255, 0.35),
           rgba(255, 255, 255, 0.15)
         );
+        scroll-behavior: smooth;
       }
 
-      /* Floating glow */
       body::before {
         content: "";
         position: fixed;
@@ -47,14 +45,14 @@
           ),
           radial-gradient(
             circle at 80% 60%,
-            rgba(255, 255, 255, 0.20),
+            rgba(255, 255, 255, 0.2),
             transparent 60%
           );
-        filter: blur(120px);
+        filter: blur(100px);
         opacity: 0.6;
       }
 
-      /* Layout container */
+      /* Layout */
       .container {
         max-width: 920px;
         margin: 0 auto;
@@ -62,43 +60,21 @@
         z-index: 1;
       }
 
-      /* Main card */
       .glass-card {
         background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        backdrop-filter: blur(20px);
         border-radius: 28px;
         border: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25),
-          inset 0 1px 0 rgba(255, 255, 255, 0.7);
         padding: 56px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .glass-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.5) 50%,
-          transparent
-        );
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
       }
 
       /* Header */
       .header {
         text-align: center;
         margin-bottom: 48px;
-        position: relative;
       }
 
-      /* App Logo replacing lock icon */
       .icon-circle {
         width: 88px;
         height: 88px;
@@ -108,15 +84,13 @@
           rgba(102, 126, 234, 0.15),
           rgba(147, 51, 234, 0.15)
         );
-        backdrop-filter: blur(10px);
         border-radius: 50%;
         border: 2px solid rgba(102, 126, 234, 0.3);
-        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15),
-          inset 0 1px 0 rgba(255, 255, 255, 0.5);
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        backdrop-filter: blur(10px);
       }
 
       .icon-circle img {
@@ -129,163 +103,81 @@
       h1 {
         font-size: 36px;
         font-weight: 700;
-        color: #1a1a1a;
         margin-bottom: 12px;
-        letter-spacing: -0.5px;
-      }
-
-      .last-updated {
-        color: #666;
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.3px;
+        color: #1a1a1a;
       }
 
       h2 {
-        font-size: 26px;
-        font-weight: 700;
-        color: #1a1a1a;
         margin-top: 56px;
         margin-bottom: 24px;
         padding-bottom: 16px;
         border-bottom: 2px solid rgba(147, 51, 234, 0.2);
-        position: relative;
-      }
-
-      h2::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 60px;
-        height: 2px;
-        background: linear-gradient(
-          90deg,
-          rgba(102, 126, 234, 0.8),
-          rgba(147, 51, 234, 0.8)
-        );
+        font-size: 26px;
+        font-weight: 700;
       }
 
       h3 {
-        font-size: 21px;
-        font-weight: 600;
-        color: #2d2d2d;
         margin-top: 36px;
         margin-bottom: 18px;
+        font-size: 21px;
       }
 
       h4 {
-        font-size: 19px;
-        font-weight: 600;
-        color: #3d3d3d;
         margin-top: 28px;
         margin-bottom: 14px;
+        font-size: 19px;
       }
 
-      p {
-        color: #4a4a4a;
-        line-height: 1.9;
-        font-size: 16px;
-        margin-bottom: 18px;
-      }
-
-      ul,
-      ol {
-        margin-left: 28px;
-        margin-bottom: 18px;
-      }
-
+      p,
       li {
         color: #4a4a4a;
+        font-size: 16px;
         line-height: 1.9;
-        margin-bottom: 14px;
+        margin-bottom: 18px;
       }
 
-      a {
-        color: #3b82f6;
-        font-weight: 600;
-        text-decoration: none;
-        position: relative;
-      }
-
-      a::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #3b82f6, #9333ea);
-        transition: width 0.3s ease;
-      }
-
-      a:hover::after {
-        width: 100%;
-      }
-
-      /* Credit & Contact sections */
-      .credits-section {
-        background: linear-gradient(
-          135deg,
-          rgba(102, 126, 234, 0.08),
-          rgba(147, 51, 234, 0.08)
-        );
-        backdrop-filter: blur(10px);
-        padding: 28px;
-        border-radius: 20px;
-        border: 1px solid rgba(102, 126, 234, 0.2);
-        margin: 36px 0;
-      }
-
+      /* Sections */
+      .credits-section,
       .contact-section {
         background: linear-gradient(
           135deg,
           rgba(102, 126, 234, 0.1),
           rgba(147, 51, 234, 0.1)
         );
-        backdrop-filter: blur(15px);
-        padding: 40px;
         border-radius: 20px;
         border: 1px solid rgba(102, 126, 234, 0.25);
-        margin-top: 56px;
+        padding: 28px;
+        margin-top: 36px;
+        backdrop-filter: blur(10px);
+      }
+
+      .contact-section {
         text-align: center;
       }
 
-      /* Scroll-to-top */
+      /* Scroll button */
       .scroll-top {
         position: fixed;
         bottom: 40px;
         right: 40px;
         width: 50px;
         height: 50px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
+        background: white;
         border-radius: 50%;
         border: 1px solid rgba(102, 126, 234, 0.3);
-        color: #3b82f6;
-        font-size: 20px;
-        font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         opacity: 0;
-        transform: translateY(20px);
         transition: all 0.3s ease;
-        z-index: 100;
       }
 
       .scroll-top.visible {
         opacity: 1;
-        transform: translateY(0);
       }
 
-      /* Responsive */
       @media (max-width: 768px) {
-        body {
-          padding: 40px 16px;
-        }
-
         .glass-card {
           padding: 36px 28px;
         }
@@ -305,7 +197,7 @@
     <div class="container">
       <div class="glass-card">
 
-        <!-- HEADER WITH LOGO -->
+        <!-- Header -->
         <div class="header">
           <div class="icon-circle">
             <img src="/focusgrid/privacy-policy/App_Logo.png" alt="App Logo" />
@@ -314,35 +206,92 @@
           <p class="last-updated">Last updated: December 01, 2025</p>
         </div>
 
-        <!-- YOUR ORIGINAL CONTENT (UNCHANGED BELOW THIS POINT) -->
+        <!-- CONTENT (UNCHANGED EXACTLY AS YOU WROTE) -->
         <p>
           Focus Grid is an Android application developed by Damodara Smart Tech Private Limited.
+          This policy explains what data we collect, why we collect it, and how it's handled.
         </p>
 
         <div class="credits-section">
           <h2>Credits & Acknowledgement</h2>
           <p>
-            This app uses and displays content provided by YouTube and
-            Dailymotion platforms…
+            This app uses and displays content provided by YouTube and Dailymotion platforms. YouTube is a trademark of Google LLC. All content and functionality related to YouTube are powered by the official YouTube API and subject to YouTube's Terms of Service. Dailymotion content and services in this app are accessed via the official Dailymotion API and subject to Dailymotion's API Terms and Conditions. Dailymotion is a registered trademark of Dailymotion S.A. All video content, trademarks, and logos belong to their respective owners. This app makes no claim of partnership, endorsement, or official association with YouTube or Dailymotion.
           </p>
         </div>
 
-        <!-- Your remaining content stays unchanged... -->
+        <h2>Information We Collect</h2>
+
+        <h4>Personal Data</h4>
+        <p>
+          When you create an account or sign in, we collect the email address you provide. This is processed through a secure, Google-backed authentication service and is the only personal information we rely on for identity verification within the app.
+        </p>
+        <ul>
+          <li><p>Email address</p></li>
+        </ul>
+
+        <h4>Additional User Preferences</h4>
+        <p>
+          The app allows users to voluntarily choose between different content categories such as “Kids Category” or “General (13+) Category.” This selection is a simple preference flag used only to tailor the type of content displayed. It does not represent or confirm the user's actual age, nor is it used for identification, profiling, or any form of personal evaluation.
+        </p>
+
+        <h4>How We Collect Data</h4>
+        <p>
+          Your email is collected only during sign-in through the official Google-operated authentication infrastructure. Content category preferences are provided directly by the user within the app interface and do not qualify as personal or sensitive data.
+        </p>
+
+        <h4>Why We Collect It</h4>
+        <p>
+          We use your email strictly for secure access and account management. The category preference you select is used solely to customize the type of content shown inside the app.
+        </p>
+
+        <h3>Data Sharing</h3>
+        <p>
+          We do not share, sell, rent, or disclose any user information to third parties. We do not engage in analytics tracking, marketing data collection, behavioral profiling, or any form of data monetization. Your information remains strictly within the app's secure, access-controlled environment.
+        </p>
+
+        <h3>Data Retention & Deletion</h3>
+        <p>
+          We keep your email as long as your account exists. If you want your data deleted, you can contact us at contact@damodarastech.com.
+        </p>
+
+        <h3>Security</h3>
+        <p>
+          We rely on Firebase Authentication's built-in security features to protect your account data.
+        </p>
+
+        <h2>Children's Privacy</h2>
+        <p>
+          Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13.
+        </p>
+
+        <h2>Links to Other Websites</h2>
+        <p>
+          Our Service may contain links to other websites that are not operated by Us.
+        </p>
+
+        <h2>Changes to this Privacy Policy</h2>
+        <p>
+          We may update our Privacy Policy from time to time.
+        </p>
 
         <div class="contact-section">
           <h2>Contact Us</h2>
           <p><strong>Email:</strong> contact@damodarastech.com</p>
           <p><strong>Website:</strong> https://damodarastech.com/</p>
         </div>
-
       </div>
     </div>
 
-    <div
-      class="scroll-top"
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-    >
+    <div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
       ↑
     </div>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        const btn = document.querySelector(".scroll-top");
+        if (window.pageYOffset > 300) btn.classList.add("visible");
+        else btn.classList.remove("visible");
+      });
+    </script>
   </body>
 </html>
