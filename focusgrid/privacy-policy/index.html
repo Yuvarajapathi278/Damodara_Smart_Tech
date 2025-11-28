@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - FocusGrid</title>
+    <style>
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Page background and animated radial gradients */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: #0a0a0f;
+        background-image: radial-gradient(
+            at 0% 0%,
+            rgba(102, 126, 234, 0.15) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 0%,
+            rgba(147, 51, 234, 0.15) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            rgba(59, 130, 246, 0.1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 0% 100%,
+            rgba(147, 51, 234, 0.1) 0px,
+            transparent 50%
+          );
+        min-height: 100vh;
+        padding: 60px 20px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+            circle at 20% 50%,
+            rgba(102, 126, 234, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(147, 51, 234, 0.08) 0%,
+            transparent 50%
+          );
+        animation: gradient-shift 15s ease infinite;
+        pointer-events: none;
+      }
+
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-10%, -10%);
+        }
+      }
+
+      /* Layout container and card */
+      .container {
+        max-width: 920px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+          inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+        padding: 56px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glass-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.5) 50%,
+          transparent
+        );
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 48px;
+        position: relative;
+      }
+
+      .icon-circle {
+        width: 88px;
+        height: 88px;
+        margin: 0 auto 28px;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.15),
+          rgba(147, 51, 234, 0.15)
+        );
+        backdrop-filter: blur(10px);
+        border-radius: 50%;
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 44px;
+        position: relative;
+      }
+
+      .icon-circle::after {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: 50%;
+        padding: 2px;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.3),
+          rgba(147, 51, 234, 0.3)
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.5;
+      }
+
+      /* Typography */
+      h1 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+        letter-spacing: -0.5px;
+      }
+
+      .last-updated {
+        color: #666;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+
+      h2 {
+        font-size: 26px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-top: 56px;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid rgba(147, 51, 234, 0.2);
+        position: relative;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          rgba(102, 126, 234, 0.8),
+          rgba(147, 51, 234, 0.8)
+        );
+        box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+      }
+
+      h3 {
+        font-size: 21px;
+        font-weight: 600;
+        color: #2d2d2d;
+        margin-top: 36px;
+        margin-bottom: 18px;
+      }
+
+      h4 {
+        font-size: 19px;
+        font-weight: 600;
+        color: #3d3d3d;
+        margin-top: 28px;
+        margin-bottom: 14px;
+      }
+
+      p {
+        color: #4a4a4a;
+        line-height: 1.9;
+        font-size: 16px;
+        margin-bottom: 18px;
+      }
+
+      ul,
+      ol {
+        margin-left: 28px;
+        margin-bottom: 18px;
+      }
+
+      li {
+        color: #4a4a4a;
+        line-height: 1.9;
+        margin-bottom: 14px;
+      }
+
+      li p {
+        margin-bottom: 10px;
+      }
+
+      strong {
+        color: #1a1a1a;
+        font-weight: 600;
+      }
+
+      a {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #3b82f6, #9333ea);
+        transition: width 0.3s ease;
+      }
+
+      a:hover {
+        color: #2563eb;
+      }
+
+      a:hover::after {
+        width: 100%;
+      }
+
+      /* Credits / Contact blocks */
+      .credits-section {
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.08),
+          rgba(147, 51, 234, 0.08)
+        );
+        backdrop-filter: blur(10px);
+        padding: 28px;
+        border-radius: 20px;
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        margin: 36px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .credits-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        100% {
+          left: 100%;
+        }
+      }
+
+      .credits-section h2 {
+        margin-top: 0;
+      }
+
+      .contact-section {
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.1),
+          rgba(147, 51, 234, 0.1)
+        );
+        backdrop-filter: blur(15px);
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid rgba(102, 126, 234, 0.25);
+        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        margin-top: 56px;
+        text-align: center;
+        position: relative;
+      }
+
+      .contact-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 1px;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.3),
+          rgba(147, 51, 234, 0.3)
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      .contact-section h2 {
+        border-bottom: none;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      .contact-section p {
+        color: #4a4a4a;
+      }
+
+      /* Scroll to top button */
+      .scroll-top {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 50%;
+        border: 1px solid rgba(102, 126, 234, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        color: #3b82f6;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .scroll-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-top:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 768px) {
+        body {
+          padding: 40px 16px;
+        }
+
+        .glass-card {
+          padding: 36px 28px;
+          border-radius: 24px;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+
+        h2 {
+          font-size: 23px;
+          margin-top: 44px;
+        }
+
+        h3 {
+          font-size: 19px;
+        }
+
+        h4 {
+          font-size: 17px;
+        }
+
+        p,
+        li {
+          font-size: 15px;
+        }
+
+        .icon-circle {
+          width: 76px;
+          height: 76px;
+          font-size: 38px;
+        }
+
+        .credits-section,
+        .contact-section {
+          padding: 24px;
+        }
+
+        .scroll-top {
+          bottom: 24px;
+          right: 24px;
+          width: 44px;
+          height: 44px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="glass-card">
+        <div class="header">
+          <div class="icon-circle">🔒</div>
+          <h1>Privacy Policy</h1>
+          <p class="last-updated">Last updated: December 01, 2025</p>
+        </div>
+
+        <p>
+          Focus Grid is an Android application developed by Damodara Smart Tech.
+          This policy explains what data we collect, why we collect it, and how
+          it’s handled.
+        </p>
+
+        <div class="credits-section">
+          <h2>Credits & Acknowledgement</h2>
+          <p>
+            This app uses and displays content provided by YouTube and
+            Dailymotion platforms. YouTube is a trademark of Google LLC. All
+            content and functionality related to YouTube are powered by the
+            official YouTube API and subject to YouTube's Terms of Service.
+            Dailymotion content and services in this app are accessed via the
+            official Dailymotion API and subject to Dailymotion's API Terms and
+            Conditions. Dailymotion is a registered trademark of Dailymotion
+            S.A. All video content, trademarks, and logos belong to their
+            respective owners. This app makes no claim of partnership,
+            endorsement, or official association with YouTube or Dailymotion. We
+            are open and enthusiastic about exploring official partnerships or
+            collaborations with YouTube or Dailymotion to enhance educational
+            and productive experiences for our users.
+          </p>
+        </div>
+
+        <h2>Information We Collect</h2>
+        <h4>Personal Data</h4>
+        <p>
+          When you create an account or sign in, we collect the email address
+          you provide. This is processed through Firebase Authentication and is
+          the only personal information we require.
+        </p>
+        <ul>
+          <li><p>Email address</p></li>
+        </ul>
+
+        <h4>How We Collect Data</h4>
+        <p>
+          Your email is collected only when you register or log in, and only
+          through Firebase Authentication
+        </p>
+
+        <h4>Why We Collect It</h4>
+        <p>
+          We use your email only for Account creation and login verification
+        </p>
+
+        <h3>Data Sharing</h3>
+        <p>
+          We do not share, sell, rent, or disclose your information to any third
+          party. Your email is handled only through Firebase Authentication,
+          which is required for account access.
+        </p>
+
+        <h3>Data Retention & Deletion</h3>
+        <p>
+          We keep your email as long as your account exists. If you want your
+          data deleted, you can request account deletion by contacting us at
+          contact@damodarastech.com
+        </p>
+        <h3>Security</h3>
+        <p>
+          We rely on Firebase Authentication’s built-in security features to
+          protect your account data. While no system is perfectly secure, we
+          take reasonable measures to safeguard your information.
+        </p>
+
+        <h2>Children's Privacy</h2>
+        <p>
+          Our Service does not address anyone under the age of 13. We do not
+          knowingly collect personally identifiable information from anyone
+          under the age of 13. If You are a parent or guardian and You are aware
+          that Your child has provided Us with Personal Data, please contact Us.
+          If We become aware that We have collected Personal Data from anyone
+          under the age of 13 without verification of parental consent, We take
+          steps to remove that information from Our servers.
+        </p>
+        <p>
+          If We need to rely on consent as a legal basis for processing Your
+          information and Your country requires consent from a parent, We may
+          require Your parent's consent before We collect and use that
+          information.
+        </p>
+
+        <h2>Links to Other Websites</h2>
+        <p>
+          Our Service may contain links to other websites that are not operated
+          by Us. If You click on a third party link, You will be directed to
+          that third party's site. We strongly advise You to review the Privacy
+          Policy of every site You visit.
+        </p>
+        <p>
+          We have no control over and assume no responsibility for the content,
+          privacy policies or practices of any third party sites or services.
+        </p>
+
+        <h2>Changes to this Privacy Policy</h2>
+        <p>
+          We may update Our Privacy Policy from time to time. We will notify You
+          of any changes by posting the new Privacy Policy on this page.
+        </p>
+        <p>
+          We will let You know via email and/or a prominent notice on Our
+          Service, prior to the change becoming effective and update the "Last
+          updated" date at the top of this Privacy Policy.
+        </p>
+        <p>
+          You are advised to review this Privacy Policy periodically for any
+          changes. Changes to this Privacy Policy are effective when they are
+          posted on this page.
+        </p>
+
+        <div class="contact-section">
+          <h2>Contact Us</h2>
+          <p>
+            If you have any questions about this Privacy Policy, You can contact
+            us:
+          </p>
+          <p>
+            <strong>By email:</strong>
+            <a href="mailto:contact@damodarastech.com"
+              >contact@damodarastech.com</a
+            >
+          </p>
+          <p>
+            <strong>Visit our website:</strong>
+            <a href="https://damodarastech.com/" target="_blank"
+              >https://damodarastech.com/</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="scroll-top"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    >
+      ↑
+    </div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const scrollTop = document.querySelector(".scroll-top");
+        if (window.pageYOffset > 300) {
+          scrollTop.classList.add("visible");
+        } else {
+          scrollTop.classList.remove("visible");
+        }
+      });
+    </script>
+  </body>
+</html>
