@@ -130,7 +130,21 @@
         margin-bottom: 18px;
       }
 
-      /* NEW: Highlight box for YouTube compliance */
+      ul {
+        margin-left: 20px;
+        margin-bottom: 18px;
+      }
+
+      a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: #9333ea;
+      }
+
       .youtube-compliance-box {
         background: linear-gradient(
           135deg,
@@ -193,13 +207,23 @@
         cursor: pointer;
         opacity: 0;
         transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
 
       .scroll-top.visible {
         opacity: 1;
       }
 
+      .scroll-top:hover {
+        background: rgba(102, 126, 234, 0.1);
+        transform: translateY(-2px);
+      }
+
       @media (max-width: 768px) {
+        body {
+          padding: 40px 15px;
+        }
+
         .glass-card {
           padding: 36px 28px;
         }
@@ -210,6 +234,18 @@
 
         h2 {
           font-size: 23px;
+          margin-top: 40px;
+        }
+
+        h3 {
+          font-size: 19px;
+        }
+
+        .scroll-top {
+          bottom: 20px;
+          right: 20px;
+          width: 45px;
+          height: 45px;
         }
       }
     </style>
@@ -226,7 +262,7 @@
           <p class="last-updated">Last updated: December 03, 2025</p>
         </div>
 
-        <!-- NEW: YouTube API Compliance Notice -->
+        <!-- YouTube API Compliance Notice (III.A.1 & III.A.2c) -->
         <div class="youtube-compliance-box">
           <p><strong>YouTube API Services Notice:</strong></p>
           <p>
@@ -276,13 +312,21 @@
           We use your email strictly for secure access and account management. The category preference you select is used solely to customize the type of content shown inside the app.
         </p>
 
-        <!-- NEW: Cookies and Device Information Section (III.A.2g Compliance) -->
+        <!-- Cookies and Device Information Section (III.A.2g Compliance) -->
         <h3>Cookies and Device Information</h3>
         <p>
-          Focus Grid does not directly place, access, or recognize cookies or similar tracking technologies on your device. However, when you use YouTube API Services within our app (such as viewing video content), YouTube and Google may store, access, or collect information on or from your device, including through cookies and similar technologies. This is governed by YouTube's and Google's respective terms and privacy policies.
+          <strong>Focus Grid's Data Collection:</strong> Focus Grid does not directly store, access, or collect information on or from your device through cookies, web beacons, local storage, or similar tracking technologies. We do not place, access, or recognize any cookies or similar technology on your device or browser for tracking, analytics, or advertising purposes.
         </p>
         <p>
-          We do not control or have access to any cookies or tracking mechanisms used by YouTube or Google. For more information on how YouTube and Google handle cookies and device data, please refer to the <a href="http://www.google.com/policies/privacy" target="_blank">Google Privacy Policy</a>.
+          <strong>Third-Party Data Collection (YouTube API Services):</strong> When you use video playback and content discovery features within Focus Grid, these features are powered by YouTube API Services. YouTube and Google may store, access, or collect information directly or indirectly on or from your device, including by placing, accessing, or recognizing cookies or similar technologies on your device or browser. This third-party data collection is governed by YouTube's and Google's respective terms and privacy policies, which you can review at:
+        </p>
+        <ul>
+          <li><a href="https://www.youtube.com/t/terms" target="_blank">YouTube Terms of Service</a></li>
+          <li><a href="http://www.google.com/policies/privacy" target="_blank">Google Privacy Policy</a></li>
+          <li><a href="https://policies.google.com/technologies/cookies" target="_blank">How Google Uses Cookies</a></li>
+        </ul>
+        <p>
+          Focus Grid does not control, access, or have visibility into any cookies or tracking mechanisms used by YouTube or Google when you interact with YouTube content through our app.
         </p>
 
         <h3>Data Sharing</h3>
@@ -307,12 +351,12 @@
 
         <h2>Links to Other Websites</h2>
         <p>
-          Our Service may contain links to other websites that are not operated by Us.
+          Our Service may contain links to other websites that are not operated by Us. We strongly advise you to review the Privacy Policy of every site you visit.
         </p>
 
         <h2>Changes to this Privacy Policy</h2>
         <p>
-          We may update our Privacy Policy from time to time.
+          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy.
         </p>
 
         <div class="contact-section">
