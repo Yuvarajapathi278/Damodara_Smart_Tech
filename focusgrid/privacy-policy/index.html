@@ -13,56 +13,36 @@
         box-sizing: border-box;
       }
 
+      /* High-performance background - matching Terms of Service */
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(28px) saturate(180%);
-        -webkit-backdrop-filter: blur(28px) saturate(180%);
+        background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
         min-height: 100vh;
         padding: 60px 20px;
         overflow-x: hidden;
-        background-image: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.35),
-          rgba(255, 255, 255, 0.15)
-        );
-        scroll-behavior: smooth;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        background: radial-gradient(
-            circle at 20% 30%,
-            rgba(255, 255, 255, 0.25),
-            transparent 60%
-          ),
-          radial-gradient(
-            circle at 80% 60%,
-            rgba(255, 255, 255, 0.2),
-            transparent 60%
-          );
-        filter: blur(100px);
-        opacity: 0.6;
+        /* Hardware acceleration */
+        transform: translateZ(0);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
       .container {
         max-width: 920px;
         margin: 0 auto;
         position: relative;
-        z-index: 1;
+        /* GPU acceleration */
+        will-change: transform;
       }
 
       .glass-card {
-        background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(20px);
+        background: #ffffff;
         border-radius: 28px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.08);
         padding: 56px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        /* Prevent repaints */
+        contain: layout style paint;
       }
 
       .header {
@@ -74,18 +54,14 @@
         width: 88px;
         height: 88px;
         margin: 0 auto 28px;
-        background: linear-gradient(
-          135deg,
-          rgba(102, 126, 234, 0.15),
-          rgba(147, 51, 234, 0.15)
-        );
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 50%;
-        border: 2px solid rgba(102, 126, 234, 0.3);
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        backdrop-filter: blur(10px);
+        /* GPU layer */
+        transform: translateZ(0);
       }
 
       .icon-circle img {
@@ -99,40 +75,56 @@
         font-weight: 700;
         margin-bottom: 12px;
         color: #1a1a1a;
+        line-height: 1.2;
       }
 
       h2 {
         margin-top: 56px;
         margin-bottom: 24px;
         padding-bottom: 16px;
-        border-bottom: 2px solid rgba(147, 51, 234, 0.2);
+        border-bottom: 2px solid rgba(102, 126, 234, 0.2);
         font-size: 26px;
         font-weight: 700;
+        color: #2a2a2a;
+        line-height: 1.3;
       }
 
       h3 {
         margin-top: 36px;
         margin-bottom: 18px;
         font-size: 21px;
+        color: #333;
+        line-height: 1.4;
       }
 
       h4 {
         margin-top: 28px;
         margin-bottom: 14px;
         font-size: 19px;
+        color: #444;
+        line-height: 1.4;
       }
 
       p,
       li {
         color: #4a4a4a;
         font-size: 16px;
-        line-height: 1.9;
+        line-height: 1.8;
         margin-bottom: 18px;
       }
 
       ul {
-        margin-left: 20px;
-        margin-bottom: 18px;
+        margin-left: 28px;
+        margin-bottom: 24px;
+      }
+
+      li {
+        margin-bottom: 12px;
+      }
+
+      strong {
+        color: #2a2a2a;
+        font-weight: 600;
       }
 
       a {
@@ -142,26 +134,38 @@
       }
 
       a:hover {
-        color: #9333ea;
+        color: #764ba2;
       }
 
-      .youtube-compliance-box {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 59, 48, 0.08),
-          rgba(255, 149, 0, 0.08)
-        );
-        border-left: 4px solid rgba(255, 59, 48, 0.6);
-        border-radius: 12px;
+      .youtube-compliance-box,
+      .dailymotion-compliance-box,
+      .copyright-notice-box {
+        background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+        border-left: 4px solid #ff3b30;
         padding: 20px 24px;
         margin: 28px 0;
+        border-radius: 12px;
       }
 
-      .youtube-compliance-box p {
+      .dailymotion-compliance-box {
+        background: linear-gradient(135deg, #e8f4ff 0%, #d0e8ff 100%);
+        border-left: 4px solid #0066ff;
+      }
+
+      .copyright-notice-box {
+        background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+        border-left: 4px solid #ffcc00;
+      }
+
+      .youtube-compliance-box p,
+      .dailymotion-compliance-box p,
+      .copyright-notice-box p {
         margin-bottom: 12px;
       }
 
-      .youtube-compliance-box a {
+      .youtube-compliance-box a,
+      .dailymotion-compliance-box a,
+      .copyright-notice-box a {
         color: #667eea;
         font-weight: 600;
         text-decoration: none;
@@ -169,36 +173,34 @@
         transition: all 0.2s ease;
       }
 
-      .youtube-compliance-box a:hover {
-        color: #9333ea;
-        border-bottom-color: rgba(147, 51, 234, 0.5);
+      .youtube-compliance-box a:hover,
+      .dailymotion-compliance-box a:hover,
+      .copyright-notice-box a:hover {
+        color: #764ba2;
+        border-bottom-color: rgba(118, 75, 162, 0.5);
       }
 
       .credits-section,
       .contact-section {
-        background: linear-gradient(
-          135deg,
-          rgba(102, 126, 234, 0.1),
-          rgba(147, 51, 234, 0.1)
-        );
+        background: linear-gradient(135deg, #f0f3ff 0%, #e8ecff 100%);
         border-radius: 20px;
-        border: 1px solid rgba(102, 126, 234, 0.25);
+        border: 1px solid rgba(102, 126, 234, 0.15);
         padding: 28px;
         margin-top: 36px;
-        backdrop-filter: blur(10px);
       }
 
       .contact-section {
         text-align: center;
       }
 
+      /* Ultra-smooth scroll button - matching Terms of Service */
       .scroll-top {
         position: fixed;
         bottom: 40px;
         right: 40px;
         width: 50px;
         height: 50px;
-        background: white;
+        background: #ffffff;
         border-radius: 50%;
         border: 1px solid rgba(102, 126, 234, 0.3);
         display: flex;
@@ -206,34 +208,49 @@
         justify-content: center;
         cursor: pointer;
         opacity: 0;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transform: translateY(20px) translateZ(0);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        font-size: 24px;
+        color: #667eea;
+        font-weight: bold;
+        /* Force GPU */
+        will-change: opacity, transform;
+        pointer-events: none;
       }
 
       .scroll-top.visible {
         opacity: 1;
+        transform: translateY(0) translateZ(0);
+        pointer-events: auto;
       }
 
       .scroll-top:hover {
-        background: rgba(102, 126, 234, 0.1);
-        transform: translateY(-2px);
+        background: #667eea;
+        color: white;
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .scroll-top:active {
+        transform: scale(0.95) translateZ(0);
       }
 
       @media (max-width: 768px) {
         body {
-          padding: 40px 15px;
+          padding: 40px 16px;
         }
 
         .glass-card {
-          padding: 36px 28px;
+          padding: 36px 24px;
+          border-radius: 20px;
         }
 
         h1 {
-          font-size: 30px;
+          font-size: 28px;
         }
 
         h2 {
-          font-size: 23px;
+          font-size: 22px;
           margin-top: 40px;
         }
 
@@ -241,11 +258,29 @@
           font-size: 19px;
         }
 
+        h4 {
+          font-size: 17px;
+        }
+
+        p, li {
+          font-size: 15px;
+        }
+
         .scroll-top {
-          bottom: 20px;
-          right: 20px;
-          width: 45px;
-          height: 45px;
+          bottom: 24px;
+          right: 24px;
+          width: 44px;
+          height: 44px;
+          font-size: 20px;
+        }
+      }
+
+      /* Performance optimization */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
       }
     </style>
@@ -256,13 +291,13 @@
       <div class="glass-card">
         <div class="header">
           <div class="icon-circle">
-            <img src="/focusgrid/privacy-policy/App_Logo.png" alt="App Logo" />
+            <img src="/focusgrid/privacy-policy/App_Logo.png" alt="App Logo" loading="lazy" />
           </div>
           <h1>Focus Grid Privacy Policy</h1>
-          <p class="last-updated">Last updated: December 03, 2025</p>
+          <p class="last-updated">Last updated: December 17, 2025</p>
         </div>
 
-        <!-- YouTube API Compliance Notice (III.A.1 & III.A.2c) -->
+        <!-- YouTube API Compliance Notice -->
         <div class="youtube-compliance-box">
           <p><strong>YouTube API Services Notice:</strong></p>
           <p>
@@ -276,17 +311,47 @@
           </p>
         </div>
 
+        <!-- Dailymotion API Compliance Notice -->
+        <div class="dailymotion-compliance-box">
+          <p><strong>Dailymotion API Services Notice:</strong></p>
+          <p>
+            Focus Grid also integrates Dailymotion API Services to expand video content availability. 
+            By using Focus Grid, you are agreeing to be bound by 
+            <a href="https://www.dailymotion.com/legal/terms" target="_blank">Dailymotion's Terms of Use</a> 
+            and <a href="https://developers.dailymotion.com/tools/" target="_blank">Dailymotion API Terms</a>.
+          </p>
+          <p>
+            For information on how Dailymotion handles your data, please review the 
+            <a href="https://www.dailymotion.com/legal/privacy" target="_blank">Dailymotion Privacy Policy</a>.
+          </p>
+        </div>
+
         <p>
-          Focus Grid is an Android application developed by Damodara Smart Tech Private Limited.
+          Focus Grid is an Android application developed by <strong>Damodara Smart Tech Private Limited</strong>.
           This policy explains what data we collect, why we collect it, and how it's handled.
         </p>
 
         <div class="credits-section">
           <h2>Credits & Acknowledgement</h2>
           <p>
-            This application uses and displays content provided exclusively through the YouTube platform. YouTube is a trademark of Google LLC. All video playback, metadata usage, and related features are powered by the official YouTube API and fully adhere to the YouTube API Services Terms of Service. All video content, trademarks, and logos belong to their respective owners.
-            <br><br>
-            Our objective is not to compete with YouTube, but to provide a curated, streamlined, and user-friendly experience that helps users discover and enjoy YouTube content more efficiently. The app operates entirely within YouTube's ecosystem, ensuring reliable performance, compliant integration, and a seamless content discovery journey.
+            This application uses and displays content provided through the <strong>YouTube</strong> and <strong>Dailymotion</strong> platforms. YouTube is a trademark of Google LLC, and Dailymotion is a registered trademark of Dailymotion S.A. All video playback, metadata usage, and related features are powered by the official YouTube API v3 and Dailymotion API, and fully adhere to their respective API Services Terms of Service. All video content, trademarks, and logos belong to their respective owners.
+          </p>
+          <p>
+            Our objective is not to compete with YouTube or Dailymotion, but to provide a curated, streamlined, and user-friendly experience that helps users discover and enjoy content from both platforms more efficiently. The app operates entirely within their ecosystems, ensuring reliable performance, compliant integration, and a seamless content discovery journey.
+          </p>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="copyright-notice-box">
+          <h2>Copyright and Content Disclaimer</h2>
+          <p>
+            <strong>No Content Hosting:</strong> Focus Grid does not host, store, or maintain any video content on our servers. All video content displayed within the App is streamed directly from YouTube and Dailymotion through their respective official APIs. When you watch a video through Focus Grid, you are accessing content directly from the original platform, and your views contribute to the publisher's official view count and engagement metrics.
+          </p>
+          <p>
+            <strong>Copyright Ownership:</strong> All video content, including audiovisual works, music, graphics, text, and metadata, remains the exclusive property of the original copyright holders and content publishers on YouTube and Dailymotion. Focus Grid makes no claim of ownership, authorship, or copyright interest in any third-party content displayed through the App.
+          </p>
+          <p>
+            <strong>Copyright Infringement Notification:</strong> If you are a copyright holder and believe that content accessible through Focus Grid infringes upon your intellectual property rights, or if such content should not be displayed within our application, please contact us immediately at <a href="mailto:contact@damodarastech.com">contact@damodarastech.com</a>. Upon receipt of a valid copyright infringement notification, we will promptly investigate and remove access to the disputed content within our App.
           </p>
         </div>
 
@@ -312,21 +377,23 @@
           We use your email strictly for secure access and account management. The category preference you select is used solely to customize the type of content shown inside the app.
         </p>
 
-        <!-- Cookies and Device Information Section (III.A.2g Compliance) -->
         <h3>Cookies and Device Information</h3>
         <p>
           <strong>Focus Grid's Data Collection:</strong> Focus Grid does not directly store, access, or collect information on or from your device through cookies, web beacons, local storage, or similar tracking technologies. We do not place, access, or recognize any cookies or similar technology on your device or browser for tracking, analytics, or advertising purposes.
         </p>
         <p>
-          <strong>Third-Party Data Collection (YouTube API Services):</strong> When you use video playback and content discovery features within Focus Grid, these features are powered by YouTube API Services. YouTube and Google may store, access, or collect information directly or indirectly on or from your device, including by placing, accessing, or recognizing cookies or similar technologies on your device or browser. This third-party data collection is governed by YouTube's and Google's respective terms and privacy policies, which you can review at:
+          <strong>Third-Party Data Collection (YouTube & Dailymotion API Services):</strong> When you use video playback and content discovery features within Focus Grid, these features are powered by YouTube API Services and Dailymotion API Services. YouTube, Dailymotion, Google, and their respective partners may store, access, or collect information directly or indirectly on or from your device, including by placing, accessing, or recognizing cookies or similar technologies on your device or browser. This third-party data collection is governed by their respective terms and privacy policies, which you can review at:
         </p>
         <ul>
           <li><a href="https://www.youtube.com/t/terms" target="_blank">YouTube Terms of Service</a></li>
           <li><a href="http://www.google.com/policies/privacy" target="_blank">Google Privacy Policy</a></li>
           <li><a href="https://policies.google.com/technologies/cookies" target="_blank">How Google Uses Cookies</a></li>
+          <li><a href="https://www.dailymotion.com/legal/terms" target="_blank">Dailymotion Terms of Use</a></li>
+          <li><a href="https://www.dailymotion.com/legal/privacy" target="_blank">Dailymotion Privacy Policy</a></li>
+          <li><a href="https://www.dailymotion.com/legal/cookiemanagement" target="_blank">How Dailymotion Uses Cookies</a></li>
         </ul>
         <p>
-          Focus Grid does not control, access, or have visibility into any cookies or tracking mechanisms used by YouTube or Google when you interact with YouTube content through our app.
+          Focus Grid does not control, access, or have visibility into any cookies or tracking mechanisms used by YouTube, Dailymotion, Google, or their partners when you interact with content through our app.
         </p>
 
         <h3>Data Sharing</h3>
@@ -346,36 +413,60 @@
 
         <h2>Children's Privacy</h2>
         <p>
-          Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13.
+          Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If we discover that a user is under 13, we will terminate that account immediately.
         </p>
 
         <h2>Links to Other Websites</h2>
         <p>
-          Our Service may contain links to other websites that are not operated by Us. We strongly advise you to review the Privacy Policy of every site you visit.
+          Our Service may contain links to other websites that are not operated by us. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
         </p>
 
         <h2>Changes to this Privacy Policy</h2>
         <p>
-          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy.
+          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes.
         </p>
 
         <div class="contact-section">
           <h2>Contact Us</h2>
-          <p><strong>Email:</strong> contact@damodarastech.com</p>
-          <p><strong>Website:</strong> https://damodarastech.com/</p>
+          <p><strong>Damodara Smart Tech Private Limited</strong></p>
+          <p><strong>Email:</strong> <a href="mailto:contact@damodarastech.com">contact@damodarastech.com</a></p>
+          <p><strong>Website:</strong> <a href="https://damodarastech.com/" target="_blank">https://damodarastech.com/</a></p>
         </div>
+
+        <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.1); text-align: center; color: #666;">
+          <p style="font-size: 14px;">By using Focus Grid, you acknowledge that you have read and understood this Privacy Policy.</p>
+        </div>
+
       </div>
     </div>
 
-    <div class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+    <div class="scroll-top" id="scrollTopBtn">
       ↑
     </div>
 
     <script>
-      window.addEventListener("scroll", () => {
-        const btn = document.querySelector(".scroll-top");
-        if (window.pageYOffset > 300) btn.classList.add("visible");
-        else btn.classList.remove("visible");
+      // Ultra-efficient scroll handler with RAF throttling (matching Terms of Service)
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      let ticking = false;
+
+      function updateScrollButton() {
+        if (window.pageYOffset > 300) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          window.requestAnimationFrame(updateScrollButton);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     </script>
   </body>
