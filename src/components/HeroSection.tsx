@@ -89,28 +89,28 @@ export function HeroSection() {
 <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
   <div className="aspect-square w-80 sm:w-80 md:w-80 lg:w-96 relative flex items-center justify-center">
     <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-green-400/30 bg-gradient-to-br from-green-100 via-green-50 to-green-300 border-4 border-green-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
-    <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-5 py-4 overflow-hidden">
-      <h2 className="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-green-700 font-['Space Grotesk'],font-['Inter'],sans-serif">
+    <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden">
+      <h2 className="text-xs md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-green-700 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
         📱 Ready to Transform Your Learning?
       </h2>
-      <div className="text-[11px] md:text-xs text-green-700 font-medium leading-snug mb-3 text-center max-w-xs">
-        <p className="font-bold text-green-800 mb-2 text-xs">
+      <div className="text-[10px] md:text-xs text-green-700 font-medium leading-snug mb-2 text-center w-full">
+        <p className="font-bold text-green-800 mb-1.5 text-[11px] md:text-xs">
           Discover Focus Grid—Your Personal Growth Companion!
         </p>
-        <p className="text-[11px] mb-2 text-green-600">
+        <p className="text-[10px] md:text-[11px] mb-2 text-green-600">
           Handpicked content that adapts to YOU. No distractions. Just pure learning & spiritual growth.
         </p>
-        <ul className="text-left list-none space-y-1 text-xs font-extrabold mx-auto inline-block">
-  <li>✨ Smart age-based curation</li>
-  <li>📝 Video Notes and AI integrated Search</li>
-  <li>⚡ Zero ads. Pure focus.</li>
-  <li>🎯 Unlock achievement badges</li>
-  <li>🚀 Much more exciting new features await you...</li>
-</ul>
+        <ul className="text-left list-none space-y-0.5 md:space-y-1 text-[10px] md:text-xs font-extrabold mx-auto inline-block">
+          <li>✨ Smart age-based curation</li>
+          <li>📝 Video Notes and AI integrated Search</li>
+          <li>⚡ Zero ads. Pure focus.</li>
+          <li>🎯 Unlock achievement badges</li>
+          <li>🚀 Much more exciting new features await you...</li>
+        </ul>
       </div>
       <Button
         size="sm"
-        className="bg-gradient-blue-purple text-white shadow-lg mt-2 text-[10px] py-1.5 px-4 font-bold hover:scale-105 transition-transform"
+        className="bg-gradient-blue-purple text-white shadow-lg mt-1.5 text-[9px] md:text-[10px] py-1.5 px-3 md:px-4 font-bold hover:scale-105 transition-transform"
         onClick={() => window.open('https://play.google.com/store/apps/details?id=com.focusgrid.app', '_blank')}
       >
         Download Now—It's Free! 🎯
