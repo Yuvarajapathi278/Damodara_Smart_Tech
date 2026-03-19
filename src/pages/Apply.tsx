@@ -185,9 +185,8 @@ ${formData.name}
           </p>
           
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Full Stack Developer</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">UI/UX Designer</span>
-            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full font-medium">Python Web Scraper</span>
+            <span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full font-medium">Cloud Engineer</span>
+            <span className="bg-rose-100 text-rose-800 px-3 py-1 rounded-full font-medium">Sales Representative</span>
           </div>
           
           <div className="mt-6 inline-block bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 px-8 py-4 rounded-xl shadow-lg">
@@ -273,9 +272,8 @@ ${formData.name}
                   required
                 >
                   <option value="">Select your preferred position</option>
-                  <option value="Full Stack Developer">🚀 Full Stack Developer</option>
-                  <option value="UI/UX Designer">🎨 UI/UX Designer</option>
-                  <option value="Python Web Scraper">🐍 Python Web Scraper</option>
+                  <option value="Cloud Engineer">☁️ Cloud Engineer</option>
+                  <option value="Sales Representative">🤝 Sales Representative</option>
                 </select>
                 {errors.position && <p className="text-red-500 text-xs mt-1">{errors.position}</p>}
               </div>

@@ -72,7 +72,7 @@ export function HeroSection() {
         }}
       >
         <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-indigo-400/30 bg-gradient-to-br from-indigo-100 via-indigo-50 to-indigo-300 border-4 border-indigo-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
-        <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden h-full">
+          <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden h-full">
           <h2 className="text-xs md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-indigo-700 font-['Space Grotesk'],font-['Inter'],sans-serif">
             📱 Focus Grid
           </h2>
@@ -82,10 +82,10 @@ export function HeroSection() {
             </p>
             <ul className="text-left list-none space-y-1 text-[10px] md:text-xs font-semibold mx-auto inline-block">
               <li>✨ Intelligent content curation</li>
-              <li>📝 AI-powered learning insights</li>
-              <li>⚡ Distraction-free experience</li>
+              <li>🧠 AI-powered quizzes & concise summaries</li>
+              <li>🕹️ Gamified learning for productive progress</li>
               <li>🎯 Personalized growth pathways</li>
-              <li>🚀 Holistic development awaits...</li>
+              <li>🚀 Much more cool features await you</li>
             </ul>
           </div>
           <Button
@@ -104,7 +104,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Back: Happiness Philosophy */}
+      {/* Back: SettlesU (moved full content here) */}
       <div
         style={{
           backfaceVisibility: 'hidden',
@@ -114,51 +114,23 @@ export function HeroSection() {
           transform: 'rotateY(180deg)'
         }}
       >
-        <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-blue-400/30 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-300 border-4 border-blue-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
+        <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-amber-400/30 bg-gradient-to-br from-amber-100 via-yellow-50 to-orange-300 border-4 border-amber-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px] flex items-center justify-center"></div>
         <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden h-full">
-          <h2
-            className="text-xs md:text-sm lg:text-base font-extrabold mb-2 text-center leading-tight break-words text-blue-900 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[13rem] mx-auto"
-            style={{ wordBreak: 'break-word' }}
-          >
-            Make Happiness Follow You
+          <h2 className="text-xs md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-amber-800 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
+            🌟 SettlesU—Your Life Orchestrator
           </h2>
-          <ul className="text-[10px] md:text-xs lg:text-sm text-blue-900 font-medium space-y-1.5 text-left list-none mb-3 mx-auto w-11/12">
-            <li className="leading-tight">✓ Right action brings effortless ease</li>
-            <li className="leading-tight">✓ Happiness emerges naturally, not forced</li>
-            <li className="leading-tight">✓ Choose rightness, witness the shift</li>
-          </ul>
-          <Button
-            size="sm"
-            className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white w-fit shadow-md mt-2 text-[10px] md:text-xs py-2 px-3 transition-all"
-            onClick={(e) => {
-              e.stopPropagation();
-              navigate('/personal-app');
-            }}
-            aria-label="Explore happiness and mindful living"
-          >
-            Discover More
-          </Button>
-          <div className="flex flex-col items-center mt-4 text-[10px] font-semibold text-blue-700">
-            <p className="text-center leading-tight">Join our community</p>
-            <div className="flex items-center gap-3 mt-1">
-              <a
-                href="https://www.youtube.com/@DamodaraSmartTech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center hover:text-red-600 transition-colors text-[9px]"
-              >
-                <Youtube size={10} className="mr-1" /> YouTube
-              </a>
-              <a
-                href="https://www.linkedin.com/company/damodara-smart-tech-pvt-ltd"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center hover:text-blue-600 transition-colors"
-              >
-                <Linkedin size={10} />
-              </a>
-            </div>
+          <div className="text-[10px] md:text-xs text-amber-800 font-medium leading-snug mb-2 text-center w-full">
+            <p className="font-bold text-amber-900 mb-1.5 text-[11px] md:text-xs">
+              Where Opportunity Meets Purpose
+            </p>
+            <ul className="text-left list-none space-y-0.5 md:space-y-1 text-[10px] md:text-xs font-semibold mx-auto inline-block text-amber-800">
+              <li>💼 Intelligent talent matching & mentorship</li>
+              <li>🤝 Global hiring ecosystem reimagined</li>
+              <li>🎓 Holistic career advancement pathways</li>
+              <li>🚀 Something extraordinary awaits...</li>
+            </ul>
           </div>
+          <p className="text-[8px] md:text-[9px] text-amber-700 font-semibold mt-3 italic">Crafted for those ready to settle wisely</p>
         </div>
       </div>
     </div>
@@ -174,26 +146,28 @@ export function HeroSection() {
               Our mission is to empower every idea with the perfect fusion of technology, creativity, and purpose.
             </p>
           </div>
-         {/* Right: SettlesU Platform */}
+         {/* Right: Careers & Recruitment (Cloud & Sales) */}
 <div className="flex-1 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="600">
-  <div className="aspect-square w-80 sm:w-80 md:w-80 lg:w-96 relative flex items-center justify-center">
-    <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-amber-400/30 bg-gradient-to-br from-amber-100 via-yellow-50 to-orange-300 border-4 border-amber-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
-    <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden">
-      <h2 className="text-xs md:text-base lg:text-lg font-extrabold mb-2 text-center leading-tight break-words text-amber-800 font-['Space Grotesk'],font-['Inter'],sans-serif max-w-[90%]">
-        🌟 SettlesU—Your Life Orchestrator
+  <div className="aspect-square w-80 sm:w-80 md:w-96 lg:w-96 relative flex items-center justify-center">
+    <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-emerald-300/30 bg-gradient-to-br from-emerald-100 via-emerald-50 to-emerald-200 border-2 border-emerald-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
+    <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden whitespace-normal">
+      <h2 className="text-sm md:text-lg font-extrabold mb-1 text-center leading-tight text-slate-900 font-['Space Grotesk'],font-['Inter'] max-w-[16rem] mx-auto">
+        🔎 Careers & Recruitment
       </h2>
-      <div className="text-[10px] md:text-xs text-amber-800 font-medium leading-snug mb-2 text-center w-full">
-        <p className="font-bold text-amber-900 mb-1.5 text-[11px] md:text-xs">
-          Where Opportunity Meets Purpose
-        </p>
-        <ul className="text-left list-none space-y-0.5 md:space-y-1 text-[10px] md:text-xs font-semibold mx-auto inline-block text-amber-800">
-          <li>💼 Intelligent talent matching & mentorship</li>
-          <li>🤝 Global hiring ecosystem reimagined</li>
-          <li>🎓 Holistic career advancement pathways</li>
-          <li>🚀 Something extraordinary awaits...</li>
+      <div className="text-[11px] md:text-sm text-slate-800 font-medium leading-snug mb-2 text-center w-full max-w-[16rem] mx-auto break-normal">
+        <p className="font-bold text-slate-900 mb-1 text-[11px] md:text-sm">Hiring: Cloud Engineer • Sales Representative</p>
+        <ul className="text-left list-none space-y-1 text-[11px] md:text-sm font-semibold mx-auto">
+          <li>☁️ Cloud Engineer — AWS/Azure/GCP, IaC, CI/CD (production-grade)</li>
+          <li>🤝 Sales Representative — B2B sales & business development</li>
+          <li>🧭 Mentorship & real-world projects</li>
         </ul>
       </div>
-      <p className="text-[8px] md:text-[9px] text-amber-700 font-semibold mt-3 italic">Crafted for those ready to settle wisely</p>
+      <div className="mt-3 flex flex-col items-center gap-2">
+        <div className="flex gap-2">
+          <Button size="sm" className="bg-gradient-to-r from-sky-500 to-indigo-600 text-white py-1.5 px-3 text-[10px]" onClick={() => navigate('/apply?position=Cloud%20Engineer')}>Apply: Cloud</Button>
+          <Button size="sm" className="bg-gradient-to-r from-rose-500 to-pink-600 text-white py-1.5 px-3 text-[10px]" onClick={() => navigate('/apply?position=Sales%20Representative')}>Apply: Sales</Button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
