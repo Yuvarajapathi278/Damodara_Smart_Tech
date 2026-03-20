@@ -155,10 +155,10 @@ export function HeroSection() {
         🔎 Careers & Recruitment
       </h2>
       <div className="text-[11px] md:text-sm text-slate-800 font-medium leading-snug mb-2 text-center w-full max-w-[16rem] mx-auto break-normal">
-        <p className="font-bold text-slate-900 mb-1 text-[11px] md:text-sm">Hiring: Cloud Engineer • Sales Representative</p>
+        <p className="font-bold text-slate-900 mb-1 text-[11px] md:text-sm">Hiring: Cloud Engineer • Sales Executive</p>
         <ul className="text-left list-none space-y-1 text-[11px] md:text-sm font-semibold mx-auto">
           <li>☁️ Cloud Engineer — AWS/Azure/GCP, IaC, CI/CD (production-grade)</li>
-          <li>🤝 Sales Representative — B2B sales & business development</li>
+          <li>🤝 Sales Executive — B2B sales & business development</li>
           <li>🧭 Mentorship & real-world projects</li>
         </ul>
       </div>
