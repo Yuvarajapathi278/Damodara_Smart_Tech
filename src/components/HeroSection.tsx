@@ -154,18 +154,20 @@ export function HeroSection() {
       <h2 className="text-sm md:text-lg font-extrabold mb-1 text-center leading-tight text-slate-900 font-['Space Grotesk'],font-['Inter'] max-w-[16rem] mx-auto">
         🔎 Careers & Recruitment
       </h2>
-      <div className="text-[11px] md:text-sm text-slate-800 font-medium leading-snug mb-2 text-center w-full max-w-[16rem] mx-auto break-normal">
-        <p className="font-bold text-slate-900 mb-1 text-[11px] md:text-sm">Hiring: Cloud Engineer • Sales Executive</p>
-        <ul className="text-left list-none space-y-1 text-[11px] md:text-sm font-semibold mx-auto">
-          <li>☁️ Cloud Engineer — AWS/Azure/GCP, IaC, CI/CD (production-grade)</li>
-          <li>🤝 Sales Executive — B2B sales & business development</li>
+      <div className="text-[10px] md:text-xs text-slate-800 font-medium leading-snug mb-3">
+            <p className="font-bold text-indigo-800 mb-1.5 text-[11px] md:text-xs">
+              Hiring: Cloud Engineer • Business Development Executive
+            </p>
+            <ul className="text-left list-none space-y-1 text-[11px] md:text-xs font-semibold mx-auto inline-block">
+          <li>☁️ Cloud Engineer — AWS/Azure/GCP, IaC, CI/CD</li>
+          <li>🤝 Business Development Executive — B2B sales & business development</li>
           <li>🧭 Mentorship & real-world projects</li>
-        </ul>
-      </div>
+            </ul>
+          </div>
       <div className="mt-3 flex flex-col items-center gap-2">
         <div className="flex gap-2">
           <Button size="sm" className="bg-gradient-to-r from-sky-500 to-indigo-600 text-white py-1.5 px-3 text-[10px]" onClick={() => navigate('/apply?position=Cloud%20Engineer')}>Apply: Cloud</Button>
-          <Button size="sm" className="bg-gradient-to-r from-rose-500 to-pink-600 text-white py-1.5 px-3 text-[10px]" onClick={() => navigate('/apply?position=Sales%20Representative')}>Apply: Sales</Button>
+          <Button size="sm" className="bg-gradient-to-r from-rose-500 to-pink-600 text-white py-1.5 px-3 text-[10px]" onClick={() => navigate('/apply?position=Business%20Development%20Executive')}>Apply: Business</Button>
         </div>
       </div>
     </div>

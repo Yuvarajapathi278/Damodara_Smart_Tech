@@ -186,7 +186,7 @@ ${formData.name}
           
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
             <span className="bg-sky-100 text-sky-800 px-3 py-1 rounded-full font-medium">Cloud Engineer</span>
-            <span className="bg-rose-100 text-rose-800 px-3 py-1 rounded-full font-medium">Sales Representative</span>
+            <span className="bg-rose-100 text-rose-800 px-3 py-1 rounded-full font-medium">Business Development Executive</span>
           </div>
           
           <div className="mt-6 inline-block bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 px-8 py-4 rounded-xl shadow-lg">
@@ -273,7 +273,7 @@ ${formData.name}
                 >
                   <option value="">Select your preferred position</option>
                   <option value="Cloud Engineer">☁️ Cloud Engineer</option>
-                  <option value="Sales Representative">🤝 Sales Representative</option>
+                  <option value="Business Development Executive">🤝 Business Development Executive</option>
                 </select>
                 {errors.position && <p className="text-red-500 text-xs mt-1">{errors.position}</p>}
               </div>
