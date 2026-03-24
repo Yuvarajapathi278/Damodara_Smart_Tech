@@ -154,7 +154,7 @@ export function HeroSection() {
       <h2 className="text-sm md:text-lg font-extrabold mb-1 text-center leading-tight text-slate-900 font-['Space Grotesk'],font-['Inter'] max-w-[16rem] mx-auto">
         🔎 Careers & Recruitment
       </h2>
-      <div className="text-[10px] md:text-xs text-slate-800 font-medium leading-snug mb-3">
+      <div className="text-[10px] md:text-xs text-slate-800 font-medium leading-snug mb-1">
             <p className="font-extrabold text-purple-800 mb-1.5 text-[11px] md:text-xs">
               Hiring..!!
             </p>
@@ -166,7 +166,7 @@ export function HeroSection() {
           <li>🎨 Multimedia Engineer — Visual, motion & multimedia content production</li>
             </ul>
           </div>
-      <div className="mt-3 flex flex-col items-center gap-2">
+      <div className="mt-1 flex flex-col items-center gap-2 -mt-1">
         <p className="text-xs text-gray-600 font-medium -mb-1">Click a role below to open the application form</p>
         <div className="flex flex-wrap gap-2 justify-center">
           <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-sky-500 to-indigo-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Cloud%20Engineer')}>Cloud</Button>
