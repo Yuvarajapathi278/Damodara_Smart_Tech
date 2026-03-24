@@ -169,11 +169,11 @@ export function HeroSection() {
       <div className="mt-3 flex flex-col items-center gap-2">
         <p className="text-xs text-gray-600 font-medium -mb-1">Click a role below to open the application form</p>
         <div className="flex flex-wrap gap-2 justify-center">
-          <Button size="sm" className="w-10 h-6 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-sky-500 to-indigo-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Cloud%20Engineer')}>Cloud</Button>
-          <Button size="sm" className="w-10 h-6 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-rose-500 to-pink-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Business%20Development%20Executive')}>Buisn</Button>
-          <Button size="sm" className="w-10 h-6 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-amber-500 to-yellow-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Civil%20Engineer%20(Site%20%26%20Infrastructure)')}>Civil</Button>
-          <Button size="sm" className="w-10 h-6 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Electrical%20Engineer%20(Power%20%26%20Hardware%20-%20DC%20%26%20AC%20Systems)')}>Elec</Button>
-          <Button size="sm" className="w-10 h-6 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Multimedia%20Engineer%20(Visual%20%26%20Motion)')}>Media</Button>
+          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-sky-500 to-indigo-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Cloud%20Engineer')}>Cloud</Button>
+          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-rose-500 to-pink-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Business%20Development%20Executive')}>Buisn</Button>
+          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-amber-500 to-yellow-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Civil%20Engineer%20(Site%20%26%20Infrastructure)')}>Civil</Button>
+          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Electrical%20Engineer%20(Power%20%26%20Hardware%20-%20DC%20%26%20AC%20Systems)')}>Elec</Button>
+          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Multimedia%20Engineer%20(Visual%20%26%20Motion)')}>Media</Button>
         </div>
       </div>
     </div>
