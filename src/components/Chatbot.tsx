@@ -3,6 +3,7 @@ import { MessageCircle, X, Send, Bot, Loader2, HelpCircle, FileText, Briefcase, 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useTheme } from './ThemeProvider';
+import { useNavigate } from 'react-router-dom';
 import { toast } from '@/components/ui/use-toast';
 import { Card } from '@/components/ui/card';
 
@@ -20,7 +21,7 @@ interface QuickReply {
 }
 
 interface BotAction {
-  type: 'whatsapp' | 'email' | 'form' | 'live-agent';
+  type: 'whatsapp' | 'email' | 'form' | 'live-agent' | 'navigate';
   label: string;
   value?: string;
 }
@@ -54,6 +55,7 @@ export function Chatbot() {
   const [botActions, setBotActions] = useState<BotAction[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
+  const navigate = useNavigate();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -64,10 +66,16 @@ export function Chatbot() {
   }, [messages]);
 
   const getBotResponse = (userMessage: string): { text: string; suggestions?: string[]; actions?: BotAction[] } => {
-    const message = userMessage.toLowerCase();
+    const message = userMessage.toLowerCase().trim();
+
+    // normalize common punctuation
+    const normalized = message.replace(/[?.!,]/g, '').replace(/\s+/g, ' ');
+
+    // Helper to match any of keywords
+    const has = (words: string[]) => words.some(w => normalized.includes(w));
 
     // Service-related queries
-    if (message.includes('service') || message.includes('what do you do') || message.includes('offer')) {
+    if (has(['service', 'what do you do', 'offer', 'services'])) {
       return {
         text: "We offer a comprehensive range of digital solutions:\n\n• Web Development & Design\n• Mobile App Development\n• UI/UX Design\n• Digital Marketing\n• API Integration\n• Cloud Solutions\n\nWhich service interests you most? I can provide detailed information about any of these.",
         suggestions: [
@@ -93,7 +101,7 @@ export function Chatbot() {
     }
 
     // Contact-related queries
-    if (message.includes('contact') || message.includes('reach') || message.includes('get in touch') || message.includes('whatsapp') || message.includes('email')) {
+    if (has(['contact', 'reach', 'get in touch', 'whatsapp', 'email'])) {
       return {
         text: "You can reach us through multiple channels. Choose your preferred method:",
         actions: [
@@ -112,7 +120,7 @@ export function Chatbot() {
     }
 
     // Live agent escalation
-    if (message.includes('human') || message.includes('agent') || message.includes('real person') || message.includes('live')) {
+    if (has(['human', 'agent', 'real person', 'live'])) {
       return {
         text: "A live agent will reach out to you soon! Please provide your name and contact details so we can assist you further.",
         actions: [
@@ -135,14 +143,27 @@ export function Chatbot() {
     }
 
     // Career queries
-    if (message.includes('career') || message.includes('job') || message.includes('work with you') || message.includes('join')) {
+    if (has(['career', 'job', 'work with you', 'join', 'openings', 'hiring'])) {
+      // Latest openings should reflect the roles currently published on the site.
+      // Keep this list in sync with HeroSection / Apply page when adding/removing roles.
+      const openings = [
+        { title: 'Cloud Engineer', value: '/apply?position=Cloud%20Engineer' },
+        { title: 'Business Development Executive', value: '/apply?position=Business%20Development%20Executive' },
+        { title: 'Civil Engineer (Site & Infrastructure)', value: '/apply?position=Civil%20Engineer%20(Site%20%26%20Infrastructure)' },
+        { title: 'Electrical Engineer (Power & Hardware - DC & AC Systems)', value: '/apply?position=Electrical%20Engineer%20(Power%20%26%20Hardware%20-%20DC%20%26%20AC%20Systems)' },
+        { title: 'Multimedia Engineer (Visual & Motion)', value: '/apply?position=Multimedia%20Engineer%20(Visual%20%26%20Motion)' }
+      ];
+
       return {
-        text: "We're always looking for talented individuals to join our team! We offer:\n\n• Competitive Salaries\n• Growth Opportunities\n• Work-Life Balance\n• Learning & Development\n• Modern Tech Stack\n\nWould you like to know about current openings or submit your resume?",
+        text: `We're hiring! Here are the latest openings published on our site (${openings.length}):\n\n` + openings.map(o => `• ${o.title}`).join('\n') + '\n\nClick any role below to open the application form for that position.',
         suggestions: [
-          "Show me current openings",
-          "What's your hiring process?",
-          "Tell me about your work culture",
-          "How can I apply?"
+          'Show me all openings',
+          "What's the hiring process?",
+          'How can I apply?'
+        ],
+        actions: [
+          ...openings.map(o => ({ type: 'navigate' as const, label: o.title, value: o.value })),
+          { type: 'navigate' as const, label: 'View All Openings', value: '/apply' }
         ]
       };
     }
@@ -203,12 +224,31 @@ export function Chatbot() {
     };
   };
 
-  const handleSendMessage = () => {
+  // Optional external AI hook (Vite env variable: VITE_AI_ENDPOINT)
+  const queryExternalAI = async (message: string) => {
+    try {
+      const endpoint = (import.meta as any).env?.VITE_AI_ENDPOINT;
+      if (!endpoint) return null;
+      const resp = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message, history: messages.map(m => ({sender: m.sender, text: m.text, time: m.timestamp})) })
+      });
+      if (!resp.ok) return null;
+      const data = await resp.json();
+      // expect { text, suggestions?, actions? }
+      return data;
+    } catch (err) {
+      return null;
+    }
+  };
+
+  const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
 
     // Add user message
     const userMessage: Message = {
-      id: messages.length + 1,
+      id: Date.now(),
       text: inputValue,
       sender: 'user',
       timestamp: new Date(),
@@ -220,10 +260,29 @@ export function Chatbot() {
     setInputValue('');
     setIsTyping(true);
 
-    setTimeout(() => {
+    // Try external AI first (if configured)
+    const external = await queryExternalAI(currentInput);
+    if (external && external.text) {
+      const botMessage: Message = {
+        id: Date.now() + 1,
+        text: external.text,
+        sender: 'bot',
+        timestamp: new Date(),
+        type: 'text'
+      };
+      setMessages(prev => [...prev, botMessage]);
+      setSuggestions(external.suggestions || []);
+      setBotActions(external.actions || []);
+      setIsTyping(false);
+      return;
+    }
+
+    // Fallback to local rule-based responder
+    try {
+      await new Promise(res => setTimeout(res, 600 + Math.random() * 600));
       const response = getBotResponse(currentInput);
       const botMessage: Message = {
-        id: messages.length + 2,
+        id: Date.now() + 2,
         text: response.text,
         sender: 'bot',
         timestamp: new Date(),
@@ -232,7 +291,7 @@ export function Chatbot() {
       setMessages(prev => [...prev, botMessage]);
       if (response.suggestions) {
         const suggestionMessage: Message = {
-          id: messages.length + 3,
+          id: Date.now() + 3,
           text: "You might also want to know:",
           sender: 'bot',
           timestamp: new Date(),
@@ -243,19 +302,23 @@ export function Chatbot() {
       } else {
         setSuggestions([]);
       }
-      // Handle actions
       if (response.actions) {
-        // If form action, show lead form
-        if (response.actions.some(a => a.type === 'form')) {
-          setShowLeadForm(true);
-        }
-        // Store actions in state for rendering
+        if (response.actions.some(a => a.type === 'form')) setShowLeadForm(true);
         setBotActions(response.actions);
       } else {
         setBotActions([]);
       }
+    } catch (err) {
+      setMessages(prev => [...prev, {
+        id: Date.now() + 4,
+        text: 'Sorry, something went wrong. Please try again or contact us directly at damodarasmarttech@gmail.com',
+        sender: 'bot',
+        timestamp: new Date(),
+        type: 'text'
+      }]);
+    } finally {
       setIsTyping(false);
-    }, 1000 + Math.random() * 1000);
+    }
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -279,6 +342,12 @@ export function Chatbot() {
         type: 'text'
       }]);
       setShowLeadForm(true);
+    } else if (action.type === 'navigate' && action.value) {
+      try {
+        navigate(action.value as string);
+      } catch (err) {
+        window.location.href = action.value as string;
+      }
     }
   };
 
