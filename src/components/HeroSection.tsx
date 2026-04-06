@@ -155,24 +155,18 @@ export function HeroSection() {
         🔎 Careers & Recruitment
       </h2>
       <div className="text-[10px] md:text-xs text-slate-800 font-medium leading-snug mb-1">
-            <p className="font-extrabold text-purple-800 mb-1.5 text-[11px] md:text-xs">
-              Hiring..!!
-            </p>
-            <ul className="text-left list-none space-y-1 text-[11px] md:text-xs font-semibold mx-auto inline-block">
-          <li>☁️ Cloud Engineer — AWS/Azure/GCP, IaC, CI/CD</li>
+        <p className="font-extrabold text-purple-800 mb-1.5 text-[11px] md:text-xs">Hiring..!!</p>
+        <ul className="text-left list-none space-y-1 text-[11px] md:text-xs font-semibold mx-auto inline-block">
           <li>🤝 Business Development Executive — B2B sales & business development</li>
           <li>🏗️ Civil Engineer — Site & Infrastructure</li>
-          <li>⚡ Electrical Engineer — Product & Hardware engineering; DC & AC circuits, power systems</li>
           <li>🎨 Multimedia Engineer — Visual, motion & multimedia content production</li>
-            </ul>
-          </div>
+        </ul>
+      </div>
       <div className="mt-1 flex flex-col items-center gap-2 -mt-1">
         <p className="text-xs text-gray-600 font-medium -mb-1">Click a role below to open the application form</p>
         <div className="flex flex-wrap gap-2 justify-center">
-          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-sky-500 to-indigo-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Cloud%20Engineer')}>Cloud</Button>
           <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-rose-500 to-pink-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Business%20Development%20Executive')}>Buisn</Button>
           <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-amber-500 to-yellow-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Civil%20Engineer%20(Site%20%26%20Infrastructure)')}>Civil</Button>
-          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Electrical%20Engineer%20(Power%20%26%20Hardware%20-%20DC%20%26%20AC%20Systems)')}>Elec</Button>
           <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Multimedia%20Engineer%20(Visual%20%26%20Motion)')}>Media</Button>
         </div>
       </div>
