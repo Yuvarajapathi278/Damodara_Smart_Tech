@@ -271,7 +271,7 @@ export function Chatbot() {
         type: 'text'
       };
       setMessages(prev => [...prev, botMessage]);
-      setSuggestions(external.suggestions || []);
+      setSuggestions(external.suggestions || []); 
       setBotActions(external.actions || []);
       setIsTyping(false);
       return;
