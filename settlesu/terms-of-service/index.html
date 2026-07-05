@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - SettlesU</title>
+    <link rel="icon" type="image/png" href="./settlesu_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0ea5e9;
+            --accent: #2dd4bf;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --active-bg: #eff6ff;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --card-bg: #1e293b;
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --border: #334155;
+                --active-bg: #1e293b;
+                --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 56px 40px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+            padding: 4px 8px;
+        }
+
+        .brand-logo {
+            width: 92px;
+            height: 92px;
+            object-fit: contain;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.16);
+            padding: 10px;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+        }
+
+        .brand-name {
+            display: block;
+            font-size: 2.65rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+        }
+
+        .header p {
+            font-size: 1rem;
+            opacity: 0.92;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .layout {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 320px;
+            border-right: 1px solid var(--border);
+            padding: 40px 24px;
+            background-color: rgba(0, 0, 0, 0.01);
+            position: sticky;
+            top: 0;
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-item {
+            margin-bottom: 12px;
+        }
+
+        .toc-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.925rem;
+            font-weight: 500;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-link:hover {
+            color: var(--primary);
+            background-color: var(--active-bg);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px 48px;
+            max-width: 880px;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.015em;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 22px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 2px;
+            margin-right: 12px;
+        }
+
+        p, ul, ol {
+            margin-bottom: 18px;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        ul, ol {
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .highlight-card {
+            background-color: var(--active-bg);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 12px 12px 0;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .highlight-card p {
+            margin-bottom: 0;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .contact-box {
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px dashed var(--primary);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .contact-box a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.02);
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 24px;
+            }
+
+            .main-content {
+                padding: 32px 24px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 16px 8px;
+            }
+
+            .header {
+                padding: 36px 16px;
+            }
+
+            .brand {
+                gap: 12px;
+            }
+
+            .brand-logo {
+                width: 64px;
+                height: 64px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="brand">
+            <img src="./settlesu_logo.png" alt="SettlesU logo" class="brand-logo">
+            <h2 class="brand-name">SettlesU</h2>
+        </div>
+        <h1>Terms of Service</h1>
+        <p>Platform Legal & SaaS Agreement</p>
+    </div>
+    
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">Table of Contents</div>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#acceptance" class="toc-link">1. Acceptance of Terms</a></li>
+                <li class="toc-item"><a href="#eligibility" class="toc-link">2. Eligibility & Roles</a></li>
+                <li class="toc-item"><a href="#verification" class="toc-link">3. Recruiter Verification</a></li>
+                <li class="toc-item"><a href="#conduct" class="toc-link">4. Acceptable Conduct</a></li>
+                <li class="toc-item"><a href="#billing" class="toc-link">5. SaaS Fees & Payment</a></li>
+                <li class="toc-item"><a href="#ip" class="toc-link">6. Intellectual Property</a></li>
+                <li class="toc-item"><a href="#liability" class="toc-link">7. Limitation of Liability</a></li>
+                <li class="toc-item"><a href="#deletion" class="toc-link">8. Account & Data Deletion</a></li>
+                <li class="toc-item"><a href="#termination" class="toc-link">9. Suspension & Termination</a></li>
+                <li class="toc-item"><a href="#governing-law" class="toc-link">10. Governing Law</a></li>
+                <li class="toc-item"><a href="#contact" class="toc-link">11. Contact & Support</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <span class="last-updated">Last Updated: July 6, 2026</span>
+
+            <p>Welcome to <strong>SettlesU</strong>, a professional career networking, matching, and messaging SaaS platform owned and operated by <strong>Damodara Smart Tech Private Limited</strong>. By registering for, accessing, or using our mobile application, websites, or services (collectively, the "Platform"), you agree to comply with and be bound by these Terms of Service ("Terms"). Please read them carefully before using the Platform.</p>
+
+            <div class="highlight-card">
+                <p>By checking the acceptance boxes during registration or authentication, or by continuing to use the Platform, you acknowledge that you have read, understood, and agreed to be bound by these Terms. If you do not agree, you must cease using the Platform immediately.</p>
+            </div>
+
+            <section id="acceptance">
+                <h2>1. Acceptance of Terms</h2>
+                <p>These Terms constitute a legally binding agreement between you ("User", "you", or "your") and Damodara Smart Tech Private Limited ("Company", "we", "us", or "our"). These Terms govern your access to the SettlesU platform, including any updates, features, tools, or mobile builds. If you are entering into these Terms on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms.</p>
+            </section>
+
+            <section id="eligibility">
+                <h2>2. Eligibility & Account Roles</h2>
+                <p>To use SettlesU, you must be at least 18 years of age or the legal age of majority in your jurisdiction. By registering, you warrant that you possess the legal capacity to enter into a binding contract. SettlesU provides two separate user streams:</p>
+                <ul>
+                    <li><strong>Candidates:</strong> Users seeking career growth, uploading resumes, listing professional credentials, matching with companies, and networking.</li>
+                    <li><strong>Recruiters / Employers:</strong> Corporate representatives or recruitment professionals posting jobs, reviewing resumes, verifying candidate backgrounds, and communicating with prospects.</li>
+                </ul>
+                <p>You agree to provide accurate, truthful, and complete details when creating your account, and you must maintain the confidentiality of your authentication details (e.g. email sign-in links and sessions). You are solely responsible for all activities occurring under your account.</p>
+            </section>
+
+            <section id="verification">
+                <h2>3. Recruiter Verification & Corporate Security</h2>
+                <p>To ensure a secure environment and verify the legitimacy of hiring organizations on SettlesU, all Recruiter accounts are subject to mandatory identity and business verification:</p>
+                <ul>
+                    <li>Recruiters must verify their identity using a valid corporate domain email address (public or generic domains like Gmail or Yahoo are not permitted for official recruiter accounts).</li>
+                    <li>Recruiters must complete mobile number verification.</li>
+                    <li>Recruiters must provide a valid Goods and Services Tax Identification Number (GSTIN), corporate incorporation certificate, or equivalent local business registration identifier.</li>
+                </ul>
+                <p>Damodara Smart Tech Private Limited reserves the sole right to review, approve, restrict, or reject any recruiter profile failing this verification. Verification delays or rejections do not constitute breach of contract by the Company.</p>
+            </section>
+
+            <section id="conduct">
+                <h2>4. Acceptable Conduct & Interactive System Rules</h2>
+                <p>You agree that you will not use SettlesU for any unlawful purpose. You shall not upload, post, or transmit any content (including resumes, job descriptions, or message content) that:</p>
+                <ul>
+                    <li>Contains false, misleading, or fraudulent information.</li>
+                    <li>Infringes on the intellectual property, privacy, or publicity rights of third parties.</li>
+                    <li>Contains computer viruses, trojans, malware, or other malicious payloads.</li>
+                    <li>Constitutes unsolicited advertising, junk mail, spam, or harassment.</li>
+                </ul>
+                <p>The Platform implements a strict <strong>mutual blocking and communication gating mechanism</strong>. Once a Candidate or Recruiter blocks another user, all matching, searching, invitation, and messaging capabilities between those accounts are immediately and permanently severed, unless unblocked. Any attempt to bypass this blocking system using alternative accounts is a material breach of these Terms and will result in immediate termination.</p>
+            </section>
+
+            <section id="billing">
+                <h2>5. SaaS Fees, Subscriptions & Payments</h2>
+                <p>Certain parts of the Platform may be provided for a fee or subscription (the "SaaS Plan"). If you subscribe to a paid feature or recruiter package:</p>
+                <ul>
+                    <li>You agree to pay all applicable fees as described at the point of purchase.</li>
+                    <li>All billing details must be accurate and valid. Payments are processed through secure third-party payment gateways.</li>
+                    <li>Unless stated otherwise, all subscriptions are billed in advance and are non-refundable.</li>
+                    <li>We reserve the right to modify pricing structures, package features, or billing cycles upon thirty (30) days' notice.</li>
+                </ul>
+            </section>
+
+            <section id="ip">
+                <h2>6. Intellectual Property Rights</h2>
+                <p>The Platform, including its user interface, algorithms, codebase, design assets, brand names, and the "SettlesU" and "Damodara Smart Tech" logos, are the exclusive intellectual property of Damodara Smart Tech Private Limited and its licensors. We grant you a limited, non-exclusive, non-transferable, and revocable license to access the Platform solely for your personal use (for Candidates) or internal recruitment needs (for Recruiters) as permitted under these Terms.</p>
+                <p>You retain ownership of any candidate profiles, resumes, company logos, and texts you upload. However, you grant us a worldwide, royalty-free, non-exclusive license to host, display, run, and parse your uploaded content on the Platform to deliver our matching and messaging services.</p>
+            </section>
+
+            <section id="liability">
+                <h2>7. Limitation of Liability & Disclaimers</h2>
+                <p>THE PLATFORM AND SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. DAMODARA SMART TECH PRIVATE LIMITED MAKES NO WARRANTIES, EXPRESS OR IMPLIED, REGARDING THE ACCURACY OF CANDIDATE PROFILES, VALIDITY OF RESUMES, LEGITIMACY OF JOB OFFERINGS, OR SYSTEM UP-TIME.</p>
+                <p>IN NO EVENT SHALL DAMODARA SMART TECH PRIVATE LIMITED, ITS DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES arising from your use of the Platform.</p>
+            </section>
+
+            <section id="deletion">
+                <h2>8. Account Deletion & Data Purging Procedure</h2>
+                <p>We respect your right to control your personal data. You can request the permanent deletion of your account and all associated profile information, resumes, and communications at any time:</p>
+                <ul>
+                    <li>You may submit an account deletion request through the dedicated settings page in the application (where available) or by emailing us directly.</li>
+                    <li>All data deletion requests must be sent from the registered email address associated with the account to either <strong>contact@damodarastech.com</strong> or <strong>damodarasmarttech@gmail.com</strong>.</li>
+                    <li>Upon receiving a valid request, we will verify your identity and purge your personal data, resumes, and profiles from our production databases within thirty (30) business days, subject to legally required retention policies.</li>
+                </ul>
+            </section>
+
+            <section id="termination">
+                <h2>9. Suspension & Termination</h2>
+                <p>We reserve the right, in our sole discretion and without prior notice, to suspend, terminate, or restrict your access to all or part of the SettlesU platform for any reason, including but not limited to, breach of these Terms, failure of recruiter verification, fraudulent activity, or behavior detrimental to other users.</p>
+            </section>
+
+            <section id="governing-law">
+                <h2>10. Governing Law & Dispute Resolution</h2>
+                <p>These Terms, and any dispute arising from them, shall be governed by and construed in accordance with the laws of India, without reference to its conflict of law principles. Any legal suit, action, or proceeding arising out of or related to these Terms must be instituted exclusively in the competent courts located in Hyderabad, Telangana, India.</p>
+            </section>
+
+            <section id="contact">
+                <h2>11. Contact, Support & Notices</h2>
+                <p>For any customer support, technical issues, legal notices, or account enquiries, please contact us at:</p>
+                
+                <div class="contact-box">
+                    <strong>Damodara Smart Tech Private Limited</strong><br>
+                    Support & Legal Dept.<br>
+                    Primary Support Email: <a href="mailto:contact@damodarastech.com">contact@damodarastech.com</a><br>
+                    Backup/Verification Email: <a href="mailto:damodarasmarttech@gmail.com">damodarasmarttech@gmail.com</a><br>
+                    Corporate Website: <a href="https://damodarastech.com" target="_blank">https://damodarastech.com</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Damodara Smart Tech Private Limited. All rights reserved.</p>
+        <p>Read our <a href="https://damodarastech.com/settlesu/privacypolicy">Privacy Policy</a></p>
+    </div>
+</div>
+
+</body>
+</html>
