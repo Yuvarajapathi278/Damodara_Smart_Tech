@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Chatbot } from "./components/Chatbot";
 import React, { useEffect, useState } from "react";
@@ -40,6 +40,14 @@ function AppWithGA() {
       <Route path="/selected-candidates" element={<SelectedCandidates />} />
       <Route path="/blog/tech-trends-2025" element={<BlogDetails />} />
       <Route path="/personal-app" element={<PersonalAppPage />} />
+      <Route path="/settlesu/privacy-policy" element={<Navigate to="/settlesu/privacy-policy/index.html" replace />} />
+      <Route path="/settlesu/privacy-policy/index.html" element={<Navigate to="/settlesu/privacy-policy/index.html" replace />} />
+      <Route path="/settlesu/terms-of-service" element={<Navigate to="/settlesu/terms-of-service/index.html" replace />} />
+      <Route path="/settlesu/terms-of-service/index.html" element={<Navigate to="/settlesu/terms-of-service/index.html" replace />} />
+      <Route path="/settlesu/privacypolicy" element={<Navigate to="/settlesu/privacypolicy/index.html" replace />} />
+      <Route path="/settlesu/privacypolicy/index.html" element={<Navigate to="/settlesu/privacypolicy/index.html" replace />} />
+      <Route path="/settlesu/termsofservice" element={<Navigate to="/settlesu/termsofservice/index.html" replace />} />
+      <Route path="/settlesu/termsofservice/index.html" element={<Navigate to="/settlesu/termsofservice/index.html" replace />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
