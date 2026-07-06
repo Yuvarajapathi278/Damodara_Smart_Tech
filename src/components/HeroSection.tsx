@@ -152,22 +152,21 @@ export function HeroSection() {
     <div className="absolute inset-0 rounded-full animate-pulse opacity-80 shadow-2xl shadow-emerald-300/30 bg-gradient-to-br from-emerald-100 via-emerald-50 to-emerald-200 border-2 border-emerald-100 transform-gpu hover:scale-105 transition-transform duration-700 blur-[1px]"></div>
     <div className="relative z-10 flex flex-col justify-center items-center w-11/12 h-11/12 mx-auto text-center px-6 py-5 overflow-hidden whitespace-normal">
       <h2 className="text-sm md:text-lg font-extrabold mb-1 text-center leading-tight text-slate-900 font-['Space Grotesk'],font-['Inter'] max-w-[16rem] mx-auto">
-        🔎 Careers & Recruitment
+        🎉 Smart Tech Internship Program
       </h2>
       <div className="text-[10px] md:text-xs text-slate-800 font-medium leading-snug mb-1">
-        <p className="font-extrabold text-purple-800 mb-1.5 text-[11px] md:text-xs">Hiring..!!</p>
+        <p className="font-extrabold text-purple-800 mb-1.5 text-[11px] md:text-xs">Apply for 2026 internships</p>
         <ul className="text-left list-none space-y-1 text-[11px] md:text-xs font-semibold mx-auto inline-block">
-          <li>🤝 Business Development Executive — B2B sales & business development</li>
-          <li>🏗️ Civil Engineer — Site & Infrastructure</li>
-          <li>🎨 Multimedia Engineer — Visual, motion & multimedia content production</li>
+          <li>🎓 Open to students and recent graduates across all disciplines</li>
+          <li>🛠️ Work on live projects with industry mentors</li>
+          <li>💰 Performance-based stipend from ₹5,000 to ₹15,000/month</li>
         </ul>
       </div>
       <div className="mt-1 flex flex-col items-center gap-2 -mt-1">
-        <p className="text-xs text-gray-600 font-medium -mb-1">Click a role below to open the application form</p>
+        <p className="text-xs text-gray-600 font-medium -mb-1">Explore the full internship details and apply</p>
         <div className="flex flex-wrap gap-2 justify-center">
-          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-rose-500 to-pink-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Business%20Development%20Executive')}>Buisn</Button>
-          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-amber-500 to-yellow-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Civil%20Engineer%20(Site%20%26%20Infrastructure)')}>Civil</Button>
-          <Button size="sm" className="w-7 h-5 p-0 flex items-center justify-center text-[9px] bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?position=Multimedia%20Engineer%20(Visual%20%26%20Motion)')}>Media</Button>
+          <Button size="sm" className="px-3 py-1 text-[9px] bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-md shadow-sm" onClick={() => navigate('/internship/details')}>View Details</Button>
+          <Button size="sm" className="px-3 py-1 text-[9px] bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-md shadow-sm" onClick={() => navigate('/apply?program=internship')}>Apply Now</Button>
         </div>
       </div>
     </div>

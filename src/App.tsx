@@ -20,6 +20,7 @@ import PersonalAppPage from "./pages/personal-app";
 //import HappinessMindsetPage from "./pages/happiness-mindset";
 import ServiceDetail from "./pages/ServiceDetail"; // 🚀 NEW
 import SelectedCandidates from "./pages/SelectedCandidates"; // 🎉 NEW
+import InternshipDetails from "./pages/InternshipDetails";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,8 @@ function AppWithGA() {
       <Route path="/services/:slug" element={<ServiceDetail />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/apply" element={<Apply />} />
+      <Route path="/internship/details" element={<InternshipDetails />} />
+      <Route path="/intership/details" element={<InternshipDetails />} />
       <Route path="/selected-candidates" element={<SelectedCandidates />} />
       <Route path="/blog/tech-trends-2025" element={<BlogDetails />} />
       <Route path="/personal-app" element={<PersonalAppPage />} />

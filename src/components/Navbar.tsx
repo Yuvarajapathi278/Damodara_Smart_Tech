@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
   { label: "Services", sectionId: "services" },
   { label: "Why Choose Us", sectionId: "why-choose-us" },
   { label: "Portfolio", sectionId: "portfolio" },
-  { label: "Careers", sectionId: "careers" },
+  { label: "Internships", sectionId: "careers" },
   { label: "Contact", sectionId: "contact" },
 ];
 
